@@ -10,19 +10,12 @@ using System.Windows.Forms;
 
 namespace PersonalExpenseTracker
 {
-    public partial class FormHome : Form
+    public partial class FormSignUp : Form
     {
-        public FormHome()
+        public FormSignUp()
         {
             InitializeComponent();
         }
 
-        private void openLogin(object sender, EventArgs e)
-        {
-            
-            FormLogin loginForm = new FormLogin();
-            loginForm.Show();
-            this.Hide();
-        }
     }
 }

@@ -31,12 +31,12 @@ namespace PersonalExpenseTracker
         {
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.email = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.password = new System.Windows.Forms.TextBox();
             this.btnSubmit = new System.Windows.Forms.Button();
             this.linkForgotPassword = new System.Windows.Forms.LinkLabel();
+            this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -58,15 +58,6 @@ namespace PersonalExpenseTracker
             this.label2.Size = new System.Drawing.Size(68, 24);
             this.label2.TabIndex = 2;
             this.label2.Text = "Sign In";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(98, 179);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(85, 13);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Username/Email";
             // 
             // email
             // 
@@ -113,6 +104,15 @@ namespace PersonalExpenseTracker
             this.linkForgotPassword.TabStop = true;
             this.linkForgotPassword.Text = "Forgot Password?";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(98, 179);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(85, 13);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Username/Email";
+            // 
             // FormLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -137,11 +137,11 @@ namespace PersonalExpenseTracker
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox email;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox password;
         private System.Windows.Forms.Button btnSubmit;
         private System.Windows.Forms.LinkLabel linkForgotPassword;
+        private System.Windows.Forms.Label label3;
     }
 }
