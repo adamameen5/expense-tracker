@@ -2,9 +2,14 @@ C:\ADAMLK\EAD\CW2\expense-tracker\PersonalExpenseTracker\PersonalExpenseTracker\
 C:\ADAMLK\EAD\CW2\expense-tracker\PersonalExpenseTracker\PersonalExpenseTracker\bin\Debug\PersonalExpenseTracker.exe
 C:\ADAMLK\EAD\CW2\expense-tracker\PersonalExpenseTracker\PersonalExpenseTracker\bin\Debug\PersonalExpenseTracker.pdb
 C:\ADAMLK\EAD\CW2\expense-tracker\PersonalExpenseTracker\PersonalExpenseTracker\bin\Debug\Newtonsoft.Json.dll
+C:\ADAMLK\EAD\CW2\expense-tracker\PersonalExpenseTracker\PersonalExpenseTracker\bin\Debug\Syncfusion.Licensing.dll
+C:\ADAMLK\EAD\CW2\expense-tracker\PersonalExpenseTracker\PersonalExpenseTracker\bin\Debug\Syncfusion.Shared.Base.dll
 C:\ADAMLK\EAD\CW2\expense-tracker\PersonalExpenseTracker\PersonalExpenseTracker\bin\Debug\Newtonsoft.Json.xml
+C:\ADAMLK\EAD\CW2\expense-tracker\PersonalExpenseTracker\PersonalExpenseTracker\bin\Debug\Syncfusion.Shared.Base.xml
 C:\ADAMLK\EAD\CW2\expense-tracker\PersonalExpenseTracker\PersonalExpenseTracker\obj\Debug\PersonalExpenseTracker.csprojAssemblyReference.cache
-C:\ADAMLK\EAD\CW2\expense-tracker\PersonalExpenseTracker\PersonalExpenseTracker\obj\Debug\PersonalExpenseTracker.Expenses.resources
+C:\ADAMLK\EAD\CW2\expense-tracker\PersonalExpenseTracker\PersonalExpenseTracker\obj\Debug\PersonalExpenseTracker.FormExpenses.resources
+C:\ADAMLK\EAD\CW2\expense-tracker\PersonalExpenseTracker\PersonalExpenseTracker\obj\Debug\PersonalExpenseTracker.FormAddNewExpense.resources
+C:\ADAMLK\EAD\CW2\expense-tracker\PersonalExpenseTracker\PersonalExpenseTracker\obj\Debug\PersonalExpenseTracker.FormAddNewIncome.resources
 C:\ADAMLK\EAD\CW2\expense-tracker\PersonalExpenseTracker\PersonalExpenseTracker\obj\Debug\PersonalExpenseTracker.FormContacts.resources
 C:\ADAMLK\EAD\CW2\expense-tracker\PersonalExpenseTracker\PersonalExpenseTracker\obj\Debug\PersonalExpenseTracker.FormDashboard.resources
 C:\ADAMLK\EAD\CW2\expense-tracker\PersonalExpenseTracker\PersonalExpenseTracker\obj\Debug\PersonalExpenseTracker.FormHome.resources

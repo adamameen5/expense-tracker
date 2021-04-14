@@ -36,8 +36,13 @@
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="Syncfusion.Licensing, Version=18.4460.0.39, Culture=neutral, PublicKeyToken=632609b4d040f6b4" />
+    <Reference Include="Syncfusion.Shared.Base, Version=18.4460.0.39, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -49,11 +54,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Expenses.cs">
+    <Compile Include="FormEvents.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Expenses.Designer.cs">
-      <DependentUpon>Expenses.cs</DependentUpon>
+    <Compile Include="FormEvents.Designer.cs">
+      <DependentUpon>FormEvents.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormExpenses.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormExpenses.Designer.cs">
+      <DependentUpon>FormExpenses.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormAddNewExpense.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAddNewExpense.Designer.cs">
+      <DependentUpon>FormAddNewExpense.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormAddNewIncome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAddNewIncome.Designer.cs">
+      <DependentUpon>FormAddNewIncome.cs</DependentUpon>
     </Compile>
     <Compile Include="FormContacts.cs">
       <SubType>Form</SubType>
@@ -73,6 +96,12 @@
     <Compile Include="FormHome.Designer.cs">
       <DependentUpon>FormHome.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormIncomes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormIncomes.Designer.cs">
+      <DependentUpon>FormIncomes.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,8 +117,17 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserDetails.cs" />
-    <EmbeddedResource Include="Expenses.resx">
-      <DependentUpon>Expenses.cs</DependentUpon>
+    <EmbeddedResource Include="FormEvents.resx">
+      <DependentUpon>FormEvents.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormExpenses.resx">
+      <DependentUpon>FormExpenses.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAddNewExpense.resx">
+      <DependentUpon>FormAddNewExpense.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormAddNewIncome.resx">
+      <DependentUpon>FormAddNewIncome.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormContacts.resx">
       <DependentUpon>FormContacts.cs</DependentUpon>
@@ -99,6 +137,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormHome.resx">
       <DependentUpon>FormHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormIncomes.resx">
+      <DependentUpon>FormIncomes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
@@ -114,6 +155,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -129,6 +171,8 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\Image1.bmp" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
