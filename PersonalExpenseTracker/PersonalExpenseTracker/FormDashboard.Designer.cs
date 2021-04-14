@@ -34,7 +34,7 @@ namespace PersonalExpenseTracker
             this.lblUserName = new System.Windows.Forms.Label();
             this.lblCurrentTime = new System.Windows.Forms.Label();
             this.btnSubmit = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnContacts = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
@@ -94,16 +94,17 @@ namespace PersonalExpenseTracker
             this.btnSubmit.Text = "Expenses";
             this.btnSubmit.UseVisualStyleBackColor = false;
             // 
-            // button1
+            // btnContacts
             // 
-            this.button1.BackColor = System.Drawing.Color.DodgerBlue;
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(75, 208);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(148, 43);
-            this.button1.TabIndex = 17;
-            this.button1.Text = "Contacts";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnContacts.BackColor = System.Drawing.Color.DodgerBlue;
+            this.btnContacts.ForeColor = System.Drawing.Color.White;
+            this.btnContacts.Location = new System.Drawing.Point(75, 208);
+            this.btnContacts.Name = "btnContacts";
+            this.btnContacts.Size = new System.Drawing.Size(148, 43);
+            this.btnContacts.TabIndex = 17;
+            this.btnContacts.Text = "Contacts";
+            this.btnContacts.UseVisualStyleBackColor = false;
+            this.btnContacts.Click += new System.EventHandler(this.openContactsView);
             // 
             // button2
             // 
@@ -206,7 +207,7 @@ namespace PersonalExpenseTracker
             this.Controls.Add(this.button4);
             this.Controls.Add(this.button5);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnContacts);
             this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.lblCurrentTime);
             this.Controls.Add(this.lblUserName);
@@ -226,7 +227,7 @@ namespace PersonalExpenseTracker
         private System.Windows.Forms.Label lblUserName;
         private System.Windows.Forms.Label lblCurrentTime;
         private System.Windows.Forms.Button btnSubmit;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnContacts;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;

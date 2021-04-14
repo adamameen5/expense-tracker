@@ -17,11 +17,17 @@ namespace PersonalExpenseTracker
             InitializeComponent();
         }
 
-        private void openLogin(object sender, EventArgs e)
+        private void toggleLoginView(object sender, EventArgs e)
         {
-            
             FormLogin loginForm = new FormLogin();
             loginForm.Show();
+            this.Hide();
+        }
+
+        private void toggleSignUpView(object sender, EventArgs e)
+        {
+            FormSignUp signUpForm = new FormSignUp();
+            signUpForm.Show();
             this.Hide();
         }
     }

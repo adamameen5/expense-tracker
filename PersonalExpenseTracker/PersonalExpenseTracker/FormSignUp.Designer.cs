@@ -32,15 +32,15 @@ namespace PersonalExpenseTracker
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.userName = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.email = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.nicNumber = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.password = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.confirmPassword = new System.Windows.Forms.TextBox();
             this.linkForgotPassword = new System.Windows.Forms.LinkLabel();
             this.btnSubmit = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -74,12 +74,12 @@ namespace PersonalExpenseTracker
             this.label3.TabIndex = 4;
             this.label3.Text = "Username";
             // 
-            // textBox1
+            // userName
             // 
-            this.textBox1.Location = new System.Drawing.Point(137, 164);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(239, 20);
-            this.textBox1.TabIndex = 5;
+            this.userName.Location = new System.Drawing.Point(137, 164);
+            this.userName.Name = "userName";
+            this.userName.Size = new System.Drawing.Size(239, 20);
+            this.userName.TabIndex = 5;
             // 
             // label4
             // 
@@ -90,12 +90,12 @@ namespace PersonalExpenseTracker
             this.label4.TabIndex = 6;
             this.label4.Text = "Email";
             // 
-            // textBox2
+            // email
             // 
-            this.textBox2.Location = new System.Drawing.Point(137, 216);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(239, 20);
-            this.textBox2.TabIndex = 7;
+            this.email.Location = new System.Drawing.Point(137, 216);
+            this.email.Name = "email";
+            this.email.Size = new System.Drawing.Size(239, 20);
+            this.email.TabIndex = 7;
             // 
             // label5
             // 
@@ -106,12 +106,12 @@ namespace PersonalExpenseTracker
             this.label5.TabIndex = 8;
             this.label5.Text = "NIC Number";
             // 
-            // textBox3
+            // nicNumber
             // 
-            this.textBox3.Location = new System.Drawing.Point(137, 269);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(239, 20);
-            this.textBox3.TabIndex = 9;
+            this.nicNumber.Location = new System.Drawing.Point(137, 269);
+            this.nicNumber.Name = "nicNumber";
+            this.nicNumber.Size = new System.Drawing.Size(239, 20);
+            this.nicNumber.TabIndex = 9;
             // 
             // label6
             // 
@@ -122,12 +122,13 @@ namespace PersonalExpenseTracker
             this.label6.TabIndex = 10;
             this.label6.Text = "Password";
             // 
-            // textBox4
+            // password
             // 
-            this.textBox4.Location = new System.Drawing.Point(137, 321);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(239, 20);
-            this.textBox4.TabIndex = 11;
+            this.password.Location = new System.Drawing.Point(137, 321);
+            this.password.Name = "password";
+            this.password.Size = new System.Drawing.Size(239, 20);
+            this.password.TabIndex = 11;
+            this.password.UseSystemPasswordChar = true;
             // 
             // label7
             // 
@@ -138,12 +139,13 @@ namespace PersonalExpenseTracker
             this.label7.TabIndex = 12;
             this.label7.Text = "Confirm password";
             // 
-            // textBox5
+            // confirmPassword
             // 
-            this.textBox5.Location = new System.Drawing.Point(137, 374);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(239, 20);
-            this.textBox5.TabIndex = 13;
+            this.confirmPassword.Location = new System.Drawing.Point(137, 374);
+            this.confirmPassword.Name = "confirmPassword";
+            this.confirmPassword.Size = new System.Drawing.Size(239, 20);
+            this.confirmPassword.TabIndex = 13;
+            this.confirmPassword.UseSystemPasswordChar = true;
             // 
             // linkForgotPassword
             // 
@@ -165,6 +167,7 @@ namespace PersonalExpenseTracker
             this.btnSubmit.TabIndex = 15;
             this.btnSubmit.Text = "Submit";
             this.btnSubmit.UseVisualStyleBackColor = false;
+            this.btnSubmit.Click += new System.EventHandler(this.validateUserInfo);
             // 
             // FormSignUp
             // 
@@ -173,15 +176,15 @@ namespace PersonalExpenseTracker
             this.ClientSize = new System.Drawing.Size(544, 538);
             this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.linkForgotPassword);
-            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.confirmPassword);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.password);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.nicNumber);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.email);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.userName);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -197,15 +200,15 @@ namespace PersonalExpenseTracker
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox userName;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox email;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox nicNumber;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox password;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox confirmPassword;
         private System.Windows.Forms.LinkLabel linkForgotPassword;
         private System.Windows.Forms.Button btnSubmit;
     }

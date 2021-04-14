@@ -10,19 +10,12 @@ using System.Windows.Forms;
 
 namespace PersonalExpenseTracker
 {
-    public partial class FormDashboard : Form
+    public partial class Expenses : Form
     {
-        public FormDashboard()
+        public Expenses()
         {
             InitializeComponent();
             lblCurrentTime.Text = DateTime.Now.ToString("f");
-        }
-
-        private void openContactsView(object sender, EventArgs e)
-        {
-            FormContacts contactsView = new FormContacts();
-            contactsView.Show();
-            this.Hide();
         }
     }
 }

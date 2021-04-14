@@ -64,7 +64,7 @@ namespace PersonalExpenseTracker
             this.btnLogin.TabIndex = 2;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = false;
-            this.btnLogin.Click += new System.EventHandler(this.openLogin);
+            this.btnLogin.Click += new System.EventHandler(this.toggleLoginView);
             // 
             // btnSignUp
             // 
@@ -76,6 +76,7 @@ namespace PersonalExpenseTracker
             this.btnSignUp.TabIndex = 3;
             this.btnSignUp.Text = "Sign Up";
             this.btnSignUp.UseVisualStyleBackColor = false;
+            this.btnSignUp.Click += new System.EventHandler(this.toggleSignUpView);
             // 
             // FormHome
             // 
