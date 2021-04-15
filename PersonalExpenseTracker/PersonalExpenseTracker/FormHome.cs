@@ -21,14 +21,14 @@ namespace PersonalExpenseTracker
         {
             FormLogin loginForm = new FormLogin();
             loginForm.Show();
-            this.Hide();
+            
         }
 
         private void toggleSignUpView(object sender, EventArgs e)
         {
             FormSignUp signUpForm = new FormSignUp();
             signUpForm.Show();
-            this.Hide();
+            
         }
     }
 }

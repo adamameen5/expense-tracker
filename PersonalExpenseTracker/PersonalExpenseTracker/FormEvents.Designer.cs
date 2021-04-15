@@ -45,16 +45,21 @@ namespace PersonalExpenseTracker
             this.label10 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton4 = new System.Windows.Forms.RadioButton();
-            this.radioButton5 = new System.Windows.Forms.RadioButton();
-            this.radioButton6 = new System.Windows.Forms.RadioButton();
-            this.radioButton7 = new System.Windows.Forms.RadioButton();
-            this.comboDropDown1 = new Syncfusion.Windows.Forms.Tools.ComboDropDown();
             this.button1 = new System.Windows.Forms.Button();
+            this.radioButton7 = new System.Windows.Forms.RadioButton();
+            this.radioButton6 = new System.Windows.Forms.RadioButton();
+            this.radioButton5 = new System.Windows.Forms.RadioButton();
+            this.radioButton4 = new System.Windows.Forms.RadioButton();
+            this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
@@ -62,16 +67,10 @@ namespace PersonalExpenseTracker
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.comboDropDown1)).BeginInit();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -210,8 +209,8 @@ namespace PersonalExpenseTracker
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.comboBox1);
             this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.comboDropDown1);
             this.panel1.Controls.Add(this.radioButton7);
             this.panel1.Controls.Add(this.radioButton6);
             this.panel1.Controls.Add(this.radioButton5);
@@ -235,71 +234,16 @@ namespace PersonalExpenseTracker
             this.panel1.Size = new System.Drawing.Size(344, 437);
             this.panel1.TabIndex = 32;
             // 
-            // radioButton1
+            // button1
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(101, 161);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(69, 17);
-            this.radioButton1.TabIndex = 44;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Everyday";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            // 
-            // radioButton2
-            // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(101, 182);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(136, 17);
-            this.radioButton2.TabIndex = 45;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Same day, every month";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            // 
-            // radioButton3
-            // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(101, 215);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(84, 17);
-            this.radioButton3.TabIndex = 46;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "Appointment";
-            this.radioButton3.UseVisualStyleBackColor = true;
-            // 
-            // radioButton4
-            // 
-            this.radioButton4.AutoSize = true;
-            this.radioButton4.Location = new System.Drawing.Point(101, 236);
-            this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(49, 17);
-            this.radioButton4.TabIndex = 47;
-            this.radioButton4.TabStop = true;
-            this.radioButton4.Text = "Task";
-            this.radioButton4.UseVisualStyleBackColor = true;
-            // 
-            // radioButton5
-            // 
-            this.radioButton5.AutoSize = true;
-            this.radioButton5.Location = new System.Drawing.Point(101, 268);
-            this.radioButton5.Name = "radioButton5";
-            this.radioButton5.Size = new System.Drawing.Size(66, 17);
-            this.radioButton5.TabIndex = 48;
-            this.radioButton5.TabStop = true;
-            this.radioButton5.Text = "Expense";
-            this.radioButton5.UseVisualStyleBackColor = true;
-            // 
-            // radioButton6
-            // 
-            this.radioButton6.AutoSize = true;
-            this.radioButton6.Location = new System.Drawing.Point(101, 289);
-            this.radioButton6.Name = "radioButton6";
-            this.radioButton6.Size = new System.Drawing.Size(60, 17);
-            this.radioButton6.TabIndex = 49;
-            this.radioButton6.TabStop = true;
-            this.radioButton6.Text = "Income";
-            this.radioButton6.UseVisualStyleBackColor = true;
+            this.button1.BackColor = System.Drawing.Color.DodgerBlue;
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(82, 384);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(148, 43);
+            this.button1.TabIndex = 52;
+            this.button1.Text = "Save";
+            this.button1.UseVisualStyleBackColor = false;
             // 
             // radioButton7
             // 
@@ -312,24 +256,71 @@ namespace PersonalExpenseTracker
             this.radioButton7.Text = "Just an event";
             this.radioButton7.UseVisualStyleBackColor = true;
             // 
-            // comboDropDown1
+            // radioButton6
             // 
-            this.comboDropDown1.BeforeTouchSize = new System.Drawing.Size(226, 21);
-            this.comboDropDown1.Location = new System.Drawing.Point(101, 342);
-            this.comboDropDown1.Name = "comboDropDown1";
-            this.comboDropDown1.Size = new System.Drawing.Size(226, 21);
-            this.comboDropDown1.TabIndex = 51;
+            this.radioButton6.AutoSize = true;
+            this.radioButton6.Location = new System.Drawing.Point(101, 289);
+            this.radioButton6.Name = "radioButton6";
+            this.radioButton6.Size = new System.Drawing.Size(60, 17);
+            this.radioButton6.TabIndex = 49;
+            this.radioButton6.TabStop = true;
+            this.radioButton6.Text = "Income";
+            this.radioButton6.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // radioButton5
             // 
-            this.button1.BackColor = System.Drawing.Color.DodgerBlue;
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(82, 384);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(148, 43);
-            this.button1.TabIndex = 52;
-            this.button1.Text = "Save";
-            this.button1.UseVisualStyleBackColor = false;
+            this.radioButton5.AutoSize = true;
+            this.radioButton5.Location = new System.Drawing.Point(101, 268);
+            this.radioButton5.Name = "radioButton5";
+            this.radioButton5.Size = new System.Drawing.Size(66, 17);
+            this.radioButton5.TabIndex = 48;
+            this.radioButton5.TabStop = true;
+            this.radioButton5.Text = "Expense";
+            this.radioButton5.UseVisualStyleBackColor = true;
+            // 
+            // radioButton4
+            // 
+            this.radioButton4.AutoSize = true;
+            this.radioButton4.Location = new System.Drawing.Point(101, 236);
+            this.radioButton4.Name = "radioButton4";
+            this.radioButton4.Size = new System.Drawing.Size(49, 17);
+            this.radioButton4.TabIndex = 47;
+            this.radioButton4.TabStop = true;
+            this.radioButton4.Text = "Task";
+            this.radioButton4.UseVisualStyleBackColor = true;
+            // 
+            // radioButton3
+            // 
+            this.radioButton3.AutoSize = true;
+            this.radioButton3.Location = new System.Drawing.Point(101, 215);
+            this.radioButton3.Name = "radioButton3";
+            this.radioButton3.Size = new System.Drawing.Size(84, 17);
+            this.radioButton3.TabIndex = 46;
+            this.radioButton3.TabStop = true;
+            this.radioButton3.Text = "Appointment";
+            this.radioButton3.UseVisualStyleBackColor = true;
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Location = new System.Drawing.Point(101, 182);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(136, 17);
+            this.radioButton2.TabIndex = 45;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "Same day, every month";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(101, 161);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(69, 17);
+            this.radioButton1.TabIndex = 44;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "Everyday";
+            this.radioButton1.UseVisualStyleBackColor = true;
             // 
             // panel2
             // 
@@ -350,6 +341,60 @@ namespace PersonalExpenseTracker
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(344, 230);
             this.panel2.TabIndex = 53;
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(114, 191);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(30, 13);
+            this.label23.TabIndex = 58;
+            this.label23.Text = "Date";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(114, 165);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(30, 13);
+            this.label22.TabIndex = 57;
+            this.label22.Text = "Date";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(114, 139);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(30, 13);
+            this.label21.TabIndex = 56;
+            this.label21.Text = "Date";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(114, 113);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(30, 13);
+            this.label20.TabIndex = 55;
+            this.label20.Text = "Date";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(114, 87);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(30, 13);
+            this.label19.TabIndex = 54;
+            this.label19.Text = "Date";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(114, 61);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(30, 13);
+            this.label12.TabIndex = 53;
+            this.label12.Text = "Date";
             // 
             // label11
             // 
@@ -415,60 +460,6 @@ namespace PersonalExpenseTracker
             this.label18.TabIndex = 33;
             this.label18.Text = "Your upcoming event";
             // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(114, 61);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(30, 13);
-            this.label12.TabIndex = 53;
-            this.label12.Text = "Date";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(114, 87);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(30, 13);
-            this.label19.TabIndex = 54;
-            this.label19.Text = "Date";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(114, 113);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(30, 13);
-            this.label20.TabIndex = 55;
-            this.label20.Text = "Date";
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(114, 139);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(30, 13);
-            this.label21.TabIndex = 56;
-            this.label21.Text = "Date";
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(114, 165);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(30, 13);
-            this.label22.TabIndex = 57;
-            this.label22.Text = "Date";
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(114, 191);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(30, 13);
-            this.label23.TabIndex = 58;
-            this.label23.Text = "Date";
-            // 
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.DodgerBlue;
@@ -491,6 +482,14 @@ namespace PersonalExpenseTracker
             this.button3.Text = "View List Of All Events";
             this.button3.UseVisualStyleBackColor = false;
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(101, 342);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(226, 21);
+            this.comboBox1.TabIndex = 53;
+            // 
             // FormEvents
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -508,7 +507,6 @@ namespace PersonalExpenseTracker
             this.Text = "FormEvents";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.comboDropDown1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
@@ -541,7 +539,6 @@ namespace PersonalExpenseTracker
         private System.Windows.Forms.RadioButton radioButton3;
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton radioButton1;
-        private Syncfusion.Windows.Forms.Tools.ComboDropDown comboDropDown1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label23;
@@ -559,5 +556,6 @@ namespace PersonalExpenseTracker
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }
