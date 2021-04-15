@@ -37,18 +37,15 @@ namespace PersonalExpenseTracker
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.email = new System.Windows.Forms.TextBox();
-            this.comboDropDown1 = new Syncfusion.Windows.Forms.Tools.ComboDropDown();
-            this.comboDropDown2 = new Syncfusion.Windows.Forms.Tools.ComboDropDown();
             this.label6 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.comboDropDown3 = new Syncfusion.Windows.Forms.Tools.ComboDropDown();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.comboDropDown1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboDropDown2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboDropDown3)).BeginInit();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // lblCurrentTime
@@ -124,22 +121,6 @@ namespace PersonalExpenseTracker
             this.email.Size = new System.Drawing.Size(226, 20);
             this.email.TabIndex = 22;
             // 
-            // comboDropDown1
-            // 
-            this.comboDropDown1.BeforeTouchSize = new System.Drawing.Size(226, 21);
-            this.comboDropDown1.Location = new System.Drawing.Point(81, 183);
-            this.comboDropDown1.Name = "comboDropDown1";
-            this.comboDropDown1.Size = new System.Drawing.Size(226, 21);
-            this.comboDropDown1.TabIndex = 23;
-            // 
-            // comboDropDown2
-            // 
-            this.comboDropDown2.BeforeTouchSize = new System.Drawing.Size(226, 21);
-            this.comboDropDown2.Location = new System.Drawing.Point(81, 233);
-            this.comboDropDown2.Name = "comboDropDown2";
-            this.comboDropDown2.Size = new System.Drawing.Size(226, 21);
-            this.comboDropDown2.TabIndex = 24;
-            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -174,14 +155,6 @@ namespace PersonalExpenseTracker
             this.label8.TabIndex = 28;
             this.label8.Text = "Account";
             // 
-            // comboDropDown3
-            // 
-            this.comboDropDown3.BeforeTouchSize = new System.Drawing.Size(226, 21);
-            this.comboDropDown3.Location = new System.Drawing.Point(447, 233);
-            this.comboDropDown3.Name = "comboDropDown3";
-            this.comboDropDown3.Size = new System.Drawing.Size(226, 21);
-            this.comboDropDown3.TabIndex = 25;
-            // 
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(447, 183);
@@ -200,20 +173,44 @@ namespace PersonalExpenseTracker
             this.button1.Text = "Save";
             this.button1.UseVisualStyleBackColor = false;
             // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(81, 183);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(226, 21);
+            this.comboBox1.TabIndex = 31;
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(81, 233);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(226, 21);
+            this.comboBox2.TabIndex = 32;
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Location = new System.Drawing.Point(447, 233);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(226, 21);
+            this.comboBox3.TabIndex = 33;
+            // 
             // FormAddNewExpense
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(861, 372);
+            this.Controls.Add(this.comboBox3);
+            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.comboDropDown3);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.comboDropDown2);
-            this.Controls.Add(this.comboDropDown1);
             this.Controls.Add(this.email);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -224,9 +221,6 @@ namespace PersonalExpenseTracker
             this.Controls.Add(this.label1);
             this.Name = "FormAddNewExpense";
             this.Text = "FormAddNewExpense";
-            ((System.ComponentModel.ISupportInitialize)(this.comboDropDown1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboDropDown2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboDropDown3)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -242,14 +236,14 @@ namespace PersonalExpenseTracker
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox email;
-        private Syncfusion.Windows.Forms.Tools.ComboDropDown comboDropDown1;
-        private Syncfusion.Windows.Forms.Tools.ComboDropDown comboDropDown2;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private Syncfusion.Windows.Forms.Tools.ComboDropDown comboDropDown3;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox comboBox3;
     }
 }
