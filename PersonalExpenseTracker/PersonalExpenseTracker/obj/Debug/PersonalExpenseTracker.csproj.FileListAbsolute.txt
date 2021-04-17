@@ -26,3 +26,5 @@ C:\ADAMLK\EAD\CW2\expense-tracker\PersonalExpenseTracker\PersonalExpenseTracker\
 C:\ADAMLK\EAD\CW2\expense-tracker\PersonalExpenseTracker\PersonalExpenseTracker\obj\Debug\PersonalExpenseTracker.FormOnboardingFinancialDetails.resources
 C:\ADAMLK\EAD\CW2\expense-tracker\PersonalExpenseTracker\PersonalExpenseTracker\obj\Debug\PersonalExpenseTracker.FormOnBoardingPersonalDetails.resources
 C:\ADAMLK\EAD\CW2\expense-tracker\PersonalExpenseTracker\PersonalExpenseTracker\obj\Debug\PersonalExpenseTracker.FormPredictor.resources
+C:\ADAMLK\EAD\CW2\expense-tracker\PersonalExpenseTracker\PersonalExpenseTracker\obj\Debug\PersonalExpenseTracker.FormAddNewPayee.resources
+C:\ADAMLK\EAD\CW2\expense-tracker\PersonalExpenseTracker\PersonalExpenseTracker\obj\Debug\PersonalExpenseTracker.FormAddNewPayor.resources

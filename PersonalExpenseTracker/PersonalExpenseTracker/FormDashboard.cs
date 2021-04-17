@@ -18,10 +18,43 @@ namespace PersonalExpenseTracker
             lblCurrentTime.Text = DateTime.Now.ToString("f");
         }
 
-        private void openContactsView(object sender, EventArgs e)
+        private void toggleUserInfoView(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void toggleContactsView(object sender, EventArgs e)
         {
             FormContacts contactsView = new FormContacts();
             contactsView.Show();
+            this.Hide();
+        }
+
+        private void toggleExpensesView(object sender, EventArgs e)
+        {
+            FormExpenses formExpense = new FormExpenses();
+            formExpense.Show();
+            this.Hide();
+        }
+
+        private void toggleIncomesView(object sender, EventArgs e)
+        {
+            FormIncomes formIncome = new FormIncomes();
+            formIncome.Show();
+            this.Hide();
+        }
+
+        private void togglePredictorView(object sender, EventArgs e)
+        {
+            FormPredictor formPredict = new FormPredictor();
+            formPredict.Show();
+            this.Hide();
+        }
+
+        private void toggleEventsView(object sender, EventArgs e)
+        {
+            FormEvents formEvent = new FormEvents();
+            formEvent.Show();
             this.Hide();
         }
     }

@@ -17,5 +17,12 @@ namespace PersonalExpenseTracker
             InitializeComponent();
             lblCurrentTime.Text = DateTime.Now.ToString("f");
         }
+
+        private void toggleAddNewExpense(object sender, EventArgs e)
+        {
+            FormAddNewExpense formAddNewExpns = new FormAddNewExpense();
+            formAddNewExpns.Show();
+            this.Close();
+        }
     }
 }

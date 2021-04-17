@@ -59,5 +59,14 @@ namespace PersonalExpenseTracker.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Are you sure you want to go back to the dashboard?.
+        /// </summary>
+        internal static string RedirectToDashboardConfirmationMessage {
+            get {
+                return ResourceManager.GetString("RedirectToDashboardConfirmationMessage", resourceCulture);
+            }
+        }
     }
 }

@@ -10,17 +10,11 @@ using System.Windows.Forms;
 
 namespace PersonalExpenseTracker
 {
-    public partial class FormAddNewIncome : Form
+    public partial class FormAddNewPayor : Form
     {
-        public FormAddNewIncome()
+        public FormAddNewPayor()
         {
             InitializeComponent();
-        }
-
-        private void goBackToDashboard(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            RedirectToDashboard rtb = new RedirectToDashboard();
-            rtb.goBackToDashboard();
         }
     }
 }

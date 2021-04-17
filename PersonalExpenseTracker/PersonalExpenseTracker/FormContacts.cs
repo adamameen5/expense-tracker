@@ -17,5 +17,18 @@ namespace PersonalExpenseTracker
             InitializeComponent();
             lblCurrentTime.Text = DateTime.Now.ToString("f");
         }
+
+        private void toggleAddNewPayorView(object sender, EventArgs e)
+        {
+            FormAddNewPayor formPayor = new FormAddNewPayor();
+            formPayor.ShowDialog();
+
+        }
+
+        private void toggleAddNewPayeeView(object sender, EventArgs e)
+        {
+            FormAddNewPayee formPayee = new FormAddNewPayee();
+            formPayee.ShowDialog();
+        }
     }
 }

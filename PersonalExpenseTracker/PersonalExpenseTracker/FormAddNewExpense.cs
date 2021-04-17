@@ -16,5 +16,11 @@ namespace PersonalExpenseTracker
         {
             InitializeComponent();
         }
+
+        private void goBackToDashboard(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            RedirectToDashboard rtb = new RedirectToDashboard();
+            rtb.goBackToDashboard();
+        }
     }
 }

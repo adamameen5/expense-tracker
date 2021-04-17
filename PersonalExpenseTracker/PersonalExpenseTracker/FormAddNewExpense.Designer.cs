@@ -46,6 +46,7 @@ namespace PersonalExpenseTracker
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.linkForgotPassword = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
             // lblCurrentTime
@@ -89,7 +90,7 @@ namespace PersonalExpenseTracker
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(27, 137);
+            this.label3.Location = new System.Drawing.Point(15, 137);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(32, 13);
             this.label3.TabIndex = 19;
@@ -98,7 +99,7 @@ namespace PersonalExpenseTracker
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(27, 187);
+            this.label4.Location = new System.Drawing.Point(15, 187);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(37, 13);
             this.label4.TabIndex = 20;
@@ -107,7 +108,7 @@ namespace PersonalExpenseTracker
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(27, 237);
+            this.label5.Location = new System.Drawing.Point(15, 237);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(35, 13);
             this.label5.TabIndex = 21;
@@ -115,7 +116,7 @@ namespace PersonalExpenseTracker
             // 
             // email
             // 
-            this.email.Location = new System.Drawing.Point(81, 133);
+            this.email.Location = new System.Drawing.Point(69, 133);
             this.email.Name = "email";
             this.email.ReadOnly = true;
             this.email.Size = new System.Drawing.Size(226, 20);
@@ -124,7 +125,7 @@ namespace PersonalExpenseTracker
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(382, 137);
+            this.label6.Location = new System.Drawing.Point(370, 137);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(30, 13);
             this.label6.TabIndex = 25;
@@ -132,7 +133,7 @@ namespace PersonalExpenseTracker
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(447, 133);
+            this.dateTimePicker1.Location = new System.Drawing.Point(435, 133);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(226, 20);
             this.dateTimePicker1.TabIndex = 26;
@@ -140,7 +141,7 @@ namespace PersonalExpenseTracker
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(382, 187);
+            this.label7.Location = new System.Drawing.Point(370, 187);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(43, 13);
             this.label7.TabIndex = 27;
@@ -149,7 +150,7 @@ namespace PersonalExpenseTracker
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(382, 237);
+            this.label8.Location = new System.Drawing.Point(370, 237);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(47, 13);
             this.label8.TabIndex = 28;
@@ -157,7 +158,7 @@ namespace PersonalExpenseTracker
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(447, 183);
+            this.textBox1.Location = new System.Drawing.Point(435, 183);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(226, 20);
             this.textBox1.TabIndex = 29;
@@ -166,7 +167,7 @@ namespace PersonalExpenseTracker
             // 
             this.button1.BackColor = System.Drawing.Color.DodgerBlue;
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(30, 301);
+            this.button1.Location = new System.Drawing.Point(18, 301);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(148, 43);
             this.button1.TabIndex = 30;
@@ -176,7 +177,7 @@ namespace PersonalExpenseTracker
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(81, 183);
+            this.comboBox1.Location = new System.Drawing.Point(69, 183);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(226, 21);
             this.comboBox1.TabIndex = 31;
@@ -184,7 +185,7 @@ namespace PersonalExpenseTracker
             // comboBox2
             // 
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(81, 233);
+            this.comboBox2.Location = new System.Drawing.Point(69, 233);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(226, 21);
             this.comboBox2.TabIndex = 32;
@@ -192,16 +193,28 @@ namespace PersonalExpenseTracker
             // comboBox3
             // 
             this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(447, 233);
+            this.comboBox3.Location = new System.Drawing.Point(435, 233);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(226, 21);
             this.comboBox3.TabIndex = 33;
+            // 
+            // linkForgotPassword
+            // 
+            this.linkForgotPassword.AutoSize = true;
+            this.linkForgotPassword.Location = new System.Drawing.Point(15, 366);
+            this.linkForgotPassword.Name = "linkForgotPassword";
+            this.linkForgotPassword.Size = new System.Drawing.Size(115, 13);
+            this.linkForgotPassword.TabIndex = 63;
+            this.linkForgotPassword.TabStop = true;
+            this.linkForgotPassword.Text = "Go back to Dashboard";
+            this.linkForgotPassword.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.goBackToDashboard);
             // 
             // FormAddNewExpense
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(861, 372);
+            this.ClientSize = new System.Drawing.Size(861, 398);
+            this.Controls.Add(this.linkForgotPassword);
             this.Controls.Add(this.comboBox3);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.comboBox1);
@@ -245,5 +258,6 @@ namespace PersonalExpenseTracker
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.LinkLabel linkForgotPassword;
     }
 }

@@ -35,16 +35,16 @@ namespace PersonalExpenseTracker
             this.label1 = new System.Windows.Forms.Label();
             this.tabContacts = new System.Windows.Forms.TabControl();
             this.tabPayor = new System.Windows.Forms.TabPage();
+            this.dataGridPayor = new System.Windows.Forms.DataGridView();
             this.tabPayee = new System.Windows.Forms.TabPage();
             this.dataGridPayee = new System.Windows.Forms.DataGridView();
-            this.dataGridPayor = new System.Windows.Forms.DataGridView();
             this.button4 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.tabContacts.SuspendLayout();
             this.tabPayor.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridPayor)).BeginInit();
             this.tabPayee.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridPayee)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridPayor)).BeginInit();
             this.SuspendLayout();
             // 
             // lblCurrentTime
@@ -106,6 +106,14 @@ namespace PersonalExpenseTracker
             this.tabPayor.Text = "Payor";
             this.tabPayor.UseVisualStyleBackColor = true;
             // 
+            // dataGridPayor
+            // 
+            this.dataGridPayor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridPayor.Location = new System.Drawing.Point(0, 0);
+            this.dataGridPayor.Name = "dataGridPayor";
+            this.dataGridPayor.Size = new System.Drawing.Size(604, 267);
+            this.dataGridPayor.TabIndex = 1;
+            // 
             // tabPayee
             // 
             this.tabPayee.Controls.Add(this.dataGridPayee);
@@ -125,14 +133,6 @@ namespace PersonalExpenseTracker
             this.dataGridPayee.Size = new System.Drawing.Size(604, 267);
             this.dataGridPayee.TabIndex = 0;
             // 
-            // dataGridPayor
-            // 
-            this.dataGridPayor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridPayor.Location = new System.Drawing.Point(0, 0);
-            this.dataGridPayor.Name = "dataGridPayor";
-            this.dataGridPayor.Size = new System.Drawing.Size(604, 267);
-            this.dataGridPayor.TabIndex = 1;
-            // 
             // button4
             // 
             this.button4.BackColor = System.Drawing.Color.DodgerBlue;
@@ -143,6 +143,7 @@ namespace PersonalExpenseTracker
             this.button4.TabIndex = 21;
             this.button4.Text = "Add New Payor";
             this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.toggleAddNewPayorView);
             // 
             // button1
             // 
@@ -154,6 +155,7 @@ namespace PersonalExpenseTracker
             this.button1.TabIndex = 22;
             this.button1.Text = "Add New Payee";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.toggleAddNewPayeeView);
             // 
             // FormContacts
             // 
@@ -171,9 +173,9 @@ namespace PersonalExpenseTracker
             this.Text = "FormContacts";
             this.tabContacts.ResumeLayout(false);
             this.tabPayor.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridPayor)).EndInit();
             this.tabPayee.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridPayee)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridPayor)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

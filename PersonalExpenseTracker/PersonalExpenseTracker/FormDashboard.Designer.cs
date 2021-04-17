@@ -93,6 +93,7 @@ namespace PersonalExpenseTracker
             this.btnSubmit.TabIndex = 16;
             this.btnSubmit.Text = "Expenses";
             this.btnSubmit.UseVisualStyleBackColor = false;
+            this.btnSubmit.Click += new System.EventHandler(this.toggleExpensesView);
             // 
             // btnContacts
             // 
@@ -104,7 +105,7 @@ namespace PersonalExpenseTracker
             this.btnContacts.TabIndex = 17;
             this.btnContacts.Text = "Contacts";
             this.btnContacts.UseVisualStyleBackColor = false;
-            this.btnContacts.Click += new System.EventHandler(this.openContactsView);
+            this.btnContacts.Click += new System.EventHandler(this.toggleContactsView);
             // 
             // button2
             // 
@@ -127,6 +128,7 @@ namespace PersonalExpenseTracker
             this.button3.TabIndex = 21;
             this.button3.Text = "My Info";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.toggleUserInfoView);
             // 
             // button4
             // 
@@ -138,6 +140,7 @@ namespace PersonalExpenseTracker
             this.button4.TabIndex = 20;
             this.button4.Text = "Predictor";
             this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.togglePredictorView);
             // 
             // button5
             // 
@@ -149,6 +152,7 @@ namespace PersonalExpenseTracker
             this.button5.TabIndex = 19;
             this.button5.Text = "Income";
             this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.toggleIncomesView);
             // 
             // button6
             // 
@@ -160,6 +164,7 @@ namespace PersonalExpenseTracker
             this.button6.TabIndex = 24;
             this.button6.Text = "Events";
             this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.toggleEventsView);
             // 
             // button7
             // 
