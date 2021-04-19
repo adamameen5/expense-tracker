@@ -61,11 +61,29 @@ namespace PersonalExpenseTracker.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The email or password you entered is not valid..
+        /// </summary>
+        internal static string INVALID_LOGIN_CREDENTIALS {
+            get {
+                return ResourceManager.GetString("INVALID_LOGIN_CREDENTIALS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Are you sure you want to go back to the dashboard?.
         /// </summary>
         internal static string RedirectToDashboardConfirmationMessage {
             get {
                 return ResourceManager.GetString("RedirectToDashboardConfirmationMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Your account is now created!.
+        /// </summary>
+        internal static string SIGN_UP_SUCCESSFUL_MESSAGE {
+            get {
+                return ResourceManager.GetString("SIGN_UP_SUCCESSFUL_MESSAGE", resourceCulture);
             }
         }
     }

@@ -1,0 +1,27 @@
+<?xml version="1.0" standalone="yes"?>
+<ExpenseGuide xmlns="http://tempuri.org/ExpenseGuide.xsd">
+  <Credentials>
+    <UserName>adamlk</UserName>
+    <Email>adamlk@gmail.com</Email>
+    <Password>asd</Password>
+    <CredentialsID>1</CredentialsID>
+    <NIC>987676V</NIC>
+    <FK_UserID>1</FK_UserID>
+  </Credentials>
+  <Credentials>
+    <UserName>hathy</UserName>
+    <Email>hathy@gmail.com</Email>
+    <Password>asd</Password>
+    <CredentialsID>2</CredentialsID>
+    <NIC>123</NIC>
+    <FK_UserID>2</FK_UserID>
+  </Credentials>
+  <User>
+    <UserID>1</UserID>
+    <DateOfBirth>to-be-filled</DateOfBirth>
+  </User>
+  <User>
+    <UserID>2</UserID>
+    <DateOfBirth>to-be-filled</DateOfBirth>
+  </User>
+</ExpenseGuide>

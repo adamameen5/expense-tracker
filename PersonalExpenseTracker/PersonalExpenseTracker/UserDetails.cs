@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace PersonalExpenseTracker
 {
+    // this is the User entity class
     public class UserDetails
     {
         public String userName { get; set; }

@@ -16,43 +16,64 @@ namespace PersonalExpenseTracker
     {
         public UserDetails userDetailsData { get; set; }
 
+        public UserCredentialsData userCredentialsData { get; set; }
+
+        //Creating a dataset instance
+        ExpenseGuide myDataSet = new ExpenseGuide();
+
         public FormSignUp()
         {
             InitializeComponent();
-            this.RestoreData();
+            //this.RestoreData();
+
+            if (File.Exists("ExpenseGuide.xml") == true)
+            {
+                this.myDataSet.ReadXml("ExpenseGuide.xml");
+            }
         }
 
         private void validateUserInfo(object sender, EventArgs e)
         {
-            this.userDetailsData = new UserDetails();
-            this.userDetailsData.userName = this.userName.Text;
-            this.userDetailsData.email = this.email.Text;
-            this.userDetailsData.nicNumber = this.nicNumber.Text;
-            this.userDetailsData.password = this.password.Text;
+            this.userCredentialsData = new UserCredentialsData();
+            this.userCredentialsData.userName = this.userName.Text;
+            this.userCredentialsData.email = this.email.Text;
+            this.userCredentialsData.nicNumber = this.nicNumber.Text;
+            this.userCredentialsData.password = this.password.Text;
 
-            try
-            {
-                String myDocs = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
-                FileStream file = new FileStream(myDocs + "\\SignUpDetails.txt", FileMode.OpenOrCreate, FileAccess.Write);
-                StreamWriter sw = new StreamWriter(file,Encoding.Unicode);
+            //add the data onto the memory resident database
+            ExpenseGuide.CredentialsRow credentialsRow = this.myDataSet.Credentials.NewCredentialsRow();
+            credentialsRow.UserName = this.userCredentialsData.userName;
+            credentialsRow.Email = this.userCredentialsData.email;
+            credentialsRow.NIC = this.userCredentialsData.nicNumber;
+            credentialsRow.Password = this.userCredentialsData.password;
 
-                String serializedObject = JsonConvert.SerializeObject(this.userDetailsData, Formatting.Indented);
-                sw.Write(serializedObject);
+            ExpenseGuide.UserRow userRow = this.myDataSet.User.NewUserRow();
+            userRow.DateOfBirth = "to-be-filled";
 
-                //sw.WriteLine(this.userDetailsData.userName);
-                //sw.WriteLine(this.userDetailsData.email);
-                //sw.WriteLine(this.userDetailsData.nicNumber);
-                //sw.WriteLine(this.userDetailsData.password);
+            //setting the relationship
+            //credentials table contains information regarding the user (UserID)
+            credentialsRow.UserRow = userRow;
 
-                sw.Close();
-                file.Close();
-                this.Close();
+            // adding the data to the respective instances
+            this.myDataSet.Credentials.AddCredentialsRow(credentialsRow);
+            this.myDataSet.User.AddUserRow(userRow);
+            this.myDataSet.AcceptChanges();
 
-            } catch (Exception ex)
-            {
-                Console.WriteLine("Error while writing");
-            }
+            //serialize it to disc
+            this.myDataSet.WriteXml("ExpenseGuide.xml");
+            this.myDataSet.Credentials.WriteXml("ExpenseGuide-Credentials.xml");
+
+            //forwarding - interacting with the model class, saving the data permanently in the db
+            UserModel userModel = new UserModel();
+            userModel.saveUserInformation(this.userCredentialsData);
+
+            //show confirmation message on success
+            MessageBox.Show(String.Format(Properties.Resources.SIGN_UP_SUCCESSFUL_MESSAGE));
             
+
+
+
+
         }
 
         private void RestoreData()

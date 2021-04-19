@@ -33,16 +33,25 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.13.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="Syncfusion.Licensing, Version=18.4460.0.39, Culture=neutral, PublicKeyToken=632609b4d040f6b4" />
     <Reference Include="Syncfusion.Shared.Base, Version=18.4460.0.39, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL" />
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Design" />
     <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Runtime.Serialization.Formatters.Soap" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -54,6 +63,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Credentials.cs">
+      <DependentUpon>ExpenseGuideDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ExpenseGuide.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ExpenseGuide.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ExpenseGuideDB.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ExpenseGuideDB.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ExpenseGuideDB.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ExpenseGuideDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ExpenseGuideDB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ExpenseGuideDB.edmx</DependentUpon>
+    </Compile>
     <Compile Include="FormAddNewPayee.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -147,7 +179,12 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RedirectToDashboard.cs" />
+    <Compile Include="User.cs">
+      <DependentUpon>ExpenseGuideDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserCredentialsData.cs" />
     <Compile Include="UserDetails.cs" />
+    <Compile Include="UserModel.cs" />
     <EmbeddedResource Include="FormAddNewPayee.resx">
       <DependentUpon>FormAddNewPayee.cs</DependentUpon>
     </EmbeddedResource>
@@ -203,6 +240,24 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="ExpenseGuide.xsc">
+      <DependentUpon>ExpenseGuide.xsd</DependentUpon>
+    </None>
+    <None Include="ExpenseGuide.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ExpenseGuide.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="ExpenseGuide.xss">
+      <DependentUpon>ExpenseGuide.xsd</DependentUpon>
+    </None>
+    <EntityDeploy Include="ExpenseGuideDB.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ExpenseGuideDB.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="ExpenseGuideDB.edmx.diagram">
+      <DependentUpon>ExpenseGuideDB.edmx</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -219,6 +274,22 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Image1.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ExpenseGuideDB.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ExpenseGuideDB.Context.cs</LastGenOutput>
+      <DependentUpon>ExpenseGuideDB.edmx</DependentUpon>
+    </Content>
+    <Content Include="ExpenseGuideDB.edmx.sql" />
+    <Content Include="ExpenseGuideDB.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ExpenseGuideDB.cs</LastGenOutput>
+      <DependentUpon>ExpenseGuideDB.edmx</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

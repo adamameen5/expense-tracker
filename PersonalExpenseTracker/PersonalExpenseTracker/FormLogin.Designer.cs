@@ -93,6 +93,7 @@ namespace PersonalExpenseTracker
             this.btnSubmit.TabIndex = 7;
             this.btnSubmit.Text = "Submit";
             this.btnSubmit.UseVisualStyleBackColor = false;
+            this.btnSubmit.Click += new System.EventHandler(this.verifyCredentials);
             // 
             // linkForgotPassword
             // 
@@ -109,9 +110,9 @@ namespace PersonalExpenseTracker
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(98, 179);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(85, 13);
+            this.label3.Size = new System.Drawing.Size(32, 13);
             this.label3.TabIndex = 3;
-            this.label3.Text = "Username/Email";
+            this.label3.Text = "Email";
             // 
             // FormLogin
             // 
