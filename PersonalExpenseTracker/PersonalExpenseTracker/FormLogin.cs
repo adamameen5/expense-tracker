@@ -99,5 +99,12 @@ namespace PersonalExpenseTracker
                 }
             }
         }
+
+        private void redirectToSignUp(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            FormSignUp formSignUp = new FormSignUp();
+            formSignUp.Show();
+            this.Hide();
+        }
     }
 }

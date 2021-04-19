@@ -152,10 +152,11 @@ namespace PersonalExpenseTracker
             this.linkForgotPassword.AutoSize = true;
             this.linkForgotPassword.Location = new System.Drawing.Point(134, 412);
             this.linkForgotPassword.Name = "linkForgotPassword";
-            this.linkForgotPassword.Size = new System.Drawing.Size(102, 13);
+            this.linkForgotPassword.Size = new System.Drawing.Size(136, 13);
             this.linkForgotPassword.TabIndex = 14;
             this.linkForgotPassword.TabStop = true;
-            this.linkForgotPassword.Text = "Already Registered?";
+            this.linkForgotPassword.Text = "Already Have An Account?";
+            this.linkForgotPassword.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.redirectToLogin);
             // 
             // btnSubmit
             // 

@@ -18,6 +18,8 @@ namespace PersonalExpenseTracker
 
         public UserCredentialsData userCredentialsData { get; set; }
 
+        public static int glblUserID = 0;
+
         //Creating a dataset instance
         ExpenseGuide myDataSet = new ExpenseGuide();
 
@@ -65,11 +67,16 @@ namespace PersonalExpenseTracker
 
             //forwarding - interacting with the model class, saving the data permanently in the db
             UserModel userModel = new UserModel();
-            userModel.saveUserInformation(this.userCredentialsData);
+            glblUserID = userModel.saveUserInformation(this.userCredentialsData);
 
             //show confirmation message on success
             MessageBox.Show(String.Format(Properties.Resources.SIGN_UP_SUCCESSFUL_MESSAGE));
-            
+
+            //Show the on-boarding forms
+            FormOnBoardingPersonalDetails formOnBoarding1 = new FormOnBoardingPersonalDetails();
+            formOnBoarding1.Show();
+
+
 
 
 
@@ -101,6 +108,13 @@ namespace PersonalExpenseTracker
                 this.password.Text = ud.password;
                 this.confirmPassword.Text = ud.password;
             }
+        }
+
+        private void redirectToLogin(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            FormLogin formLogin = new FormLogin();
+            formLogin.Show();
+            this.Hide();
         }
     }
 }

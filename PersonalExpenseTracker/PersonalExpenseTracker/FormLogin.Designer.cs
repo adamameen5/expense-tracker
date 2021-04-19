@@ -35,7 +35,7 @@ namespace PersonalExpenseTracker
             this.label4 = new System.Windows.Forms.Label();
             this.password = new System.Windows.Forms.TextBox();
             this.btnSubmit = new System.Windows.Forms.Button();
-            this.linkForgotPassword = new System.Windows.Forms.LinkLabel();
+            this.linkAlreadyHaveAnAccount = new System.Windows.Forms.LinkLabel();
             this.label3 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -95,15 +95,16 @@ namespace PersonalExpenseTracker
             this.btnSubmit.UseVisualStyleBackColor = false;
             this.btnSubmit.Click += new System.EventHandler(this.verifyCredentials);
             // 
-            // linkForgotPassword
+            // linkAlreadyHaveAnAccount
             // 
-            this.linkForgotPassword.AutoSize = true;
-            this.linkForgotPassword.Location = new System.Drawing.Point(98, 303);
-            this.linkForgotPassword.Name = "linkForgotPassword";
-            this.linkForgotPassword.Size = new System.Drawing.Size(92, 13);
-            this.linkForgotPassword.TabIndex = 8;
-            this.linkForgotPassword.TabStop = true;
-            this.linkForgotPassword.Text = "Forgot Password?";
+            this.linkAlreadyHaveAnAccount.AutoSize = true;
+            this.linkAlreadyHaveAnAccount.Location = new System.Drawing.Point(98, 303);
+            this.linkAlreadyHaveAnAccount.Name = "linkAlreadyHaveAnAccount";
+            this.linkAlreadyHaveAnAccount.Size = new System.Drawing.Size(79, 13);
+            this.linkAlreadyHaveAnAccount.TabIndex = 8;
+            this.linkAlreadyHaveAnAccount.TabStop = true;
+            this.linkAlreadyHaveAnAccount.Text = "Not registered?";
+            this.linkAlreadyHaveAnAccount.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.redirectToSignUp);
             // 
             // label3
             // 
@@ -119,7 +120,7 @@ namespace PersonalExpenseTracker
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(484, 450);
-            this.Controls.Add(this.linkForgotPassword);
+            this.Controls.Add(this.linkAlreadyHaveAnAccount);
             this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.password);
             this.Controls.Add(this.label4);
@@ -142,7 +143,7 @@ namespace PersonalExpenseTracker
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox password;
         private System.Windows.Forms.Button btnSubmit;
-        private System.Windows.Forms.LinkLabel linkForgotPassword;
+        private System.Windows.Forms.LinkLabel linkAlreadyHaveAnAccount;
         private System.Windows.Forms.Label label3;
     }
 }

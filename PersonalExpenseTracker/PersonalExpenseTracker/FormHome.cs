@@ -21,6 +21,7 @@ namespace PersonalExpenseTracker
         {
             FormLogin loginForm = new FormLogin();
             loginForm.Show();
+            this.Hide();
             
         }
 
@@ -28,6 +29,7 @@ namespace PersonalExpenseTracker
         {
             FormSignUp signUpForm = new FormSignUp();
             signUpForm.Show();
+            this.Hide();
             
         }
     }
