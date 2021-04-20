@@ -80,6 +80,22 @@
     <NIC>8338</NIC>
     <FK_UserID>10</FK_UserID>
   </Credentials>
+  <Credentials>
+    <UserName>Adam</UserName>
+    <Email>adam@gmail.com</Email>
+    <Password>adam</Password>
+    <CredentialsID>11</CredentialsID>
+    <NIC>83737V</NIC>
+    <FK_UserID>11</FK_UserID>
+  </Credentials>
+  <Credentials>
+    <UserName>Edwin</UserName>
+    <Email>edwin@gmail.com</Email>
+    <Password>edwin</Password>
+    <CredentialsID>12</CredentialsID>
+    <NIC>93838V</NIC>
+    <FK_UserID>12</FK_UserID>
+  </Credentials>
   <User>
     <UserID>1</UserID>
     <DateOfBirth>to-be-filled</DateOfBirth>
@@ -118,6 +134,14 @@
   </User>
   <User>
     <UserID>10</UserID>
+    <DateOfBirth>to-be-filled</DateOfBirth>
+  </User>
+  <User>
+    <UserID>11</UserID>
+    <DateOfBirth>to-be-filled</DateOfBirth>
+  </User>
+  <User>
+    <UserID>12</UserID>
     <DateOfBirth>to-be-filled</DateOfBirth>
   </User>
 </ExpenseGuide>

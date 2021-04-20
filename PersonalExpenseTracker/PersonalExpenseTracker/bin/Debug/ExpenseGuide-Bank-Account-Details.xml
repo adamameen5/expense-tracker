@@ -1,0 +1,11 @@
+<?xml version="1.0" standalone="yes"?>
+<ExpenseGuide xmlns="http://tempuri.org/ExpenseGuide.xsd">
+  <BankAccountDetail>
+    <BankAccountID>1</BankAccountID>
+    <BankAccountNumber>HSBC-009</BankAccountNumber>
+    <BankAccountBankName>HSBC</BankAccountBankName>
+    <BankAccountBranchName>Colombo 07</BankAccountBranchName>
+    <BankAccountNameToDisplay>HSBC Col-07</BankAccountNameToDisplay>
+    <FK_UserID>2</FK_UserID>
+  </BankAccountDetail>
+</ExpenseGuide>

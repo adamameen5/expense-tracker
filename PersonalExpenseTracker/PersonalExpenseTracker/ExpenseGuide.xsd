@@ -48,6 +48,18 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="BankAccountDetail" msprop:Generator_TableClassName="BankAccountDetailDataTable" msprop:Generator_TableVarName="tableBankAccountDetail" msprop:Generator_RowChangedName="BankAccountDetailRowChanged" msprop:Generator_TablePropName="BankAccountDetail" msprop:Generator_RowDeletingName="BankAccountDetailRowDeleting" msprop:Generator_RowChangingName="BankAccountDetailRowChanging" msprop:Generator_RowEvHandlerName="BankAccountDetailRowChangeEventHandler" msprop:Generator_RowDeletedName="BankAccountDetailRowDeleted" msprop:Generator_RowClassName="BankAccountDetailRow" msprop:Generator_UserTableName="BankAccountDetail" msprop:Generator_RowEvArgName="BankAccountDetailRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="BankAccountID" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="1" msprop:Generator_ColumnVarNameInTable="columnBankAccountID" msprop:Generator_ColumnPropNameInRow="BankAccountID" msprop:Generator_ColumnPropNameInTable="BankAccountIDColumn" msprop:Generator_UserColumnName="BankAccountID" type="xs:int" />
+              <xs:element name="BankAccountNumber" msprop:Generator_ColumnVarNameInTable="columnBankAccountNumber" msprop:Generator_ColumnPropNameInRow="BankAccountNumber" msprop:Generator_ColumnPropNameInTable="BankAccountNumberColumn" msprop:Generator_UserColumnName="BankAccountNumber" type="xs:string" minOccurs="0" />
+              <xs:element name="BankAccountBankName" msprop:Generator_ColumnVarNameInTable="columnBankAccountBankName" msprop:Generator_ColumnPropNameInRow="BankAccountBankName" msprop:Generator_ColumnPropNameInTable="BankAccountBankNameColumn" msprop:Generator_UserColumnName="BankAccountBankName" type="xs:string" minOccurs="0" />
+              <xs:element name="BankAccountBranchName" msprop:Generator_ColumnVarNameInTable="columnBankAccountBranchName" msprop:Generator_ColumnPropNameInRow="BankAccountBranchName" msprop:Generator_ColumnPropNameInTable="BankAccountBranchNameColumn" msprop:Generator_UserColumnName="BankAccountBranchName" type="xs:string" minOccurs="0" />
+              <xs:element name="BankAccountNameToDisplay" msprop:Generator_ColumnVarNameInTable="columnBankAccountNameToDisplay" msprop:Generator_ColumnPropNameInRow="BankAccountNameToDisplay" msprop:Generator_ColumnPropNameInTable="BankAccountNameToDisplayColumn" msprop:Generator_UserColumnName="BankAccountNameToDisplay" type="xs:string" minOccurs="0" />
+              <xs:element name="FK_UserID" msprop:Generator_ColumnVarNameInTable="columnFK_UserID" msprop:Generator_ColumnPropNameInRow="FK_UserID" msprop:Generator_ColumnPropNameInTable="FK_UserIDColumn" msprop:Generator_UserColumnName="FK_UserID" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
@@ -62,11 +74,16 @@
       <xs:selector xpath=".//mstns:CardDetail" />
       <xs:field xpath="mstns:CardID" />
     </xs:unique>
+    <xs:unique name="BankAccountDetail_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:BankAccountDetail" />
+      <xs:field xpath="mstns:BankAccountID" />
+    </xs:unique>
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
       <msdata:Relationship name="User_Credentials" msdata:parent="User" msdata:child="Credentials" msdata:parentkey="UserID" msdata:childkey="FK_UserID" msprop:Generator_UserChildTable="Credentials" msprop:Generator_ChildPropName="GetCredentialsRows" msprop:Generator_UserRelationName="User_Credentials" msprop:Generator_ParentPropName="UserRow" msprop:Generator_RelationVarName="relationUser_Credentials" msprop:Generator_UserParentTable="User" />
       <msdata:Relationship name="User_CardDetail" msdata:parent="User" msdata:child="CardDetail" msdata:parentkey="UserID" msdata:childkey="FK_UserID" msprop:Generator_UserChildTable="CardDetail" msprop:Generator_ChildPropName="GetCardDetailRows" msprop:Generator_UserRelationName="User_CardDetail" msprop:Generator_ParentPropName="UserRow" msprop:Generator_RelationVarName="relationUser_CardDetail" msprop:Generator_UserParentTable="User" />
+      <msdata:Relationship name="User_BankAccountDetail" msdata:parent="User" msdata:child="BankAccountDetail" msdata:parentkey="UserID" msdata:childkey="FK_UserID" msprop:Generator_UserChildTable="BankAccountDetail" msprop:Generator_ChildPropName="GetBankAccountDetailRows" msprop:Generator_UserRelationName="User_BankAccountDetail" msprop:Generator_ParentPropName="UserRow" msprop:Generator_RelationVarName="relationUser_BankAccountDetail" msprop:Generator_UserParentTable="User" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>

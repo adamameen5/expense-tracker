@@ -36,6 +36,18 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="BankAccountDetails">
+      <EntityTypeMapping TypeName="IsTypeOf(ExpenseGuideDB.BankAccountDetail)">
+        <MappingFragment StoreEntitySet="BankAccountDetails">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="BankAccountNumber" ColumnName="BankAccountNumber" />
+          <ScalarProperty Name="BankAccountBankName" ColumnName="BankAccountBankName" />
+          <ScalarProperty Name="BankAccountBranchName" ColumnName="BankAccountBranchName" />
+          <ScalarProperty Name="BankAccountNameToDisplay" ColumnName="BankAccountNameToDisplay" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <AssociationSetMapping Name="CredentialsUser" TypeName="ExpenseGuideDB.CredentialsUser" StoreEntitySet="Credentials">
       <EndProperty Name="User">
         <ScalarProperty Name="Id" ColumnName="User_Id" />

@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 04/20/2021 22:09:34
+-- Date Created: 04/21/2021 02:46:12
 -- Generated from EDMX file: C:\ADAMLK\EAD\EAD_Final_2\expense-tracker\PersonalExpenseTracker\PersonalExpenseTracker\ExpenseGuideDB.edmx
 -- --------------------------------------------------
 
@@ -75,6 +75,17 @@ CREATE TABLE [dbo].[CardDetails] (
 );
 GO
 
+-- Creating table 'BankAccountDetails'
+CREATE TABLE [dbo].[BankAccountDetails] (
+    [Id] int IDENTITY(1,1) NOT NULL,
+    [BankAccountNumber] nvarchar(max)  NOT NULL,
+    [BankAccountBankName] nvarchar(max)  NOT NULL,
+    [BankAccountBranchName] nvarchar(max)  NOT NULL,
+    [BankAccountNameToDisplay] nvarchar(max)  NOT NULL,
+    [UserId] int  NOT NULL
+);
+GO
+
 -- --------------------------------------------------
 -- Creating all PRIMARY KEY constraints
 -- --------------------------------------------------
@@ -94,6 +105,12 @@ GO
 -- Creating primary key on [Id] in table 'CardDetails'
 ALTER TABLE [dbo].[CardDetails]
 ADD CONSTRAINT [PK_CardDetails]
+    PRIMARY KEY CLUSTERED ([Id] ASC);
+GO
+
+-- Creating primary key on [Id] in table 'BankAccountDetails'
+ALTER TABLE [dbo].[BankAccountDetails]
+ADD CONSTRAINT [PK_BankAccountDetails]
     PRIMARY KEY CLUSTERED ([Id] ASC);
 GO
 
@@ -128,6 +145,21 @@ GO
 -- Creating non-clustered index for FOREIGN KEY 'FK_CardDetailUser'
 CREATE INDEX [IX_FK_CardDetailUser]
 ON [dbo].[CardDetails]
+    ([UserId]);
+GO
+
+-- Creating foreign key on [UserId] in table 'BankAccountDetails'
+ALTER TABLE [dbo].[BankAccountDetails]
+ADD CONSTRAINT [FK_BankAccountDetailUser]
+    FOREIGN KEY ([UserId])
+    REFERENCES [dbo].[Users]
+        ([Id])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_BankAccountDetailUser'
+CREATE INDEX [IX_FK_BankAccountDetailUser]
+ON [dbo].[BankAccountDetails]
     ([UserId]);
 GO
 

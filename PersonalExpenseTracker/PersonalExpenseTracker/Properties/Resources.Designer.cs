@@ -61,6 +61,15 @@ namespace PersonalExpenseTracker.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Your financial details were succesfully added!.
+        /// </summary>
+        internal static string FINANCIAL_DETAILS_SUCCESFULLY_ADDED {
+            get {
+                return ResourceManager.GetString("FINANCIAL_DETAILS_SUCCESFULLY_ADDED", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The email or password you entered is not valid..
         /// </summary>
         internal static string INVALID_LOGIN_CREDENTIALS {

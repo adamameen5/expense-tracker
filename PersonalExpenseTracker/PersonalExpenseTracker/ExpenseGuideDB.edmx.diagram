@@ -10,6 +10,8 @@
         <AssociationConnector Association="ExpenseGuideDB.CredentialsUser" />
         <EntityTypeShape EntityType="ExpenseGuideDB.CardDetail" Width="1.5" PointX="7.75" PointY="1.625" />
         <AssociationConnector Association="ExpenseGuideDB.CardDetailUser" />
+        <EntityTypeShape EntityType="ExpenseGuideDB.BankAccountDetail" Width="1.5" PointX="10.75" PointY="2.75" />
+        <AssociationConnector Association="ExpenseGuideDB.BankAccountDetailUser" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

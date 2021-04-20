@@ -30,9 +30,13 @@ namespace PersonalExpenseTracker {
         
         private CardDetailDataTable tableCardDetail;
         
+        private BankAccountDetailDataTable tableBankAccountDetail;
+        
         private global::System.Data.DataRelation relationUser_Credentials;
         
         private global::System.Data.DataRelation relationUser_CardDetail;
+        
+        private global::System.Data.DataRelation relationUser_BankAccountDetail;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -70,6 +74,9 @@ namespace PersonalExpenseTracker {
                 }
                 if ((ds.Tables["CardDetail"] != null)) {
                     base.Tables.Add(new CardDetailDataTable(ds.Tables["CardDetail"]));
+                }
+                if ((ds.Tables["BankAccountDetail"] != null)) {
+                    base.Tables.Add(new BankAccountDetailDataTable(ds.Tables["BankAccountDetail"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -116,6 +123,16 @@ namespace PersonalExpenseTracker {
         public CardDetailDataTable CardDetail {
             get {
                 return this.tableCardDetail;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public BankAccountDetailDataTable BankAccountDetail {
+            get {
+                return this.tableBankAccountDetail;
             }
         }
         
@@ -195,6 +212,9 @@ namespace PersonalExpenseTracker {
                 if ((ds.Tables["CardDetail"] != null)) {
                     base.Tables.Add(new CardDetailDataTable(ds.Tables["CardDetail"]));
                 }
+                if ((ds.Tables["BankAccountDetail"] != null)) {
+                    base.Tables.Add(new BankAccountDetailDataTable(ds.Tables["BankAccountDetail"]));
+                }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
                 this.Namespace = ds.Namespace;
@@ -246,8 +266,15 @@ namespace PersonalExpenseTracker {
                     this.tableCardDetail.InitVars();
                 }
             }
+            this.tableBankAccountDetail = ((BankAccountDetailDataTable)(base.Tables["BankAccountDetail"]));
+            if ((initTable == true)) {
+                if ((this.tableBankAccountDetail != null)) {
+                    this.tableBankAccountDetail.InitVars();
+                }
+            }
             this.relationUser_Credentials = this.Relations["User_Credentials"];
             this.relationUser_CardDetail = this.Relations["User_CardDetail"];
+            this.relationUser_BankAccountDetail = this.Relations["User_BankAccountDetail"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -264,6 +291,8 @@ namespace PersonalExpenseTracker {
             base.Tables.Add(this.tableUser);
             this.tableCardDetail = new CardDetailDataTable();
             base.Tables.Add(this.tableCardDetail);
+            this.tableBankAccountDetail = new BankAccountDetailDataTable();
+            base.Tables.Add(this.tableBankAccountDetail);
             this.relationUser_Credentials = new global::System.Data.DataRelation("User_Credentials", new global::System.Data.DataColumn[] {
                         this.tableUser.UserIDColumn}, new global::System.Data.DataColumn[] {
                         this.tableCredentials.FK_UserIDColumn}, false);
@@ -272,6 +301,10 @@ namespace PersonalExpenseTracker {
                         this.tableUser.UserIDColumn}, new global::System.Data.DataColumn[] {
                         this.tableCardDetail.FK_UserIDColumn}, false);
             this.Relations.Add(this.relationUser_CardDetail);
+            this.relationUser_BankAccountDetail = new global::System.Data.DataRelation("User_BankAccountDetail", new global::System.Data.DataColumn[] {
+                        this.tableUser.UserIDColumn}, new global::System.Data.DataColumn[] {
+                        this.tableBankAccountDetail.FK_UserIDColumn}, false);
+            this.Relations.Add(this.relationUser_BankAccountDetail);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -289,6 +322,12 @@ namespace PersonalExpenseTracker {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private bool ShouldSerializeCardDetail() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private bool ShouldSerializeBankAccountDetail() {
             return false;
         }
         
@@ -355,6 +394,9 @@ namespace PersonalExpenseTracker {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public delegate void CardDetailRowChangeEventHandler(object sender, CardDetailRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public delegate void BankAccountDetailRowChangeEventHandler(object sender, BankAccountDetailRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -1352,6 +1394,339 @@ namespace PersonalExpenseTracker {
         }
         
         /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class BankAccountDetailDataTable : global::System.Data.TypedTableBase<BankAccountDetailRow> {
+            
+            private global::System.Data.DataColumn columnBankAccountID;
+            
+            private global::System.Data.DataColumn columnBankAccountNumber;
+            
+            private global::System.Data.DataColumn columnBankAccountBankName;
+            
+            private global::System.Data.DataColumn columnBankAccountBranchName;
+            
+            private global::System.Data.DataColumn columnBankAccountNameToDisplay;
+            
+            private global::System.Data.DataColumn columnFK_UserID;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public BankAccountDetailDataTable() {
+                this.TableName = "BankAccountDetail";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal BankAccountDetailDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected BankAccountDetailDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn BankAccountIDColumn {
+                get {
+                    return this.columnBankAccountID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn BankAccountNumberColumn {
+                get {
+                    return this.columnBankAccountNumber;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn BankAccountBankNameColumn {
+                get {
+                    return this.columnBankAccountBankName;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn BankAccountBranchNameColumn {
+                get {
+                    return this.columnBankAccountBranchName;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn BankAccountNameToDisplayColumn {
+                get {
+                    return this.columnBankAccountNameToDisplay;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn FK_UserIDColumn {
+                get {
+                    return this.columnFK_UserID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public BankAccountDetailRow this[int index] {
+                get {
+                    return ((BankAccountDetailRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event BankAccountDetailRowChangeEventHandler BankAccountDetailRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event BankAccountDetailRowChangeEventHandler BankAccountDetailRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event BankAccountDetailRowChangeEventHandler BankAccountDetailRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event BankAccountDetailRowChangeEventHandler BankAccountDetailRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void AddBankAccountDetailRow(BankAccountDetailRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public BankAccountDetailRow AddBankAccountDetailRow(string BankAccountNumber, string BankAccountBankName, string BankAccountBranchName, string BankAccountNameToDisplay, UserRow parentUserRowByUser_BankAccountDetail) {
+                BankAccountDetailRow rowBankAccountDetailRow = ((BankAccountDetailRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        null,
+                        BankAccountNumber,
+                        BankAccountBankName,
+                        BankAccountBranchName,
+                        BankAccountNameToDisplay,
+                        null};
+                if ((parentUserRowByUser_BankAccountDetail != null)) {
+                    columnValuesArray[5] = parentUserRowByUser_BankAccountDetail[4];
+                }
+                rowBankAccountDetailRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowBankAccountDetailRow);
+                return rowBankAccountDetailRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public BankAccountDetailRow FindByBankAccountID(int BankAccountID) {
+                return ((BankAccountDetailRow)(this.Rows.Find(new object[] {
+                            BankAccountID})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                BankAccountDetailDataTable cln = ((BankAccountDetailDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new BankAccountDetailDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal void InitVars() {
+                this.columnBankAccountID = base.Columns["BankAccountID"];
+                this.columnBankAccountNumber = base.Columns["BankAccountNumber"];
+                this.columnBankAccountBankName = base.Columns["BankAccountBankName"];
+                this.columnBankAccountBranchName = base.Columns["BankAccountBranchName"];
+                this.columnBankAccountNameToDisplay = base.Columns["BankAccountNameToDisplay"];
+                this.columnFK_UserID = base.Columns["FK_UserID"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            private void InitClass() {
+                this.columnBankAccountID = new global::System.Data.DataColumn("BankAccountID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnBankAccountID);
+                this.columnBankAccountNumber = new global::System.Data.DataColumn("BankAccountNumber", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnBankAccountNumber);
+                this.columnBankAccountBankName = new global::System.Data.DataColumn("BankAccountBankName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnBankAccountBankName);
+                this.columnBankAccountBranchName = new global::System.Data.DataColumn("BankAccountBranchName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnBankAccountBranchName);
+                this.columnBankAccountNameToDisplay = new global::System.Data.DataColumn("BankAccountNameToDisplay", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnBankAccountNameToDisplay);
+                this.columnFK_UserID = new global::System.Data.DataColumn("FK_UserID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFK_UserID);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnBankAccountID}, true));
+                this.columnBankAccountID.AutoIncrement = true;
+                this.columnBankAccountID.AutoIncrementSeed = 1;
+                this.columnBankAccountID.AllowDBNull = false;
+                this.columnBankAccountID.Unique = true;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public BankAccountDetailRow NewBankAccountDetailRow() {
+                return ((BankAccountDetailRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new BankAccountDetailRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(BankAccountDetailRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.BankAccountDetailRowChanged != null)) {
+                    this.BankAccountDetailRowChanged(this, new BankAccountDetailRowChangeEvent(((BankAccountDetailRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.BankAccountDetailRowChanging != null)) {
+                    this.BankAccountDetailRowChanging(this, new BankAccountDetailRowChangeEvent(((BankAccountDetailRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.BankAccountDetailRowDeleted != null)) {
+                    this.BankAccountDetailRowDeleted(this, new BankAccountDetailRowChangeEvent(((BankAccountDetailRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.BankAccountDetailRowDeleting != null)) {
+                    this.BankAccountDetailRowDeleting(this, new BankAccountDetailRowChangeEvent(((BankAccountDetailRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void RemoveBankAccountDetailRow(BankAccountDetailRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                ExpenseGuide ds = new ExpenseGuide();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "BankAccountDetailDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
         public partial class CredentialsRow : global::System.Data.DataRow {
@@ -1714,6 +2089,17 @@ namespace PersonalExpenseTracker {
                     return ((CardDetailRow[])(base.GetChildRows(this.Table.ChildRelations["User_CardDetail"])));
                 }
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public BankAccountDetailRow[] GetBankAccountDetailRows() {
+                if ((this.Table.ChildRelations["User_BankAccountDetail"] == null)) {
+                    return new BankAccountDetailRow[0];
+                }
+                else {
+                    return ((BankAccountDetailRow[])(base.GetChildRows(this.Table.ChildRelations["User_BankAccountDetail"])));
+                }
+            }
         }
         
         /// <summary>
@@ -1894,6 +2280,186 @@ namespace PersonalExpenseTracker {
         }
         
         /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class BankAccountDetailRow : global::System.Data.DataRow {
+            
+            private BankAccountDetailDataTable tableBankAccountDetail;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal BankAccountDetailRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableBankAccountDetail = ((BankAccountDetailDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int BankAccountID {
+                get {
+                    return ((int)(this[this.tableBankAccountDetail.BankAccountIDColumn]));
+                }
+                set {
+                    this[this.tableBankAccountDetail.BankAccountIDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string BankAccountNumber {
+                get {
+                    try {
+                        return ((string)(this[this.tableBankAccountDetail.BankAccountNumberColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'BankAccountNumber\' in table \'BankAccountDetail\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableBankAccountDetail.BankAccountNumberColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string BankAccountBankName {
+                get {
+                    try {
+                        return ((string)(this[this.tableBankAccountDetail.BankAccountBankNameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'BankAccountBankName\' in table \'BankAccountDetail\' is DBNull" +
+                                ".", e);
+                    }
+                }
+                set {
+                    this[this.tableBankAccountDetail.BankAccountBankNameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string BankAccountBranchName {
+                get {
+                    try {
+                        return ((string)(this[this.tableBankAccountDetail.BankAccountBranchNameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'BankAccountBranchName\' in table \'BankAccountDetail\' is DBNu" +
+                                "ll.", e);
+                    }
+                }
+                set {
+                    this[this.tableBankAccountDetail.BankAccountBranchNameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string BankAccountNameToDisplay {
+                get {
+                    try {
+                        return ((string)(this[this.tableBankAccountDetail.BankAccountNameToDisplayColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'BankAccountNameToDisplay\' in table \'BankAccountDetail\' is D" +
+                                "BNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableBankAccountDetail.BankAccountNameToDisplayColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int FK_UserID {
+                get {
+                    try {
+                        return ((int)(this[this.tableBankAccountDetail.FK_UserIDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'FK_UserID\' in table \'BankAccountDetail\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableBankAccountDetail.FK_UserIDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public UserRow UserRow {
+                get {
+                    return ((UserRow)(this.GetParentRow(this.Table.ParentRelations["User_BankAccountDetail"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["User_BankAccountDetail"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsBankAccountNumberNull() {
+                return this.IsNull(this.tableBankAccountDetail.BankAccountNumberColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetBankAccountNumberNull() {
+                this[this.tableBankAccountDetail.BankAccountNumberColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsBankAccountBankNameNull() {
+                return this.IsNull(this.tableBankAccountDetail.BankAccountBankNameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetBankAccountBankNameNull() {
+                this[this.tableBankAccountDetail.BankAccountBankNameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsBankAccountBranchNameNull() {
+                return this.IsNull(this.tableBankAccountDetail.BankAccountBranchNameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetBankAccountBranchNameNull() {
+                this[this.tableBankAccountDetail.BankAccountBranchNameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsBankAccountNameToDisplayNull() {
+                return this.IsNull(this.tableBankAccountDetail.BankAccountNameToDisplayColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetBankAccountNameToDisplayNull() {
+                this[this.tableBankAccountDetail.BankAccountNameToDisplayColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsFK_UserIDNull() {
+                return this.IsNull(this.tableBankAccountDetail.FK_UserIDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetFK_UserIDNull() {
+                this[this.tableBankAccountDetail.FK_UserIDColumn] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -1981,6 +2547,40 @@ namespace PersonalExpenseTracker {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public CardDetailRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public class BankAccountDetailRowChangeEvent : global::System.EventArgs {
+            
+            private BankAccountDetailRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public BankAccountDetailRowChangeEvent(BankAccountDetailRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public BankAccountDetailRow Row {
                 get {
                     return this.eventRow;
                 }

@@ -35,13 +35,13 @@ namespace PersonalExpenseTracker
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.bankAccountNameToDisplay = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.bankAccountBranchName = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.bankAccountNumber = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.bankAccountBankName = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.cardNameToDisplay = new System.Windows.Forms.TextBox();
@@ -106,13 +106,13 @@ namespace PersonalExpenseTracker
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.textBox3);
+            this.groupBox1.Controls.Add(this.bankAccountNameToDisplay);
             this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.textBox4);
+            this.groupBox1.Controls.Add(this.bankAccountBranchName);
             this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.textBox2);
+            this.groupBox1.Controls.Add(this.bankAccountNumber);
             this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.bankAccountBankName);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Location = new System.Drawing.Point(119, 213);
             this.groupBox1.Name = "groupBox1";
@@ -121,12 +121,12 @@ namespace PersonalExpenseTracker
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Account 1";
             // 
-            // textBox3
+            // bankAccountNameToDisplay
             // 
-            this.textBox3.Location = new System.Drawing.Point(126, 86);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(94, 20);
-            this.textBox3.TabIndex = 53;
+            this.bankAccountNameToDisplay.Location = new System.Drawing.Point(126, 86);
+            this.bankAccountNameToDisplay.Name = "bankAccountNameToDisplay";
+            this.bankAccountNameToDisplay.Size = new System.Drawing.Size(94, 20);
+            this.bankAccountNameToDisplay.TabIndex = 53;
             // 
             // label7
             // 
@@ -137,12 +137,12 @@ namespace PersonalExpenseTracker
             this.label7.TabIndex = 52;
             this.label7.Text = "Name To Display";
             // 
-            // textBox4
+            // bankAccountBranchName
             // 
-            this.textBox4.Location = new System.Drawing.Point(9, 86);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(94, 20);
-            this.textBox4.TabIndex = 51;
+            this.bankAccountBranchName.Location = new System.Drawing.Point(9, 86);
+            this.bankAccountBranchName.Name = "bankAccountBranchName";
+            this.bankAccountBranchName.Size = new System.Drawing.Size(94, 20);
+            this.bankAccountBranchName.TabIndex = 51;
             // 
             // label8
             // 
@@ -153,12 +153,12 @@ namespace PersonalExpenseTracker
             this.label8.TabIndex = 50;
             this.label8.Text = "Bank Branch";
             // 
-            // textBox2
+            // bankAccountNumber
             // 
-            this.textBox2.Location = new System.Drawing.Point(126, 42);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(94, 20);
-            this.textBox2.TabIndex = 49;
+            this.bankAccountNumber.Location = new System.Drawing.Point(126, 42);
+            this.bankAccountNumber.Name = "bankAccountNumber";
+            this.bankAccountNumber.Size = new System.Drawing.Size(94, 20);
+            this.bankAccountNumber.TabIndex = 49;
             // 
             // label6
             // 
@@ -169,12 +169,12 @@ namespace PersonalExpenseTracker
             this.label6.TabIndex = 48;
             this.label6.Text = "Account Number";
             // 
-            // textBox1
+            // bankAccountBankName
             // 
-            this.textBox1.Location = new System.Drawing.Point(9, 42);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(94, 20);
-            this.textBox1.TabIndex = 47;
+            this.bankAccountBankName.Location = new System.Drawing.Point(9, 42);
+            this.bankAccountBankName.Name = "bankAccountBankName";
+            this.bankAccountBankName.Size = new System.Drawing.Size(94, 20);
+            this.bankAccountBankName.TabIndex = 47;
             // 
             // label5
             // 
@@ -310,13 +310,13 @@ namespace PersonalExpenseTracker
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox bankAccountNumber;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox bankAccountBankName;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox bankAccountNameToDisplay;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox bankAccountBranchName;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.TextBox cardNameToDisplay;

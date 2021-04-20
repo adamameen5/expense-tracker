@@ -63,6 +63,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BankAccountDetail.cs">
+      <DependentUpon>ExpenseGuideDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="CardDetail.cs">
       <DependentUpon>ExpenseGuideDB.tt</DependentUpon>
     </Compile>
@@ -185,6 +188,7 @@
     <Compile Include="User.cs">
       <DependentUpon>ExpenseGuideDB.tt</DependentUpon>
     </Compile>
+    <Compile Include="UserBankAccountDetailsData.cs" />
     <Compile Include="UserCardDetailsData.cs" />
     <Compile Include="UserCredentialsData.cs" />
     <Compile Include="UserDetails.cs" />

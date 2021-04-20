@@ -12,6 +12,11 @@
       <End Role="CardDetail" EntitySet="CardDetails" />
       <End Role="User" EntitySet="Users" />
     </AssociationSet>
+    <EntitySet Name="BankAccountDetails" EntityType="ExpenseGuideDB.BankAccountDetail" />
+    <AssociationSet Name="BankAccountDetailUser" Association="ExpenseGuideDB.BankAccountDetailUser">
+      <End Role="BankAccountDetail" EntitySet="BankAccountDetails" />
+      <End Role="User" EntitySet="Users" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="Credentials">
     <Key>
@@ -58,6 +63,29 @@
         <PropertyRef Name="Id" />
       </Principal>
       <Dependent Role="CardDetail">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="BankAccountDetail">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BankAccountNumber" Type="String" Nullable="false" />
+    <Property Name="BankAccountBankName" Type="String" Nullable="false" />
+    <Property Name="BankAccountBranchName" Type="String" Nullable="false" />
+    <Property Name="BankAccountNameToDisplay" Type="String" Nullable="false" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+  </EntityType>
+  <Association Name="BankAccountDetailUser">
+    <End Type="ExpenseGuideDB.BankAccountDetail" Role="BankAccountDetail" Multiplicity="*" />
+    <End Type="ExpenseGuideDB.User" Role="User" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BankAccountDetail">
         <PropertyRef Name="UserId" />
       </Dependent>
     </ReferentialConstraint>
