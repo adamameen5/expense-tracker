@@ -75,6 +75,7 @@ namespace PersonalExpenseTracker
             //Show the on-boarding forms
             FormOnBoardingPersonalDetails formOnBoarding1 = new FormOnBoardingPersonalDetails();
             formOnBoarding1.Show();
+            this.Hide();
 
 
 

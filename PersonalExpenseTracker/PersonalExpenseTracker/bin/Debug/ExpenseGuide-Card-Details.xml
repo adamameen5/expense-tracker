@@ -1,0 +1,19 @@
+<?xml version="1.0" standalone="yes"?>
+<ExpenseGuide xmlns="http://tempuri.org/ExpenseGuide.xsd">
+  <CardDetail>
+    <CardNumber>2222</CardNumber>
+    <CardID>1</CardID>
+    <CardNameToDisplay>deeded</CardNameToDisplay>
+    <CardBankName>ueue</CardBankName>
+    <CardDateOfExpiry>MM/YY</CardDateOfExpiry>
+    <FK_UserID>3</FK_UserID>
+  </CardDetail>
+  <CardDetail>
+    <CardNumber>2222</CardNumber>
+    <CardID>2</CardID>
+    <CardNameToDisplay>deeded</CardNameToDisplay>
+    <CardBankName>huhuhii</CardBankName>
+    <CardDateOfExpiry>MM/YY</CardDateOfExpiry>
+    <FK_UserID>3</FK_UserID>
+  </CardDetail>
+</ExpenseGuide>

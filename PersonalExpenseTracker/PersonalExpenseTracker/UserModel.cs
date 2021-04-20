@@ -51,6 +51,19 @@ namespace PersonalExpenseTracker
             }
         }
 
+        public void saveCardDetails(int cardBelongingToId, UserCardDetailsData info)
+        {
+            CardDetail cardDetails = new CardDetail();
+            cardDetails.CardBankName = info.cardBankName;
+            cardDetails.CardDateOfExpiry = info.cardDateOfExpiry;
+            cardDetails.CardNameToDisplay = info.cardNameToDisplay;
+            cardDetails.CardNumber = info.cardNumber;
+
+            User userInfo = new User();
+
+
+        }
+
         public void updateUserInformation(int idToUpdate, UserDetails info)
         {
             try
@@ -71,5 +84,7 @@ namespace PersonalExpenseTracker
             }
 
         }
+
+        
     }
 }

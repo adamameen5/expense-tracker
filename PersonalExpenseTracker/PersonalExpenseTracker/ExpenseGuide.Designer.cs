@@ -28,7 +28,11 @@ namespace PersonalExpenseTracker {
         
         private UserDataTable tableUser;
         
+        private CardDetailDataTable tableCardDetail;
+        
         private global::System.Data.DataRelation relationUser_Credentials;
+        
+        private global::System.Data.DataRelation relationUser_CardDetail;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -63,6 +67,9 @@ namespace PersonalExpenseTracker {
                 }
                 if ((ds.Tables["User"] != null)) {
                     base.Tables.Add(new UserDataTable(ds.Tables["User"]));
+                }
+                if ((ds.Tables["CardDetail"] != null)) {
+                    base.Tables.Add(new CardDetailDataTable(ds.Tables["CardDetail"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -99,6 +106,16 @@ namespace PersonalExpenseTracker {
         public UserDataTable User {
             get {
                 return this.tableUser;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public CardDetailDataTable CardDetail {
+            get {
+                return this.tableCardDetail;
             }
         }
         
@@ -175,6 +192,9 @@ namespace PersonalExpenseTracker {
                 if ((ds.Tables["User"] != null)) {
                     base.Tables.Add(new UserDataTable(ds.Tables["User"]));
                 }
+                if ((ds.Tables["CardDetail"] != null)) {
+                    base.Tables.Add(new CardDetailDataTable(ds.Tables["CardDetail"]));
+                }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
                 this.Namespace = ds.Namespace;
@@ -220,7 +240,14 @@ namespace PersonalExpenseTracker {
                     this.tableUser.InitVars();
                 }
             }
+            this.tableCardDetail = ((CardDetailDataTable)(base.Tables["CardDetail"]));
+            if ((initTable == true)) {
+                if ((this.tableCardDetail != null)) {
+                    this.tableCardDetail.InitVars();
+                }
+            }
             this.relationUser_Credentials = this.Relations["User_Credentials"];
+            this.relationUser_CardDetail = this.Relations["User_CardDetail"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -235,10 +262,16 @@ namespace PersonalExpenseTracker {
             base.Tables.Add(this.tableCredentials);
             this.tableUser = new UserDataTable();
             base.Tables.Add(this.tableUser);
+            this.tableCardDetail = new CardDetailDataTable();
+            base.Tables.Add(this.tableCardDetail);
             this.relationUser_Credentials = new global::System.Data.DataRelation("User_Credentials", new global::System.Data.DataColumn[] {
                         this.tableUser.UserIDColumn}, new global::System.Data.DataColumn[] {
                         this.tableCredentials.FK_UserIDColumn}, false);
             this.Relations.Add(this.relationUser_Credentials);
+            this.relationUser_CardDetail = new global::System.Data.DataRelation("User_CardDetail", new global::System.Data.DataColumn[] {
+                        this.tableUser.UserIDColumn}, new global::System.Data.DataColumn[] {
+                        this.tableCardDetail.FK_UserIDColumn}, false);
+            this.Relations.Add(this.relationUser_CardDetail);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -250,6 +283,12 @@ namespace PersonalExpenseTracker {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private bool ShouldSerializeUser() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private bool ShouldSerializeCardDetail() {
             return false;
         }
         
@@ -313,6 +352,9 @@ namespace PersonalExpenseTracker {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public delegate void UserRowChangeEventHandler(object sender, UserRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public delegate void CardDetailRowChangeEventHandler(object sender, CardDetailRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -977,6 +1019,339 @@ namespace PersonalExpenseTracker {
         }
         
         /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class CardDetailDataTable : global::System.Data.TypedTableBase<CardDetailRow> {
+            
+            private global::System.Data.DataColumn columnCardNumber;
+            
+            private global::System.Data.DataColumn columnCardID;
+            
+            private global::System.Data.DataColumn columnCardNameToDisplay;
+            
+            private global::System.Data.DataColumn columnCardBankName;
+            
+            private global::System.Data.DataColumn columnCardDateOfExpiry;
+            
+            private global::System.Data.DataColumn columnFK_UserID;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public CardDetailDataTable() {
+                this.TableName = "CardDetail";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal CardDetailDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected CardDetailDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn CardNumberColumn {
+                get {
+                    return this.columnCardNumber;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn CardIDColumn {
+                get {
+                    return this.columnCardID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn CardNameToDisplayColumn {
+                get {
+                    return this.columnCardNameToDisplay;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn CardBankNameColumn {
+                get {
+                    return this.columnCardBankName;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn CardDateOfExpiryColumn {
+                get {
+                    return this.columnCardDateOfExpiry;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn FK_UserIDColumn {
+                get {
+                    return this.columnFK_UserID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public CardDetailRow this[int index] {
+                get {
+                    return ((CardDetailRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event CardDetailRowChangeEventHandler CardDetailRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event CardDetailRowChangeEventHandler CardDetailRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event CardDetailRowChangeEventHandler CardDetailRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event CardDetailRowChangeEventHandler CardDetailRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void AddCardDetailRow(CardDetailRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public CardDetailRow AddCardDetailRow(string CardNumber, string CardNameToDisplay, string CardBankName, string CardDateOfExpiry, UserRow parentUserRowByUser_CardDetail) {
+                CardDetailRow rowCardDetailRow = ((CardDetailRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        CardNumber,
+                        null,
+                        CardNameToDisplay,
+                        CardBankName,
+                        CardDateOfExpiry,
+                        null};
+                if ((parentUserRowByUser_CardDetail != null)) {
+                    columnValuesArray[5] = parentUserRowByUser_CardDetail[4];
+                }
+                rowCardDetailRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowCardDetailRow);
+                return rowCardDetailRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public CardDetailRow FindByCardID(int CardID) {
+                return ((CardDetailRow)(this.Rows.Find(new object[] {
+                            CardID})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                CardDetailDataTable cln = ((CardDetailDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new CardDetailDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal void InitVars() {
+                this.columnCardNumber = base.Columns["CardNumber"];
+                this.columnCardID = base.Columns["CardID"];
+                this.columnCardNameToDisplay = base.Columns["CardNameToDisplay"];
+                this.columnCardBankName = base.Columns["CardBankName"];
+                this.columnCardDateOfExpiry = base.Columns["CardDateOfExpiry"];
+                this.columnFK_UserID = base.Columns["FK_UserID"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            private void InitClass() {
+                this.columnCardNumber = new global::System.Data.DataColumn("CardNumber", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCardNumber);
+                this.columnCardID = new global::System.Data.DataColumn("CardID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCardID);
+                this.columnCardNameToDisplay = new global::System.Data.DataColumn("CardNameToDisplay", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCardNameToDisplay);
+                this.columnCardBankName = new global::System.Data.DataColumn("CardBankName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCardBankName);
+                this.columnCardDateOfExpiry = new global::System.Data.DataColumn("CardDateOfExpiry", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCardDateOfExpiry);
+                this.columnFK_UserID = new global::System.Data.DataColumn("FK_UserID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFK_UserID);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnCardID}, true));
+                this.columnCardID.AutoIncrement = true;
+                this.columnCardID.AutoIncrementSeed = 1;
+                this.columnCardID.AllowDBNull = false;
+                this.columnCardID.Unique = true;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public CardDetailRow NewCardDetailRow() {
+                return ((CardDetailRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new CardDetailRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(CardDetailRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.CardDetailRowChanged != null)) {
+                    this.CardDetailRowChanged(this, new CardDetailRowChangeEvent(((CardDetailRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.CardDetailRowChanging != null)) {
+                    this.CardDetailRowChanging(this, new CardDetailRowChangeEvent(((CardDetailRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.CardDetailRowDeleted != null)) {
+                    this.CardDetailRowDeleted(this, new CardDetailRowChangeEvent(((CardDetailRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.CardDetailRowDeleting != null)) {
+                    this.CardDetailRowDeleting(this, new CardDetailRowChangeEvent(((CardDetailRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void RemoveCardDetailRow(CardDetailRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                ExpenseGuide ds = new ExpenseGuide();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "CardDetailDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
         public partial class CredentialsRow : global::System.Data.DataRow {
@@ -1328,6 +1703,194 @@ namespace PersonalExpenseTracker {
                     return ((CredentialsRow[])(base.GetChildRows(this.Table.ChildRelations["User_Credentials"])));
                 }
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public CardDetailRow[] GetCardDetailRows() {
+                if ((this.Table.ChildRelations["User_CardDetail"] == null)) {
+                    return new CardDetailRow[0];
+                }
+                else {
+                    return ((CardDetailRow[])(base.GetChildRows(this.Table.ChildRelations["User_CardDetail"])));
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class CardDetailRow : global::System.Data.DataRow {
+            
+            private CardDetailDataTable tableCardDetail;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal CardDetailRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableCardDetail = ((CardDetailDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string CardNumber {
+                get {
+                    try {
+                        return ((string)(this[this.tableCardDetail.CardNumberColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'CardNumber\' in table \'CardDetail\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCardDetail.CardNumberColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int CardID {
+                get {
+                    return ((int)(this[this.tableCardDetail.CardIDColumn]));
+                }
+                set {
+                    this[this.tableCardDetail.CardIDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string CardNameToDisplay {
+                get {
+                    try {
+                        return ((string)(this[this.tableCardDetail.CardNameToDisplayColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'CardNameToDisplay\' in table \'CardDetail\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCardDetail.CardNameToDisplayColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string CardBankName {
+                get {
+                    try {
+                        return ((string)(this[this.tableCardDetail.CardBankNameColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'CardBankName\' in table \'CardDetail\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCardDetail.CardBankNameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string CardDateOfExpiry {
+                get {
+                    try {
+                        return ((string)(this[this.tableCardDetail.CardDateOfExpiryColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'CardDateOfExpiry\' in table \'CardDetail\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCardDetail.CardDateOfExpiryColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int FK_UserID {
+                get {
+                    try {
+                        return ((int)(this[this.tableCardDetail.FK_UserIDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'FK_UserID\' in table \'CardDetail\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableCardDetail.FK_UserIDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public UserRow UserRow {
+                get {
+                    return ((UserRow)(this.GetParentRow(this.Table.ParentRelations["User_CardDetail"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["User_CardDetail"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsCardNumberNull() {
+                return this.IsNull(this.tableCardDetail.CardNumberColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetCardNumberNull() {
+                this[this.tableCardDetail.CardNumberColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsCardNameToDisplayNull() {
+                return this.IsNull(this.tableCardDetail.CardNameToDisplayColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetCardNameToDisplayNull() {
+                this[this.tableCardDetail.CardNameToDisplayColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsCardBankNameNull() {
+                return this.IsNull(this.tableCardDetail.CardBankNameColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetCardBankNameNull() {
+                this[this.tableCardDetail.CardBankNameColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsCardDateOfExpiryNull() {
+                return this.IsNull(this.tableCardDetail.CardDateOfExpiryColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetCardDateOfExpiryNull() {
+                this[this.tableCardDetail.CardDateOfExpiryColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsFK_UserIDNull() {
+                return this.IsNull(this.tableCardDetail.FK_UserIDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetFK_UserIDNull() {
+                this[this.tableCardDetail.FK_UserIDColumn] = global::System.Convert.DBNull;
+            }
         }
         
         /// <summary>
@@ -1384,6 +1947,40 @@ namespace PersonalExpenseTracker {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public UserRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public class CardDetailRowChangeEvent : global::System.EventArgs {
+            
+            private CardDetailRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public CardDetailRowChangeEvent(CardDetailRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public CardDetailRow Row {
                 get {
                     return this.eventRow;
                 }

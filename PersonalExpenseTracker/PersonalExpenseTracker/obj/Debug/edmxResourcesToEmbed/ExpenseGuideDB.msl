@@ -24,11 +24,30 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="CardDetails">
+      <EntityTypeMapping TypeName="IsTypeOf(ExpenseGuideDB.CardDetail)">
+        <MappingFragment StoreEntitySet="CardDetails">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="CardNumber" ColumnName="CardNumber" />
+          <ScalarProperty Name="CardNameToDisplay" ColumnName="CardNameToDisplay" />
+          <ScalarProperty Name="CardDateOfExpiry" ColumnName="CardDateOfExpiry" />
+          <ScalarProperty Name="CardBankName" ColumnName="CardBankName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <AssociationSetMapping Name="CredentialsUser" TypeName="ExpenseGuideDB.CredentialsUser" StoreEntitySet="Credentials">
       <EndProperty Name="User">
         <ScalarProperty Name="Id" ColumnName="User_Id" />
       </EndProperty>
       <EndProperty Name="Credentials">
+        <ScalarProperty Name="Id" ColumnName="Id" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="CardDetailUser" TypeName="ExpenseGuideDB.CardDetailUser" StoreEntitySet="CardDetails">
+      <EndProperty Name="User">
+        <ScalarProperty Name="Id" ColumnName="User_Id" />
+      </EndProperty>
+      <EndProperty Name="CardDetail">
         <ScalarProperty Name="Id" ColumnName="Id" />
       </EndProperty>
     </AssociationSetMapping>

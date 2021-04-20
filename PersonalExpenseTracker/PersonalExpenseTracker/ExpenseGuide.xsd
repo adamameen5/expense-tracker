@@ -12,7 +12,7 @@
   <xs:element name="ExpenseGuide" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="ExpenseGuide" msprop:Generator_UserDSName="ExpenseGuide">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Credentials" msprop:Generator_TableClassName="CredentialsDataTable" msprop:Generator_TableVarName="tableCredentials" msprop:Generator_TablePropName="Credentials" msprop:Generator_RowDeletingName="CredentialsRowDeleting" msprop:Generator_RowChangingName="CredentialsRowChanging" msprop:Generator_RowEvHandlerName="CredentialsRowChangeEventHandler" msprop:Generator_RowDeletedName="CredentialsRowDeleted" msprop:Generator_UserTableName="Credentials" msprop:Generator_RowChangedName="CredentialsRowChanged" msprop:Generator_RowEvArgName="CredentialsRowChangeEvent" msprop:Generator_RowClassName="CredentialsRow">
+        <xs:element name="Credentials" msprop:Generator_TableClassName="CredentialsDataTable" msprop:Generator_TableVarName="tableCredentials" msprop:Generator_RowChangedName="CredentialsRowChanged" msprop:Generator_TablePropName="Credentials" msprop:Generator_RowDeletingName="CredentialsRowDeleting" msprop:Generator_RowChangingName="CredentialsRowChanging" msprop:Generator_RowEvHandlerName="CredentialsRowChangeEventHandler" msprop:Generator_RowDeletedName="CredentialsRowDeleted" msprop:Generator_RowClassName="CredentialsRow" msprop:Generator_UserTableName="Credentials" msprop:Generator_RowEvArgName="CredentialsRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="UserName" msprop:Generator_ColumnVarNameInTable="columnUserName" msprop:Generator_ColumnPropNameInRow="UserName" msprop:Generator_ColumnPropNameInTable="UserNameColumn" msprop:Generator_UserColumnName="UserName" type="xs:string" minOccurs="0" />
@@ -24,7 +24,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="User" msprop:Generator_TableClassName="UserDataTable" msprop:Generator_TableVarName="tableUser" msprop:Generator_TablePropName="User" msprop:Generator_RowDeletingName="UserRowDeleting" msprop:Generator_RowChangingName="UserRowChanging" msprop:Generator_RowEvHandlerName="UserRowChangeEventHandler" msprop:Generator_RowDeletedName="UserRowDeleted" msprop:Generator_UserTableName="User" msprop:Generator_RowChangedName="UserRowChanged" msprop:Generator_RowEvArgName="UserRowChangeEvent" msprop:Generator_RowClassName="UserRow">
+        <xs:element name="User" msprop:Generator_TableClassName="UserDataTable" msprop:Generator_TableVarName="tableUser" msprop:Generator_RowChangedName="UserRowChanged" msprop:Generator_TablePropName="User" msprop:Generator_RowDeletingName="UserRowDeleting" msprop:Generator_RowChangingName="UserRowChanging" msprop:Generator_RowEvHandlerName="UserRowChangeEventHandler" msprop:Generator_RowDeletedName="UserRowDeleted" msprop:Generator_RowClassName="UserRow" msprop:Generator_UserTableName="User" msprop:Generator_RowEvArgName="UserRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="FullName" msprop:Generator_ColumnVarNameInTable="columnFullName" msprop:Generator_ColumnPropNameInRow="FullName" msprop:Generator_ColumnPropNameInTable="FullNameColumn" msprop:Generator_UserColumnName="FullName" type="xs:string" minOccurs="0" />
@@ -33,6 +33,18 @@
               <xs:element name="RecoveryEmailAddress" msprop:Generator_ColumnVarNameInTable="columnRecoveryEmailAddress" msprop:Generator_ColumnPropNameInRow="RecoveryEmailAddress" msprop:Generator_ColumnPropNameInTable="RecoveryEmailAddressColumn" msprop:Generator_UserColumnName="RecoveryEmailAddress" type="xs:string" minOccurs="0" />
               <xs:element name="UserID" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="1" msprop:Generator_ColumnVarNameInTable="columnUserID" msprop:Generator_ColumnPropNameInRow="UserID" msprop:Generator_ColumnPropNameInTable="UserIDColumn" msprop:Generator_UserColumnName="UserID" type="xs:int" />
               <xs:element name="DateOfBirth" msprop:Generator_ColumnVarNameInTable="columnDateOfBirth" msprop:Generator_ColumnPropNameInRow="DateOfBirth" msprop:Generator_ColumnPropNameInTable="DateOfBirthColumn" msprop:Generator_UserColumnName="DateOfBirth" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="CardDetail" msprop:Generator_TableClassName="CardDetailDataTable" msprop:Generator_TableVarName="tableCardDetail" msprop:Generator_TablePropName="CardDetail" msprop:Generator_RowDeletingName="CardDetailRowDeleting" msprop:Generator_RowChangingName="CardDetailRowChanging" msprop:Generator_RowEvHandlerName="CardDetailRowChangeEventHandler" msprop:Generator_RowDeletedName="CardDetailRowDeleted" msprop:Generator_UserTableName="CardDetail" msprop:Generator_RowChangedName="CardDetailRowChanged" msprop:Generator_RowEvArgName="CardDetailRowChangeEvent" msprop:Generator_RowClassName="CardDetailRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="CardNumber" msprop:Generator_ColumnVarNameInTable="columnCardNumber" msprop:Generator_ColumnPropNameInRow="CardNumber" msprop:Generator_ColumnPropNameInTable="CardNumberColumn" msprop:Generator_UserColumnName="CardNumber" type="xs:string" minOccurs="0" />
+              <xs:element name="CardID" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="1" msprop:Generator_ColumnVarNameInTable="columnCardID" msprop:Generator_ColumnPropNameInRow="CardID" msprop:Generator_ColumnPropNameInTable="CardIDColumn" msprop:Generator_UserColumnName="CardID" type="xs:int" />
+              <xs:element name="CardNameToDisplay" msprop:Generator_ColumnVarNameInTable="columnCardNameToDisplay" msprop:Generator_ColumnPropNameInRow="CardNameToDisplay" msprop:Generator_ColumnPropNameInTable="CardNameToDisplayColumn" msprop:Generator_UserColumnName="CardNameToDisplay" type="xs:string" minOccurs="0" />
+              <xs:element name="CardBankName" msprop:Generator_ColumnVarNameInTable="columnCardBankName" msprop:Generator_ColumnPropNameInRow="CardBankName" msprop:Generator_ColumnPropNameInTable="CardBankNameColumn" msprop:Generator_UserColumnName="CardBankName" type="xs:string" minOccurs="0" />
+              <xs:element name="CardDateOfExpiry" msprop:Generator_ColumnVarNameInTable="columnCardDateOfExpiry" msprop:Generator_ColumnPropNameInRow="CardDateOfExpiry" msprop:Generator_ColumnPropNameInTable="CardDateOfExpiryColumn" msprop:Generator_UserColumnName="CardDateOfExpiry" type="xs:string" minOccurs="0" />
+              <xs:element name="FK_UserID" msprop:Generator_ColumnVarNameInTable="columnFK_UserID" msprop:Generator_ColumnPropNameInRow="FK_UserID" msprop:Generator_ColumnPropNameInTable="FK_UserIDColumn" msprop:Generator_UserColumnName="FK_UserID" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -46,10 +58,15 @@
       <xs:selector xpath=".//mstns:User" />
       <xs:field xpath="mstns:UserID" />
     </xs:unique>
+    <xs:unique name="CardDetail_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:CardDetail" />
+      <xs:field xpath="mstns:CardID" />
+    </xs:unique>
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="User_Credentials" msdata:parent="User" msdata:child="Credentials" msdata:parentkey="UserID" msdata:childkey="FK_UserID" msprop:Generator_UserChildTable="Credentials" msprop:Generator_ChildPropName="GetCredentialsRows" msprop:Generator_UserRelationName="User_Credentials" msprop:Generator_RelationVarName="relationUser_Credentials" msprop:Generator_UserParentTable="User" msprop:Generator_ParentPropName="UserRow" />
+      <msdata:Relationship name="User_Credentials" msdata:parent="User" msdata:child="Credentials" msdata:parentkey="UserID" msdata:childkey="FK_UserID" msprop:Generator_UserChildTable="Credentials" msprop:Generator_ChildPropName="GetCredentialsRows" msprop:Generator_UserRelationName="User_Credentials" msprop:Generator_ParentPropName="UserRow" msprop:Generator_RelationVarName="relationUser_Credentials" msprop:Generator_UserParentTable="User" />
+      <msdata:Relationship name="User_CardDetail" msdata:parent="User" msdata:child="CardDetail" msdata:parentkey="UserID" msdata:childkey="FK_UserID" msprop:Generator_UserChildTable="CardDetail" msprop:Generator_ChildPropName="GetCardDetailRows" msprop:Generator_UserRelationName="User_CardDetail" msprop:Generator_ParentPropName="UserRow" msprop:Generator_RelationVarName="relationUser_CardDetail" msprop:Generator_UserParentTable="User" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>

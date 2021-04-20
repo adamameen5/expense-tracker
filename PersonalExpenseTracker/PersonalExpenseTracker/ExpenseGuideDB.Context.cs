@@ -27,5 +27,6 @@ namespace PersonalExpenseTracker
     
         public virtual DbSet<Credentials> Credentials { get; set; }
         public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<CardDetail> CardDetails { get; set; }
     }
 }

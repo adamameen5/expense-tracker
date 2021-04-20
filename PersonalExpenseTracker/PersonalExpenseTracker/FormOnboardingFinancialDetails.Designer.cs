@@ -35,22 +35,22 @@ namespace PersonalExpenseTracker
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.cardNameToDisplay = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.cardDateOfExpiry = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.cardNumber = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.cardBankName = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
@@ -121,38 +121,6 @@ namespace PersonalExpenseTracker
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Account 1";
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(6, 25);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(63, 13);
-            this.label5.TabIndex = 46;
-            this.label5.Text = "Bank Name";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(9, 42);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(94, 20);
-            this.textBox1.TabIndex = 47;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(126, 42);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(94, 20);
-            this.textBox2.TabIndex = 49;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(123, 25);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(87, 13);
-            this.label6.TabIndex = 48;
-            this.label6.Text = "Account Number";
-            // 
             // textBox3
             // 
             this.textBox3.Location = new System.Drawing.Point(126, 86);
@@ -185,15 +153,47 @@ namespace PersonalExpenseTracker
             this.label8.TabIndex = 50;
             this.label8.Text = "Bank Branch";
             // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(126, 42);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(94, 20);
+            this.textBox2.TabIndex = 49;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(123, 25);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(87, 13);
+            this.label6.TabIndex = 48;
+            this.label6.Text = "Account Number";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(9, 42);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(94, 20);
+            this.textBox1.TabIndex = 47;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(6, 25);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(63, 13);
+            this.label5.TabIndex = 46;
+            this.label5.Text = "Bank Name";
+            // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.textBox5);
+            this.groupBox2.Controls.Add(this.cardNameToDisplay);
             this.groupBox2.Controls.Add(this.label9);
-            this.groupBox2.Controls.Add(this.textBox6);
+            this.groupBox2.Controls.Add(this.cardDateOfExpiry);
             this.groupBox2.Controls.Add(this.label10);
-            this.groupBox2.Controls.Add(this.textBox7);
+            this.groupBox2.Controls.Add(this.cardNumber);
             this.groupBox2.Controls.Add(this.label11);
-            this.groupBox2.Controls.Add(this.textBox8);
+            this.groupBox2.Controls.Add(this.cardBankName);
             this.groupBox2.Controls.Add(this.label12);
             this.groupBox2.Location = new System.Drawing.Point(119, 360);
             this.groupBox2.Name = "groupBox2";
@@ -202,12 +202,12 @@ namespace PersonalExpenseTracker
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Card 1";
             // 
-            // textBox5
+            // cardNameToDisplay
             // 
-            this.textBox5.Location = new System.Drawing.Point(126, 86);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(94, 20);
-            this.textBox5.TabIndex = 53;
+            this.cardNameToDisplay.Location = new System.Drawing.Point(126, 86);
+            this.cardNameToDisplay.Name = "cardNameToDisplay";
+            this.cardNameToDisplay.Size = new System.Drawing.Size(94, 20);
+            this.cardNameToDisplay.TabIndex = 53;
             // 
             // label9
             // 
@@ -218,13 +218,13 @@ namespace PersonalExpenseTracker
             this.label9.TabIndex = 52;
             this.label9.Text = "Name To Display";
             // 
-            // textBox6
+            // cardDateOfExpiry
             // 
-            this.textBox6.Location = new System.Drawing.Point(9, 86);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(94, 20);
-            this.textBox6.TabIndex = 51;
-            this.textBox6.Text = "MM/YY";
+            this.cardDateOfExpiry.Location = new System.Drawing.Point(9, 86);
+            this.cardDateOfExpiry.Name = "cardDateOfExpiry";
+            this.cardDateOfExpiry.Size = new System.Drawing.Size(94, 20);
+            this.cardDateOfExpiry.TabIndex = 51;
+            this.cardDateOfExpiry.Text = "MM/YY";
             // 
             // label10
             // 
@@ -235,12 +235,12 @@ namespace PersonalExpenseTracker
             this.label10.TabIndex = 50;
             this.label10.Text = "Date Of Expiry";
             // 
-            // textBox7
+            // cardNumber
             // 
-            this.textBox7.Location = new System.Drawing.Point(126, 42);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(94, 20);
-            this.textBox7.TabIndex = 49;
+            this.cardNumber.Location = new System.Drawing.Point(126, 42);
+            this.cardNumber.Name = "cardNumber";
+            this.cardNumber.Size = new System.Drawing.Size(94, 20);
+            this.cardNumber.TabIndex = 49;
             // 
             // label11
             // 
@@ -251,12 +251,12 @@ namespace PersonalExpenseTracker
             this.label11.TabIndex = 48;
             this.label11.Text = "Card Number";
             // 
-            // textBox8
+            // cardBankName
             // 
-            this.textBox8.Location = new System.Drawing.Point(9, 42);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(94, 20);
-            this.textBox8.TabIndex = 47;
+            this.cardBankName.Location = new System.Drawing.Point(9, 42);
+            this.cardBankName.Name = "cardBankName";
+            this.cardBankName.Size = new System.Drawing.Size(94, 20);
+            this.cardBankName.TabIndex = 47;
             // 
             // label12
             // 
@@ -277,6 +277,7 @@ namespace PersonalExpenseTracker
             this.button1.TabIndex = 55;
             this.button1.Text = "Finish";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.enterFinancialDetails);
             // 
             // FormOnboardingFinancialDetails
             // 
@@ -318,13 +319,13 @@ namespace PersonalExpenseTracker
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox cardNameToDisplay;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox cardDateOfExpiry;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox cardNumber;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox cardBankName;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Button button1;
     }

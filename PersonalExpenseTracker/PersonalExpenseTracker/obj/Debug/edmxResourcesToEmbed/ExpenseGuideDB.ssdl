@@ -3,8 +3,13 @@
   <EntityContainer Name="ExpenseGuideDBStoreContainer">
     <EntitySet Name="Credentials" EntityType="ExpenseGuideDB.Store.Credentials" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Users" EntityType="ExpenseGuideDB.Store.Users" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CardDetails" EntityType="ExpenseGuideDB.Store.CardDetails" store:Type="Tables" Schema="dbo" />
     <AssociationSet Name="CredentialsUser" Association="ExpenseGuideDB.Store.CredentialsUser">
       <End Role="Credentials" EntitySet="Credentials" />
+      <End Role="User" EntitySet="Users" />
+    </AssociationSet>
+    <AssociationSet Name="CardDetailUser" Association="ExpenseGuideDB.Store.CardDetailUser">
+      <End Role="CardDetail" EntitySet="CardDetails" />
       <End Role="User" EntitySet="Users" />
     </AssociationSet>
   </EntityContainer>
@@ -30,6 +35,17 @@
     <Property Name="RecoveryEmailAddress" Type="nvarchar(max)" Nullable="true" />
     <Property Name="DateOfBirth" Type="nvarchar(max)" Nullable="true" />
   </EntityType>
+  <EntityType Name="CardDetails">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CardNumber" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="CardNameToDisplay" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="CardDateOfExpiry" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="CardBankName" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="User_Id" Type="int" Nullable="false" />
+  </EntityType>
   <Association Name="CredentialsUser">
     <End Role="Credentials" Type="ExpenseGuideDB.Store.Credentials" Multiplicity="*" />
     <End Role="User" Type="ExpenseGuideDB.Store.Users" Multiplicity="1" />
@@ -38,6 +54,18 @@
         <PropertyRef Name="Id" />
       </Principal>
       <Dependent Role="Credentials">
+        <PropertyRef Name="User_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="CardDetailUser">
+    <End Role="CardDetail" Type="ExpenseGuideDB.Store.CardDetails" Multiplicity="*" />
+    <End Role="User" Type="ExpenseGuideDB.Store.Users" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CardDetail">
         <PropertyRef Name="User_Id" />
       </Dependent>
     </ReferentialConstraint>
