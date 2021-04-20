@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 04/20/2021 07:38:59
+-- Date Created: 04/20/2021 22:09:34
 -- Generated from EDMX file: C:\ADAMLK\EAD\EAD_Final_2\expense-tracker\PersonalExpenseTracker\PersonalExpenseTracker\ExpenseGuideDB.edmx
 -- --------------------------------------------------
 
@@ -71,7 +71,7 @@ CREATE TABLE [dbo].[CardDetails] (
     [CardNameToDisplay] nvarchar(max)  NULL,
     [CardDateOfExpiry] nvarchar(max)  NULL,
     [CardBankName] nvarchar(max)  NULL,
-    [User_Id] int  NOT NULL
+    [UserId] int  NOT NULL
 );
 GO
 
@@ -116,10 +116,10 @@ ON [dbo].[Credentials]
     ([User_Id]);
 GO
 
--- Creating foreign key on [User_Id] in table 'CardDetails'
+-- Creating foreign key on [UserId] in table 'CardDetails'
 ALTER TABLE [dbo].[CardDetails]
 ADD CONSTRAINT [FK_CardDetailUser]
-    FOREIGN KEY ([User_Id])
+    FOREIGN KEY ([UserId])
     REFERENCES [dbo].[Users]
         ([Id])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
@@ -128,7 +128,7 @@ GO
 -- Creating non-clustered index for FOREIGN KEY 'FK_CardDetailUser'
 CREATE INDEX [IX_FK_CardDetailUser]
 ON [dbo].[CardDetails]
-    ([User_Id]);
+    ([UserId]);
 GO
 
 -- --------------------------------------------------

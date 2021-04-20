@@ -32,6 +32,7 @@
           <ScalarProperty Name="CardNameToDisplay" ColumnName="CardNameToDisplay" />
           <ScalarProperty Name="CardDateOfExpiry" ColumnName="CardDateOfExpiry" />
           <ScalarProperty Name="CardBankName" ColumnName="CardBankName" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -40,14 +41,6 @@
         <ScalarProperty Name="Id" ColumnName="User_Id" />
       </EndProperty>
       <EndProperty Name="Credentials">
-        <ScalarProperty Name="Id" ColumnName="Id" />
-      </EndProperty>
-    </AssociationSetMapping>
-    <AssociationSetMapping Name="CardDetailUser" TypeName="ExpenseGuideDB.CardDetailUser" StoreEntitySet="CardDetails">
-      <EndProperty Name="User">
-        <ScalarProperty Name="Id" ColumnName="User_Id" />
-      </EndProperty>
-      <EndProperty Name="CardDetail">
         <ScalarProperty Name="Id" ColumnName="Id" />
       </EndProperty>
     </AssociationSetMapping>

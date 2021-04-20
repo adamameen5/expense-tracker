@@ -58,10 +58,15 @@ namespace PersonalExpenseTracker
             cardDetails.CardDateOfExpiry = info.cardDateOfExpiry;
             cardDetails.CardNameToDisplay = info.cardNameToDisplay;
             cardDetails.CardNumber = info.cardNumber;
+            cardDetails.UserId = cardBelongingToId;
 
-            User userInfo = new User();
+            
 
+            ExpenseGuideDBContainer db = new ExpenseGuideDBContainer();
+            db.CardDetails.Add(cardDetails);
+            db.SaveChanges();
 
+            
         }
 
         public void updateUserInformation(int idToUpdate, UserDetails info)

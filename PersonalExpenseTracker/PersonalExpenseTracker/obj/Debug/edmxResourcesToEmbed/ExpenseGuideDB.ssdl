@@ -44,7 +44,7 @@
     <Property Name="CardNameToDisplay" Type="nvarchar(max)" Nullable="true" />
     <Property Name="CardDateOfExpiry" Type="nvarchar(max)" Nullable="true" />
     <Property Name="CardBankName" Type="nvarchar(max)" Nullable="true" />
-    <Property Name="User_Id" Type="int" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
   </EntityType>
   <Association Name="CredentialsUser">
     <End Role="Credentials" Type="ExpenseGuideDB.Store.Credentials" Multiplicity="*" />
@@ -66,7 +66,7 @@
         <PropertyRef Name="Id" />
       </Principal>
       <Dependent Role="CardDetail">
-        <PropertyRef Name="User_Id" />
+        <PropertyRef Name="UserId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

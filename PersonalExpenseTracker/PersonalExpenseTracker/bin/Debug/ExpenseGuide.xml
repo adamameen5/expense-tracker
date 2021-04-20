@@ -72,6 +72,14 @@
     <NIC>22222</NIC>
     <FK_UserID>9</FK_UserID>
   </Credentials>
+  <Credentials>
+    <UserName>Adam</UserName>
+    <Email>adam@gmi.com</Email>
+    <Password>adam</Password>
+    <CredentialsID>10</CredentialsID>
+    <NIC>8338</NIC>
+    <FK_UserID>10</FK_UserID>
+  </Credentials>
   <User>
     <UserID>1</UserID>
     <DateOfBirth>to-be-filled</DateOfBirth>
@@ -106,6 +114,10 @@
   </User>
   <User>
     <UserID>9</UserID>
+    <DateOfBirth>to-be-filled</DateOfBirth>
+  </User>
+  <User>
+    <UserID>10</UserID>
     <DateOfBirth>to-be-filled</DateOfBirth>
   </User>
 </ExpenseGuide>

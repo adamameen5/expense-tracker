@@ -19,7 +19,6 @@ namespace PersonalExpenseTracker
         public string CardNameToDisplay { get; set; }
         public string CardDateOfExpiry { get; set; }
         public string CardBankName { get; set; }
-    
-        public virtual User User { get; set; }
+        public int UserId { get; set; }
     }
 }

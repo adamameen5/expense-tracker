@@ -49,7 +49,7 @@
     <Property Name="CardNameToDisplay" Type="nvarchar(max)" Nullable="true" />
     <Property Name="CardDateOfExpiry" Type="nvarchar(max)" Nullable="true" />
     <Property Name="CardBankName" Type="nvarchar(max)" Nullable="true" />
-    <Property Name="User_Id" Type="int" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
   </EntityType>
   <Association Name="CredentialsUser">
     <End Role="Credentials" Type="ExpenseGuideDB.Store.Credentials" Multiplicity="*" />
@@ -71,7 +71,7 @@
         <PropertyRef Name="Id" />
       </Principal>
       <Dependent Role="CardDetail">
-        <PropertyRef Name="User_Id" />
+        <PropertyRef Name="UserId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -127,11 +127,19 @@
           <Property Name="CardNameToDisplay" Type="String" Nullable="true" />
           <Property Name="CardDateOfExpiry" Type="String" Nullable="true" />
           <Property Name="CardBankName" Type="String" Nullable="true" />
-          <NavigationProperty Name="User" Relationship="ExpenseGuideDB.CardDetailUser" FromRole="CardDetail" ToRole="User" />
+          <Property Name="UserId" Type="Int32" Nullable="false" />
         </EntityType>
         <Association Name="CardDetailUser">
           <End Type="ExpenseGuideDB.CardDetail" Role="CardDetail" Multiplicity="*" />
           <End Type="ExpenseGuideDB.User" Role="User" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="CardDetail">
+              <PropertyRef Name="UserId" />
+            </Dependent>
+          </ReferentialConstraint>
         </Association>
       </Schema>
     </edmx:ConceptualModels>
@@ -170,6 +178,7 @@
           <ScalarProperty Name="CardNameToDisplay" ColumnName="CardNameToDisplay" />
           <ScalarProperty Name="CardDateOfExpiry" ColumnName="CardDateOfExpiry" />
           <ScalarProperty Name="CardBankName" ColumnName="CardBankName" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -178,14 +187,6 @@
         <ScalarProperty Name="Id" ColumnName="User_Id" />
       </EndProperty>
       <EndProperty Name="Credentials">
-        <ScalarProperty Name="Id" ColumnName="Id" />
-      </EndProperty>
-    </AssociationSetMapping>
-    <AssociationSetMapping Name="CardDetailUser" TypeName="ExpenseGuideDB.CardDetailUser" StoreEntitySet="CardDetails">
-      <EndProperty Name="User">
-        <ScalarProperty Name="Id" ColumnName="User_Id" />
-      </EndProperty>
-      <EndProperty Name="CardDetail">
         <ScalarProperty Name="Id" ColumnName="Id" />
       </EndProperty>
     </AssociationSetMapping>
