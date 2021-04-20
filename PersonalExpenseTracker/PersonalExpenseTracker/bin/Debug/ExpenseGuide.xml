@@ -16,12 +16,60 @@
     <NIC>123</NIC>
     <FK_UserID>2</FK_UserID>
   </Credentials>
+  <Credentials>
+    <UserName>adam</UserName>
+    <Email>adam@hgf</Email>
+    <Password>adam</Password>
+    <CredentialsID>3</CredentialsID>
+    <NIC>2222</NIC>
+    <FK_UserID>3</FK_UserID>
+  </Credentials>
+  <Credentials>
+    <UserName>aha</UserName>
+    <Email>aha@hdm</Email>
+    <Password>aha</Password>
+    <CredentialsID>4</CredentialsID>
+    <NIC>222A</NIC>
+    <FK_UserID>4</FK_UserID>
+  </Credentials>
+  <Credentials>
+    <UserName>saman</UserName>
+    <Email>saman</Email>
+    <Password>sama</Password>
+    <CredentialsID>5</CredentialsID>
+    <NIC>222S</NIC>
+    <FK_UserID>5</FK_UserID>
+  </Credentials>
+  <Credentials>
+    <UserName>amil</UserName>
+    <Email>amila222@de</Email>
+    <Password>amila</Password>
+    <CredentialsID>6</CredentialsID>
+    <NIC>22222</NIC>
+    <FK_UserID>6</FK_UserID>
+  </Credentials>
   <User>
     <UserID>1</UserID>
     <DateOfBirth>to-be-filled</DateOfBirth>
   </User>
   <User>
     <UserID>2</UserID>
+    <DateOfBirth>to-be-filled</DateOfBirth>
+  </User>
+  <User>
+    <UserID>3</UserID>
+    <DateOfBirth>to-be-filled</DateOfBirth>
+  </User>
+  <User>
+    <UserID>4</UserID>
+    <DateOfBirth>to-be-filled</DateOfBirth>
+  </User>
+  <User>
+    <UserID>5</UserID>
+    <DateOfBirth>to-be-filled</DateOfBirth>
+  </User>
+  <User>
+    <UserID>6</UserID>
     <DateOfBirth>to-be-filled</DateOfBirth>
   </User>
 </ExpenseGuide>

@@ -2,8 +2,8 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 04/19/2021 13:26:33
--- Generated from EDMX file: C:\ADAMLK\EAD\CW2\expense-tracker\PersonalExpenseTracker\PersonalExpenseTracker\ExpenseGuideDB.edmx
+-- Date Created: 04/20/2021 05:21:28
+-- Generated from EDMX file: C:\ADAMLK\EAD\EAD_Final_2\expense-tracker\PersonalExpenseTracker\PersonalExpenseTracker\ExpenseGuideDB.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;

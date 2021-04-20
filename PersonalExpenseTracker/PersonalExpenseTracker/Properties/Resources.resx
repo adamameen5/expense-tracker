@@ -120,6 +120,9 @@
   <data name="INVALID_LOGIN_CREDENTIALS" xml:space="preserve">
     <value>The email or password you entered is not valid.</value>
   </data>
+  <data name="PERSONAL_DETAILS_SUCCESFULLY_ADDED" xml:space="preserve">
+    <value>Your personal details were succesfully added!</value>
+  </data>
   <data name="RedirectToDashboardConfirmationMessage" xml:space="preserve">
     <value>Are you sure you want to go back to the dashboard?</value>
   </data>

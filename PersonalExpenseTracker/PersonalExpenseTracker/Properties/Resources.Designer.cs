@@ -70,6 +70,15 @@ namespace PersonalExpenseTracker.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Your personal details were succesfully added!.
+        /// </summary>
+        internal static string PERSONAL_DETAILS_SUCCESFULLY_ADDED {
+            get {
+                return ResourceManager.GetString("PERSONAL_DETAILS_SUCCESFULLY_ADDED", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Are you sure you want to go back to the dashboard?.
         /// </summary>
         internal static string RedirectToDashboardConfirmationMessage {

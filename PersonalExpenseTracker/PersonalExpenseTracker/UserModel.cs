@@ -49,8 +49,26 @@ namespace PersonalExpenseTracker
                 MessageBox.Show(ex.Message);
                 return 0;
             }
+        }
 
-            
+        public void updateUserInformation(int idToUpdate, UserDetails info)
+        {
+            try
+            {
+                using (var context = new ExpenseGuideDBContainer())
+                {
+                    var std = context.Users.Find(idToUpdate);
+                    std.FullName = info.fullName;
+                    std.Contact = info.contact;
+                    std.RecoveryEmailAddress = info.recoveryEmailAddress;
+                    std.DateOfBirth = info.dateOfBirth;
+                    context.SaveChanges();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
 
         }
     }
