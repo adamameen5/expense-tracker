@@ -48,7 +48,7 @@ namespace PersonalExpenseTracker
             this.UserDataSet = this.myDataSet;
             this.expenseGuide = this.UserDataSet;
             this.dataGridPayor.DataSource = this.expenseGuide;
-            this.dataGridPayor.DataMember = "Credentials";
+            this.dataGridPayor.DataMember = "Contact";
         }
 
         private void dataGridPayor_CellContentClick(object sender, DataGridViewCellEventArgs e)

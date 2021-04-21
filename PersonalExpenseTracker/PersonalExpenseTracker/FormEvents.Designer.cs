@@ -30,27 +30,6 @@ namespace PersonalExpenseTracker
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormEvents));
-            this.label3 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.label4 = new System.Windows.Forms.Label();
-            this.email = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.radioButton7 = new System.Windows.Forms.RadioButton();
-            this.radioButton6 = new System.Windows.Forms.RadioButton();
-            this.radioButton5 = new System.Windows.Forms.RadioButton();
-            this.radioButton4 = new System.Windows.Forms.RadioButton();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label23 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
@@ -72,231 +51,41 @@ namespace PersonalExpenseTracker
             this.lblUserName = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.userControlBackToDashboardLink1 = new PersonalExpenseTracker.UserControlBackToDashboardLink();
-            this.panel1.SuspendLayout();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.eventDate = new System.Windows.Forms.DateTimePicker();
+            this.label4 = new System.Windows.Forms.Label();
+            this.eventCode = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.eventName = new System.Windows.Forms.TextBox();
+            this.eventRecurringEveryday = new System.Windows.Forms.RadioButton();
+            this.eventRecuringSameDayEveryMonth = new System.Windows.Forms.RadioButton();
+            this.eventTypeAppointment = new System.Windows.Forms.RadioButton();
+            this.eventTypeTask = new System.Windows.Forms.RadioButton();
+            this.eventTypeExpense = new System.Windows.Forms.RadioButton();
+            this.evenTypeIncome = new System.Windows.Forms.RadioButton();
+            this.eventTypeJustAnEvent = new System.Windows.Forms.RadioButton();
+            this.button1 = new System.Windows.Forms.Button();
+            this.eventCategory = new System.Windows.Forms.ComboBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel1.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.panel5.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(97, 14);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(118, 20);
-            this.label3.TabIndex = 33;
-            this.label3.Text = "Add New Event";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(13, 61);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(30, 13);
-            this.label6.TabIndex = 34;
-            this.label6.Text = "Date";
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(101, 57);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(226, 20);
-            this.dateTimePicker1.TabIndex = 35;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(13, 95);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(63, 13);
-            this.label4.TabIndex = 36;
-            this.label4.Text = "Event Code";
-            // 
-            // email
-            // 
-            this.email.Location = new System.Drawing.Point(101, 91);
-            this.email.Name = "email";
-            this.email.ReadOnly = true;
-            this.email.Size = new System.Drawing.Size(226, 20);
-            this.email.TabIndex = 37;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(13, 129);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(66, 13);
-            this.label5.TabIndex = 38;
-            this.label5.Text = "Event Name";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(13, 163);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(53, 13);
-            this.label7.TabIndex = 39;
-            this.label7.Text = "Recurring";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(13, 217);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(31, 13);
-            this.label8.TabIndex = 40;
-            this.label8.Text = "Type";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(13, 270);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(49, 13);
-            this.label9.TabIndex = 41;
-            this.label9.Text = "Category";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(13, 346);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(44, 13);
-            this.label10.TabIndex = 42;
-            this.label10.Text = "Contact";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(101, 125);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(226, 20);
-            this.textBox1.TabIndex = 43;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.comboBox1);
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.radioButton7);
-            this.panel1.Controls.Add(this.radioButton6);
-            this.panel1.Controls.Add(this.radioButton5);
-            this.panel1.Controls.Add(this.radioButton4);
-            this.panel1.Controls.Add(this.radioButton3);
-            this.panel1.Controls.Add(this.radioButton2);
-            this.panel1.Controls.Add(this.radioButton1);
-            this.panel1.Controls.Add(this.textBox1);
-            this.panel1.Controls.Add(this.label10);
-            this.panel1.Controls.Add(this.label9);
-            this.panel1.Controls.Add(this.label8);
-            this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.email);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.dateTimePicker1);
-            this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Location = new System.Drawing.Point(29, 149);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(344, 437);
-            this.panel1.TabIndex = 32;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(101, 342);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(226, 21);
-            this.comboBox1.TabIndex = 53;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.DodgerBlue;
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(82, 384);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(148, 43);
-            this.button1.TabIndex = 52;
-            this.button1.Text = "Save";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // radioButton7
-            // 
-            this.radioButton7.AutoSize = true;
-            this.radioButton7.Location = new System.Drawing.Point(101, 312);
-            this.radioButton7.Name = "radioButton7";
-            this.radioButton7.Size = new System.Drawing.Size(89, 17);
-            this.radioButton7.TabIndex = 50;
-            this.radioButton7.TabStop = true;
-            this.radioButton7.Text = "Just an event";
-            this.radioButton7.UseVisualStyleBackColor = true;
-            // 
-            // radioButton6
-            // 
-            this.radioButton6.AutoSize = true;
-            this.radioButton6.Location = new System.Drawing.Point(101, 289);
-            this.radioButton6.Name = "radioButton6";
-            this.radioButton6.Size = new System.Drawing.Size(60, 17);
-            this.radioButton6.TabIndex = 49;
-            this.radioButton6.TabStop = true;
-            this.radioButton6.Text = "Income";
-            this.radioButton6.UseVisualStyleBackColor = true;
-            // 
-            // radioButton5
-            // 
-            this.radioButton5.AutoSize = true;
-            this.radioButton5.Location = new System.Drawing.Point(101, 268);
-            this.radioButton5.Name = "radioButton5";
-            this.radioButton5.Size = new System.Drawing.Size(66, 17);
-            this.radioButton5.TabIndex = 48;
-            this.radioButton5.TabStop = true;
-            this.radioButton5.Text = "Expense";
-            this.radioButton5.UseVisualStyleBackColor = true;
-            // 
-            // radioButton4
-            // 
-            this.radioButton4.AutoSize = true;
-            this.radioButton4.Location = new System.Drawing.Point(101, 236);
-            this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(49, 17);
-            this.radioButton4.TabIndex = 47;
-            this.radioButton4.TabStop = true;
-            this.radioButton4.Text = "Task";
-            this.radioButton4.UseVisualStyleBackColor = true;
-            // 
-            // radioButton3
-            // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(101, 215);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(84, 17);
-            this.radioButton3.TabIndex = 46;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "Appointment";
-            this.radioButton3.UseVisualStyleBackColor = true;
-            // 
-            // radioButton2
-            // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(101, 182);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(136, 17);
-            this.radioButton2.TabIndex = 45;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Same day, every month";
-            this.radioButton2.UseVisualStyleBackColor = true;
-            // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(101, 161);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(69, 17);
-            this.radioButton1.TabIndex = 44;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Everyday";
-            this.radioButton1.UseVisualStyleBackColor = true;
             // 
             // panel2
             // 
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel2.Controls.Add(this.label23);
             this.panel2.Controls.Add(this.label22);
             this.panel2.Controls.Add(this.label21);
@@ -500,6 +289,249 @@ namespace PersonalExpenseTracker
             this.userControlBackToDashboardLink1.Size = new System.Drawing.Size(210, 25);
             this.userControlBackToDashboardLink1.TabIndex = 59;
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(97, 14);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(118, 20);
+            this.label3.TabIndex = 33;
+            this.label3.Text = "Add New Event";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(13, 61);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(30, 13);
+            this.label6.TabIndex = 34;
+            this.label6.Text = "Date";
+            // 
+            // eventDate
+            // 
+            this.eventDate.Location = new System.Drawing.Point(101, 57);
+            this.eventDate.Name = "eventDate";
+            this.eventDate.Size = new System.Drawing.Size(226, 20);
+            this.eventDate.TabIndex = 35;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(13, 95);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(63, 13);
+            this.label4.TabIndex = 36;
+            this.label4.Text = "Event Code";
+            // 
+            // eventCode
+            // 
+            this.eventCode.Location = new System.Drawing.Point(101, 91);
+            this.eventCode.Name = "eventCode";
+            this.eventCode.ReadOnly = true;
+            this.eventCode.Size = new System.Drawing.Size(226, 20);
+            this.eventCode.TabIndex = 37;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(13, 129);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(66, 13);
+            this.label5.TabIndex = 38;
+            this.label5.Text = "Event Name";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(13, 163);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(53, 13);
+            this.label7.TabIndex = 39;
+            this.label7.Text = "Recurring";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(13, 217);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(31, 13);
+            this.label8.TabIndex = 40;
+            this.label8.Text = "Type";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(13, 273);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(49, 13);
+            this.label9.TabIndex = 41;
+            this.label9.Text = "Category";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(13, 354);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(44, 13);
+            this.label10.TabIndex = 42;
+            this.label10.Text = "Contact";
+            // 
+            // eventName
+            // 
+            this.eventName.Location = new System.Drawing.Point(101, 125);
+            this.eventName.Name = "eventName";
+            this.eventName.Size = new System.Drawing.Size(226, 20);
+            this.eventName.TabIndex = 43;
+            // 
+            // eventRecurringEveryday
+            // 
+            this.eventRecurringEveryday.AutoSize = true;
+            this.eventRecurringEveryday.Location = new System.Drawing.Point(5, 4);
+            this.eventRecurringEveryday.Name = "eventRecurringEveryday";
+            this.eventRecurringEveryday.Size = new System.Drawing.Size(69, 17);
+            this.eventRecurringEveryday.TabIndex = 44;
+            this.eventRecurringEveryday.TabStop = true;
+            this.eventRecurringEveryday.Text = "Everyday";
+            this.eventRecurringEveryday.UseVisualStyleBackColor = true;
+            // 
+            // eventRecuringSameDayEveryMonth
+            // 
+            this.eventRecuringSameDayEveryMonth.AutoSize = true;
+            this.eventRecuringSameDayEveryMonth.Location = new System.Drawing.Point(5, 25);
+            this.eventRecuringSameDayEveryMonth.Name = "eventRecuringSameDayEveryMonth";
+            this.eventRecuringSameDayEveryMonth.Size = new System.Drawing.Size(136, 17);
+            this.eventRecuringSameDayEveryMonth.TabIndex = 45;
+            this.eventRecuringSameDayEveryMonth.TabStop = true;
+            this.eventRecuringSameDayEveryMonth.Text = "Same day, every month";
+            this.eventRecuringSameDayEveryMonth.UseVisualStyleBackColor = true;
+            // 
+            // eventTypeAppointment
+            // 
+            this.eventTypeAppointment.AutoSize = true;
+            this.eventTypeAppointment.Location = new System.Drawing.Point(7, 3);
+            this.eventTypeAppointment.Name = "eventTypeAppointment";
+            this.eventTypeAppointment.Size = new System.Drawing.Size(84, 17);
+            this.eventTypeAppointment.TabIndex = 46;
+            this.eventTypeAppointment.TabStop = true;
+            this.eventTypeAppointment.Text = "Appointment";
+            this.eventTypeAppointment.UseVisualStyleBackColor = true;
+            // 
+            // eventTypeTask
+            // 
+            this.eventTypeTask.AutoSize = true;
+            this.eventTypeTask.Location = new System.Drawing.Point(7, 24);
+            this.eventTypeTask.Name = "eventTypeTask";
+            this.eventTypeTask.Size = new System.Drawing.Size(49, 17);
+            this.eventTypeTask.TabIndex = 47;
+            this.eventTypeTask.TabStop = true;
+            this.eventTypeTask.Text = "Task";
+            this.eventTypeTask.UseVisualStyleBackColor = true;
+            // 
+            // eventTypeExpense
+            // 
+            this.eventTypeExpense.AutoSize = true;
+            this.eventTypeExpense.Location = new System.Drawing.Point(6, 2);
+            this.eventTypeExpense.Name = "eventTypeExpense";
+            this.eventTypeExpense.Size = new System.Drawing.Size(66, 17);
+            this.eventTypeExpense.TabIndex = 48;
+            this.eventTypeExpense.TabStop = true;
+            this.eventTypeExpense.Text = "Expense";
+            this.eventTypeExpense.UseVisualStyleBackColor = true;
+            // 
+            // evenTypeIncome
+            // 
+            this.evenTypeIncome.AutoSize = true;
+            this.evenTypeIncome.Location = new System.Drawing.Point(6, 24);
+            this.evenTypeIncome.Name = "evenTypeIncome";
+            this.evenTypeIncome.Size = new System.Drawing.Size(60, 17);
+            this.evenTypeIncome.TabIndex = 49;
+            this.evenTypeIncome.TabStop = true;
+            this.evenTypeIncome.Text = "Income";
+            this.evenTypeIncome.UseVisualStyleBackColor = true;
+            // 
+            // eventTypeJustAnEvent
+            // 
+            this.eventTypeJustAnEvent.AutoSize = true;
+            this.eventTypeJustAnEvent.Location = new System.Drawing.Point(6, 46);
+            this.eventTypeJustAnEvent.Name = "eventTypeJustAnEvent";
+            this.eventTypeJustAnEvent.Size = new System.Drawing.Size(89, 17);
+            this.eventTypeJustAnEvent.TabIndex = 50;
+            this.eventTypeJustAnEvent.TabStop = true;
+            this.eventTypeJustAnEvent.Text = "Just an event";
+            this.eventTypeJustAnEvent.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.DodgerBlue;
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Location = new System.Drawing.Point(16, 380);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(311, 43);
+            this.button1.TabIndex = 52;
+            this.button1.Text = "Save";
+            this.button1.UseVisualStyleBackColor = false;
+            // 
+            // eventCategory
+            // 
+            this.eventCategory.FormattingEnabled = true;
+            this.eventCategory.Location = new System.Drawing.Point(99, 350);
+            this.eventCategory.Name = "eventCategory";
+            this.eventCategory.Size = new System.Drawing.Size(226, 21);
+            this.eventCategory.TabIndex = 53;
+            // 
+            // panel1
+            // 
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.panel5);
+            this.panel1.Controls.Add(this.panel4);
+            this.panel1.Controls.Add(this.panel3);
+            this.panel1.Controls.Add(this.eventCategory);
+            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.eventName);
+            this.panel1.Controls.Add(this.label10);
+            this.panel1.Controls.Add(this.label9);
+            this.panel1.Controls.Add(this.label8);
+            this.panel1.Controls.Add(this.label7);
+            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.eventCode);
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.eventDate);
+            this.panel1.Controls.Add(this.label6);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Location = new System.Drawing.Point(29, 149);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(344, 437);
+            this.panel1.TabIndex = 32;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.eventRecuringSameDayEveryMonth);
+            this.panel3.Controls.Add(this.eventRecurringEveryday);
+            this.panel3.Location = new System.Drawing.Point(101, 158);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(226, 46);
+            this.panel3.TabIndex = 54;
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.eventTypeTask);
+            this.panel4.Controls.Add(this.eventTypeAppointment);
+            this.panel4.Location = new System.Drawing.Point(99, 212);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(227, 50);
+            this.panel4.TabIndex = 55;
+            // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.eventTypeJustAnEvent);
+            this.panel5.Controls.Add(this.evenTypeIncome);
+            this.panel5.Controls.Add(this.eventTypeExpense);
+            this.panel5.Location = new System.Drawing.Point(99, 272);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(227, 68);
+            this.panel5.TabIndex = 56;
+            // 
             // FormEvents
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -516,37 +548,23 @@ namespace PersonalExpenseTracker
             this.Controls.Add(this.panel1);
             this.Name = "FormEvents";
             this.Text = "FormEvents";
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox email;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.RadioButton radioButton7;
-        private System.Windows.Forms.RadioButton radioButton6;
-        private System.Windows.Forms.RadioButton radioButton5;
-        private System.Windows.Forms.RadioButton radioButton4;
-        private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label22;
@@ -563,11 +581,34 @@ namespace PersonalExpenseTracker
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lblCurrentTime;
         private System.Windows.Forms.Label lblUserName;
         private System.Windows.Forms.Label label2;
         private UserControlBackToDashboardLink userControlBackToDashboardLink1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.DateTimePicker eventDate;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox eventCode;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox eventName;
+        private System.Windows.Forms.RadioButton eventRecurringEveryday;
+        private System.Windows.Forms.RadioButton eventRecuringSameDayEveryMonth;
+        private System.Windows.Forms.RadioButton eventTypeAppointment;
+        private System.Windows.Forms.RadioButton eventTypeTask;
+        private System.Windows.Forms.RadioButton eventTypeExpense;
+        private System.Windows.Forms.RadioButton evenTypeIncome;
+        private System.Windows.Forms.RadioButton eventTypeJustAnEvent;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ComboBox eventCategory;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Panel panel3;
     }
 }
