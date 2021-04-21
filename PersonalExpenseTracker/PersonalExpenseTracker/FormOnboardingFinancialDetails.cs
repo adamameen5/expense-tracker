@@ -27,7 +27,7 @@ namespace PersonalExpenseTracker
 
         private void enterFinancialDetails(object sender, EventArgs e)
         {
-            glblUserID = FormSignUp.glblUserID;
+            glblUserID = FormLogin.globalLoggedInUserID;
             Boolean bankAccountSaved = false;
             Boolean cardSaved = false;
 
@@ -83,15 +83,15 @@ namespace PersonalExpenseTracker
             //forwarding the data (interacting with the model class, saving the data permanently in the db)
             //here we save the bank account details and card details permanently in the db
 
-            UserAccountsModel userAccountsModel = new UserAccountsModel();
+            AccountsModel accountsModel = new AccountsModel();
 
-            bankAccountSaved = userAccountsModel.saveBankAccountDetails(glblUserID, bankAccountDetailsData);
-            cardSaved = userAccountsModel.saveCardDetails(glblUserID, cardDetailData);
+            bankAccountSaved = accountsModel.saveBankAccountDetails(glblUserID, bankAccountDetailsData);
+            cardSaved = accountsModel.saveCardDetails(glblUserID, cardDetailData);
 
             if (bankAccountSaved && cardSaved)
             {
                 //show success message if the data was added succesfully
-                MessageBox.Show(String.Format(Properties.Resources.FINANCIAL_DETAILS_SUCCESFULLY_ADDED));
+                MessageBox.Show(String.Format(Properties.Resources.FINANCIAL_DETAILS_SUCCESSFULLY_ADDED));
 
                 //Show the login window
                 FormLogin formLogin = new FormLogin();

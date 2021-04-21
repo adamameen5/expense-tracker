@@ -1,0 +1,19 @@
+<?xml version="1.0" standalone="yes"?>
+<ExpenseGuide xmlns="http://tempuri.org/ExpenseGuide.xsd">
+  <Contact>
+    <ContactID>1</ContactID>
+    <ContactName>Dialog</ContactName>
+    <ContactDescription>Bill</ContactDescription>
+    <ContactType>Payee</ContactType>
+    <FK_UserID>1</FK_UserID>
+    <ContactTelephoneNumber>029282</ContactTelephoneNumber>
+  </Contact>
+  <Contact>
+    <ContactID>2</ContactID>
+    <ContactName>Test</ContactName>
+    <ContactDescription>Test</ContactDescription>
+    <ContactType>Payee</ContactType>
+    <FK_UserID>1</FK_UserID>
+    <ContactTelephoneNumber>922992</ContactTelephoneNumber>
+  </Contact>
+</ExpenseGuide>

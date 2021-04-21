@@ -61,6 +61,15 @@ namespace PersonalExpenseTracker.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Please fill in all the text fields..
+        /// </summary>
+        internal static string ALL_FIELDS_REQUIRED_MESSAGE {
+            get {
+                return ResourceManager.GetString("ALL_FIELDS_REQUIRED_MESSAGE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap EG_Logo {
@@ -71,11 +80,11 @@ namespace PersonalExpenseTracker.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Your financial details were succesfully added!.
+        ///   Looks up a localized string similar to Your financial details were successfully added!.
         /// </summary>
-        internal static string FINANCIAL_DETAILS_SUCCESFULLY_ADDED {
+        internal static string FINANCIAL_DETAILS_SUCCESSFULLY_ADDED {
             get {
-                return ResourceManager.GetString("FINANCIAL_DETAILS_SUCCESFULLY_ADDED", resourceCulture);
+                return ResourceManager.GetString("FINANCIAL_DETAILS_SUCCESSFULLY_ADDED", resourceCulture);
             }
         }
         
@@ -89,11 +98,20 @@ namespace PersonalExpenseTracker.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Your personal details were succesfully added!.
+        ///   Looks up a localized string similar to Payee details were successfully added!.
         /// </summary>
-        internal static string PERSONAL_DETAILS_SUCCESFULLY_ADDED {
+        internal static string PAYEE_DETAILS_SUCCESSFULLY_SAVED {
             get {
-                return ResourceManager.GetString("PERSONAL_DETAILS_SUCCESFULLY_ADDED", resourceCulture);
+                return ResourceManager.GetString("PAYEE_DETAILS_SUCCESSFULLY_SAVED", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Your personal details were successfully added!.
+        /// </summary>
+        internal static string PERSONAL_DETAILS_SUCCESSFULLY_ADDED {
+            get {
+                return ResourceManager.GetString("PERSONAL_DETAILS_SUCCESSFULLY_ADDED", resourceCulture);
             }
         }
         

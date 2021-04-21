@@ -31,7 +31,7 @@ namespace PersonalExpenseTracker
             userModel.updateUserInformation(UserID, this.userDetailsData);
 
             //show confirmation message on success
-            MessageBox.Show(String.Format(Properties.Resources.PERSONAL_DETAILS_SUCCESFULLY_ADDED));
+            MessageBox.Show(String.Format(Properties.Resources.PERSONAL_DETAILS_SUCCESSFULLY_ADDED));
 
             FormOnboardingFinancialDetails frm2 = new FormOnboardingFinancialDetails();
             frm2.Show();

@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace PersonalExpenseTracker
 {
-    public class UserAccountsModel
+    public class AccountsModel
     {
         public Boolean saveCardDetails(int cardBelongingToId, UserCardDetailsData info)
         {

@@ -72,6 +72,7 @@
     <Compile Include="Contact.cs">
       <DependentUpon>ExpenseGuideDB.tt</DependentUpon>
     </Compile>
+    <Compile Include="ContactsModel.cs" />
     <Compile Include="Credentials.cs">
       <DependentUpon>ExpenseGuideDB.tt</DependentUpon>
     </Compile>
@@ -197,7 +198,7 @@
     <Compile Include="User.cs">
       <DependentUpon>ExpenseGuideDB.tt</DependentUpon>
     </Compile>
-    <Compile Include="UserAccountsModel.cs" />
+    <Compile Include="AccountsModel.cs" />
     <Compile Include="UserBankAccountDetailsData.cs" />
     <Compile Include="UserCardDetailsData.cs" />
     <Compile Include="UserContactsData.cs" />
