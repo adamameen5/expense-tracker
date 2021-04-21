@@ -108,7 +108,7 @@ namespace PersonalExpenseTracker
             //here we save the contact details permanently in the db
 
             ContactsModel contactsModel = new ContactsModel();
-            contactSaved = contactsModel.addPayeeRecord(FormLogin.globalLoggedInUserID, userContactsData);
+            contactSaved = contactsModel.addContactRecord(FormLogin.globalLoggedInUserID, userContactsData);
 
             if (contactSaved)
             {
@@ -119,7 +119,7 @@ namespace PersonalExpenseTracker
             }
         }
 
-        public void resetTextFields()
+        private void resetTextFields()
         {
             this.payeeName.Text = "";
             this.payeeDescription.Text = "";

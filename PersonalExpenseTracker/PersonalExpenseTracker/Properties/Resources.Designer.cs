@@ -107,6 +107,15 @@ namespace PersonalExpenseTracker.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Payor details were successfully added!.
+        /// </summary>
+        internal static string PAYOR_DETAILS_SUCCESSFULLY_SAVED {
+            get {
+                return ResourceManager.GetString("PAYOR_DETAILS_SUCCESSFULLY_SAVED", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Your personal details were successfully added!.
         /// </summary>
         internal static string PERSONAL_DETAILS_SUCCESSFULLY_ADDED {

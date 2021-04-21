@@ -30,11 +30,11 @@ namespace PersonalExpenseTracker
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAddNewPayor));
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.payorName = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.payorDescription = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.payorTelephoneNumber = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.button4 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -45,12 +45,12 @@ namespace PersonalExpenseTracker
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
-            // textBox1
+            // payorName
             // 
-            this.textBox1.Location = new System.Drawing.Point(130, 148);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(257, 20);
-            this.textBox1.TabIndex = 45;
+            this.payorName.Location = new System.Drawing.Point(130, 148);
+            this.payorName.Name = "payorName";
+            this.payorName.Size = new System.Drawing.Size(257, 20);
+            this.payorName.TabIndex = 45;
             // 
             // label5
             // 
@@ -61,13 +61,13 @@ namespace PersonalExpenseTracker
             this.label5.TabIndex = 44;
             this.label5.Text = "Payor Name";
             // 
-            // textBox2
+            // payorDescription
             // 
-            this.textBox2.Location = new System.Drawing.Point(130, 188);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(257, 114);
-            this.textBox2.TabIndex = 47;
+            this.payorDescription.Location = new System.Drawing.Point(130, 188);
+            this.payorDescription.Multiline = true;
+            this.payorDescription.Name = "payorDescription";
+            this.payorDescription.Size = new System.Drawing.Size(257, 114);
+            this.payorDescription.TabIndex = 47;
             // 
             // label3
             // 
@@ -78,12 +78,12 @@ namespace PersonalExpenseTracker
             this.label3.TabIndex = 46;
             this.label3.Text = "Payor Description";
             // 
-            // textBox3
+            // payorTelephoneNumber
             // 
-            this.textBox3.Location = new System.Drawing.Point(130, 325);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(257, 20);
-            this.textBox3.TabIndex = 49;
+            this.payorTelephoneNumber.Location = new System.Drawing.Point(130, 325);
+            this.payorTelephoneNumber.Name = "payorTelephoneNumber";
+            this.payorTelephoneNumber.Size = new System.Drawing.Size(257, 20);
+            this.payorTelephoneNumber.TabIndex = 49;
             // 
             // label4
             // 
@@ -104,6 +104,7 @@ namespace PersonalExpenseTracker
             this.button4.TabIndex = 50;
             this.button4.Text = "Save";
             this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.validatePayorInfo);
             // 
             // pictureBox1
             // 
@@ -161,11 +162,11 @@ namespace PersonalExpenseTracker
             this.Controls.Add(this.lblUserName);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.button4);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.payorTelephoneNumber);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.payorDescription);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.payorName);
             this.Controls.Add(this.label5);
             this.Name = "FormAddNewPayor";
             this.Text = "FormAddNewPayor";
@@ -176,11 +177,11 @@ namespace PersonalExpenseTracker
         }
 
         #endregion
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox payorName;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox payorDescription;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox payorTelephoneNumber;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.PictureBox pictureBox1;

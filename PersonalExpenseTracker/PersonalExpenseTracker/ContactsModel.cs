@@ -9,19 +9,19 @@ namespace PersonalExpenseTracker
 {
     public class ContactsModel
     {
-        public Boolean addPayeeRecord(int cardBelongingToId, UserContactsData info) 
+        public Boolean addContactRecord(int cardBelongingToId, UserContactsData info) 
         {
             try
             {
-                Contact conactRecord = new Contact();
-                conactRecord.ContactName = info.contactName;
-                conactRecord.ContactDescription = info.contactDescription;
-                conactRecord.ContactType = info.contactType;
-                conactRecord.ContactTelephoneNumber = info.contactTelephoneNumber;
-                conactRecord.UserId = cardBelongingToId;
+                Contact contactRecord = new Contact();
+                contactRecord.ContactName = info.contactName;
+                contactRecord.ContactDescription = info.contactDescription;
+                contactRecord.ContactType = info.contactType;
+                contactRecord.ContactTelephoneNumber = info.contactTelephoneNumber;
+                contactRecord.UserId = cardBelongingToId;
 
                 ExpenseGuideDBContainer db = new ExpenseGuideDBContainer();
-                db.Contacts.Add(conactRecord);
+                db.Contacts.Add(contactRecord);
                 db.SaveChanges();
 
                 return true;
