@@ -46,7 +46,7 @@ namespace PersonalExpenseTracker
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.linkForgotPassword = new System.Windows.Forms.LinkLabel();
+            this.linkGoBackToDashboard = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
             // lblCurrentTime
@@ -198,23 +198,23 @@ namespace PersonalExpenseTracker
             this.comboBox3.Size = new System.Drawing.Size(226, 21);
             this.comboBox3.TabIndex = 33;
             // 
-            // linkForgotPassword
+            // linkGoBackToDashboard
             // 
-            this.linkForgotPassword.AutoSize = true;
-            this.linkForgotPassword.Location = new System.Drawing.Point(15, 366);
-            this.linkForgotPassword.Name = "linkForgotPassword";
-            this.linkForgotPassword.Size = new System.Drawing.Size(115, 13);
-            this.linkForgotPassword.TabIndex = 63;
-            this.linkForgotPassword.TabStop = true;
-            this.linkForgotPassword.Text = "Go back to Dashboard";
-            this.linkForgotPassword.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.goBackToDashboard);
+            this.linkGoBackToDashboard.AutoSize = true;
+            this.linkGoBackToDashboard.Location = new System.Drawing.Point(15, 366);
+            this.linkGoBackToDashboard.Name = "linkGoBackToDashboard";
+            this.linkGoBackToDashboard.Size = new System.Drawing.Size(115, 13);
+            this.linkGoBackToDashboard.TabIndex = 63;
+            this.linkGoBackToDashboard.TabStop = true;
+            this.linkGoBackToDashboard.Text = "Go back to Dashboard";
+            this.linkGoBackToDashboard.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.goBackToDashboard);
             // 
             // FormAddNewExpense
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(861, 398);
-            this.Controls.Add(this.linkForgotPassword);
+            this.Controls.Add(this.linkGoBackToDashboard);
             this.Controls.Add(this.comboBox3);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.comboBox1);
@@ -258,6 +258,6 @@ namespace PersonalExpenseTracker
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.LinkLabel linkForgotPassword;
+        private System.Windows.Forms.LinkLabel linkGoBackToDashboard;
     }
 }

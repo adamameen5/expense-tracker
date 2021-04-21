@@ -16,9 +16,7 @@ namespace PersonalExpenseTracker
                                      MessageBoxButtons.YesNo);
             if (confirmWindow == DialogResult.Yes)
             {
-                FormDashboard formDash = new FormDashboard();
-                formDash.Show();
-
+                
                 List<Form> openForms = new List<Form>();
 
                 foreach (Form f in Application.OpenForms)
@@ -28,9 +26,11 @@ namespace PersonalExpenseTracker
 
                 foreach (Form f in openForms)
                 {
-                    if (f.Name != "FormDashboard")
                         f.Close();
                 }
+
+                FormDashboard formDash = new FormDashboard();
+                formDash.Show();
             }
 
         }

@@ -19,8 +19,17 @@ namespace PersonalExpenseTracker
 
         private void goBackToDashboard(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            RedirectToDashboard rtb = new RedirectToDashboard();
-            rtb.goBackToDashboard();
+            
+            var confirmWindow = MessageBox.Show(Properties.Resources.RedirectToDashboardConfirmationMessage,
+                                     "Confirm Redirection!",
+                                     MessageBoxButtons.YesNo);
+
+            if (confirmWindow == DialogResult.Yes)
+            {
+                FormDashboard formDash = new FormDashboard();
+                formDash.Show();
+                this.Hide();
+            }       
         }
     }
 }

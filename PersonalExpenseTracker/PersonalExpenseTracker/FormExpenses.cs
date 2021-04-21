@@ -22,7 +22,7 @@ namespace PersonalExpenseTracker
         {
             FormAddNewExpense formAddNewExpns = new FormAddNewExpense();
             formAddNewExpns.Show();
-            this.Close();
+            this.Hide();
         }
     }
 }
