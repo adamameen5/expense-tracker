@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace PersonalExpenseTracker
 {
+    /*
+     * This is the Entity class for Card Detais
+     */
     public class UserCardDetailsData
     {
         public String cardNumber { get; set; }

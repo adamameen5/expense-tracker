@@ -200,9 +200,12 @@
     <Compile Include="UserAccountsModel.cs" />
     <Compile Include="UserBankAccountDetailsData.cs" />
     <Compile Include="UserCardDetailsData.cs" />
+    <Compile Include="UserContactsData.cs" />
     <Compile Include="UserCredentialsData.cs" />
     <Compile Include="UserDetails.cs" />
+    <Compile Include="UserEventsData.cs" />
     <Compile Include="UserModel.cs" />
+    <Compile Include="UserTransactionsData.cs" />
     <EmbeddedResource Include="FormAddNewPayee.resx">
       <DependentUpon>FormAddNewPayee.cs</DependentUpon>
     </EmbeddedResource>

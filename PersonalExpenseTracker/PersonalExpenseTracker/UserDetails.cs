@@ -6,7 +6,9 @@ using System.Threading.Tasks;
 
 namespace PersonalExpenseTracker
 {
-    // this is the User entity class
+    /*
+     * This is the Entity class for user details
+     */
     public class UserDetails
     {
         public String userName { get; set; }
