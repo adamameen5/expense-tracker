@@ -29,10 +29,7 @@ namespace PersonalExpenseTracker
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblCurrentTime = new System.Windows.Forms.Label();
-            this.lblUserName = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormEvents));
             this.label3 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
@@ -45,6 +42,7 @@ namespace PersonalExpenseTracker
             this.label10 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.button1 = new System.Windows.Forms.Button();
             this.radioButton7 = new System.Windows.Forms.RadioButton();
             this.radioButton6 = new System.Windows.Forms.RadioButton();
@@ -69,48 +67,15 @@ namespace PersonalExpenseTracker
             this.label18 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lblCurrentTime = new System.Windows.Forms.Label();
+            this.lblUserName = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.userControlBackToDashboardLink1 = new PersonalExpenseTracker.UserControlBackToDashboardLink();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // lblCurrentTime
-            // 
-            this.lblCurrentTime.AutoSize = true;
-            this.lblCurrentTime.Location = new System.Drawing.Point(523, 31);
-            this.lblCurrentTime.Name = "lblCurrentTime";
-            this.lblCurrentTime.Size = new System.Drawing.Size(30, 13);
-            this.lblCurrentTime.TabIndex = 31;
-            this.lblCurrentTime.Text = "Time";
-            // 
-            // lblUserName
-            // 
-            this.lblUserName.AutoSize = true;
-            this.lblUserName.Location = new System.Drawing.Point(445, 31);
-            this.lblUserName.Name = "lblUserName";
-            this.lblUserName.Size = new System.Drawing.Size(57, 13);
-            this.lblUserName.TabIndex = 30;
-            this.lblUserName.Text = "UserName";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(274, 25);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(67, 24);
-            this.label2.TabIndex = 29;
-            this.label2.Text = "Events";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(22, 19);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(246, 37);
-            this.label1.TabIndex = 28;
-            this.label1.Text = "Expense Guide";
             // 
             // label3
             // 
@@ -229,10 +194,18 @@ namespace PersonalExpenseTracker
             this.panel1.Controls.Add(this.dateTimePicker1);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Location = new System.Drawing.Point(29, 82);
+            this.panel1.Location = new System.Drawing.Point(29, 149);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(344, 437);
             this.panel1.TabIndex = 32;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(101, 342);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(226, 21);
+            this.comboBox1.TabIndex = 53;
             // 
             // button1
             // 
@@ -337,7 +310,7 @@ namespace PersonalExpenseTracker
             this.panel2.Controls.Add(this.label16);
             this.panel2.Controls.Add(this.label17);
             this.panel2.Controls.Add(this.label18);
-            this.panel2.Location = new System.Drawing.Point(409, 82);
+            this.panel2.Location = new System.Drawing.Point(409, 149);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(344, 230);
             this.panel2.TabIndex = 53;
@@ -464,7 +437,7 @@ namespace PersonalExpenseTracker
             // 
             this.button2.BackColor = System.Drawing.Color.DodgerBlue;
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(510, 381);
+            this.button2.Location = new System.Drawing.Point(510, 448);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(148, 43);
             this.button2.TabIndex = 53;
@@ -475,51 +448,85 @@ namespace PersonalExpenseTracker
             // 
             this.button3.BackColor = System.Drawing.Color.DodgerBlue;
             this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(510, 442);
+            this.button3.Location = new System.Drawing.Point(510, 509);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(148, 43);
             this.button3.TabIndex = 54;
             this.button3.Text = "View List Of All Events";
             this.button3.UseVisualStyleBackColor = false;
             // 
-            // comboBox1
+            // pictureBox1
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(101, 342);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(226, 21);
-            this.comboBox1.TabIndex = 53;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(29, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(199, 110);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 58;
+            this.pictureBox1.TabStop = false;
+            // 
+            // lblCurrentTime
+            // 
+            this.lblCurrentTime.AutoSize = true;
+            this.lblCurrentTime.Location = new System.Drawing.Point(243, 64);
+            this.lblCurrentTime.Name = "lblCurrentTime";
+            this.lblCurrentTime.Size = new System.Drawing.Size(30, 13);
+            this.lblCurrentTime.TabIndex = 57;
+            this.lblCurrentTime.Text = "Time";
+            // 
+            // lblUserName
+            // 
+            this.lblUserName.AutoSize = true;
+            this.lblUserName.Location = new System.Drawing.Point(243, 92);
+            this.lblUserName.Name = "lblUserName";
+            this.lblUserName.Size = new System.Drawing.Size(57, 13);
+            this.lblUserName.TabIndex = 56;
+            this.lblUserName.Text = "UserName";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(242, 26);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(67, 24);
+            this.label2.TabIndex = 55;
+            this.label2.Text = "Events";
+            // 
+            // userControlBackToDashboardLink1
+            // 
+            this.userControlBackToDashboardLink1.Location = new System.Drawing.Point(29, 616);
+            this.userControlBackToDashboardLink1.Name = "userControlBackToDashboardLink1";
+            this.userControlBackToDashboardLink1.Size = new System.Drawing.Size(210, 25);
+            this.userControlBackToDashboardLink1.TabIndex = 59;
             // 
             // FormEvents
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 531);
+            this.ClientSize = new System.Drawing.Size(800, 663);
+            this.Controls.Add(this.userControlBackToDashboardLink1);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.lblCurrentTime);
+            this.Controls.Add(this.lblUserName);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.lblCurrentTime);
-            this.Controls.Add(this.lblUserName);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.Name = "FormEvents";
             this.Text = "FormEvents";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label lblCurrentTime;
-        private System.Windows.Forms.Label lblUserName;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
@@ -557,5 +564,10 @@ namespace PersonalExpenseTracker
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label lblCurrentTime;
+        private System.Windows.Forms.Label lblUserName;
+        private System.Windows.Forms.Label label2;
+        private UserControlBackToDashboardLink userControlBackToDashboardLink1;
     }
 }

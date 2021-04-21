@@ -16,6 +16,7 @@ namespace PersonalExpenseTracker
         {
             InitializeComponent();
             lblCurrentTime.Text = DateTime.Now.ToString("f");
+            lblUserName.Text = FormLogin.globalLoggedInUserName;
         }
 
         private void toggleAddNewExpense(object sender, EventArgs e)

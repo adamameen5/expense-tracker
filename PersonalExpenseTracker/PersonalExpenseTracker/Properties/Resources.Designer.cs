@@ -61,6 +61,16 @@ namespace PersonalExpenseTracker.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap EG_Logo {
+            get {
+                object obj = ResourceManager.GetObject("EG_Logo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Your financial details were succesfully added!.
         /// </summary>
         internal static string FINANCIAL_DETAILS_SUCCESFULLY_ADDED {

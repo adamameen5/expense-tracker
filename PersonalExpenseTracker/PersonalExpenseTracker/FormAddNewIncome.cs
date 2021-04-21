@@ -15,6 +15,8 @@ namespace PersonalExpenseTracker
         public FormAddNewIncome()
         {
             InitializeComponent();
+            lblCurrentTime.Text = DateTime.Now.ToString("f");
+            lblUserName.Text = FormLogin.globalLoggedInUserName;
         }
 
         private void goBackToDashboard(object sender, LinkLabelLinkClickedEventArgs e)

@@ -10,28 +10,36 @@ using System.Windows.Forms;
 
 namespace PersonalExpenseTracker
 {
-    public partial class FormAddNewExpense : Form
+    public partial class UserControlBackToDashboardLink : UserControl
     {
-        public FormAddNewExpense()
+        public UserControlBackToDashboardLink()
         {
             InitializeComponent();
-            lblCurrentTime.Text = DateTime.Now.ToString("f");
-            lblUserName.Text = FormLogin.globalLoggedInUserName;
         }
 
-        private void goBackToDashboard(object sender, LinkLabelLinkClickedEventArgs e)
+        private void linkBackToDashboard(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            
             var confirmWindow = MessageBox.Show(Properties.Resources.RedirectToDashboardConfirmationMessage,
                                      "Confirm Redirection!",
                                      MessageBoxButtons.YesNo);
 
             if (confirmWindow == DialogResult.Yes)
             {
+                List<Form> openForms = new List<Form>();
+
+                foreach (Form f in Application.OpenForms)
+                {
+                    openForms.Add(f);
+                }
+
+                foreach (Form f in openForms)
+                {
+                    f.Hide();
+                }
                 FormDashboard formDash = new FormDashboard();
                 formDash.Show();
-                this.Hide();
-            }       
+                
+            }
         }
     }
 }

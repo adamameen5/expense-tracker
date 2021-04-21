@@ -29,67 +29,32 @@ namespace PersonalExpenseTracker
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblCurrentTime = new System.Windows.Forms.Label();
-            this.lblUserName = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormExpenses));
             this.dataGridExpenses = new System.Windows.Forms.DataGridView();
             this.button4 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.userControlBackToDashboardLink1 = new PersonalExpenseTracker.UserControlBackToDashboardLink();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lblCurrentTime = new System.Windows.Forms.Label();
+            this.lblUserName = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridExpenses)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // lblCurrentTime
-            // 
-            this.lblCurrentTime.AutoSize = true;
-            this.lblCurrentTime.Location = new System.Drawing.Point(528, 40);
-            this.lblCurrentTime.Name = "lblCurrentTime";
-            this.lblCurrentTime.Size = new System.Drawing.Size(30, 13);
-            this.lblCurrentTime.TabIndex = 14;
-            this.lblCurrentTime.Text = "Time";
-            // 
-            // lblUserName
-            // 
-            this.lblUserName.AutoSize = true;
-            this.lblUserName.Location = new System.Drawing.Point(450, 40);
-            this.lblUserName.Name = "lblUserName";
-            this.lblUserName.Size = new System.Drawing.Size(57, 13);
-            this.lblUserName.TabIndex = 13;
-            this.lblUserName.Text = "UserName";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(279, 34);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(95, 24);
-            this.label2.TabIndex = 12;
-            this.label2.Text = "Expenses";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(27, 28);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(246, 37);
-            this.label1.TabIndex = 11;
-            this.label1.Text = "Expense Guide";
             // 
             // dataGridExpenses
             // 
             this.dataGridExpenses.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridExpenses.Location = new System.Drawing.Point(34, 103);
+            this.dataGridExpenses.Location = new System.Drawing.Point(34, 144);
             this.dataGridExpenses.Name = "dataGridExpenses";
-            this.dataGridExpenses.Size = new System.Drawing.Size(614, 284);
+            this.dataGridExpenses.Size = new System.Drawing.Size(640, 284);
             this.dataGridExpenses.TabIndex = 15;
             // 
             // button4
             // 
             this.button4.BackColor = System.Drawing.Color.DodgerBlue;
             this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(34, 413);
+            this.button4.Location = new System.Drawing.Point(34, 454);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(148, 43);
             this.button4.TabIndex = 22;
@@ -101,41 +66,88 @@ namespace PersonalExpenseTracker
             // 
             this.button1.BackColor = System.Drawing.Color.DodgerBlue;
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(200, 413);
+            this.button1.Location = new System.Drawing.Point(200, 454);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(148, 43);
             this.button1.TabIndex = 23;
             this.button1.Text = "Export as CSV";
             this.button1.UseVisualStyleBackColor = false;
             // 
+            // userControlBackToDashboardLink1
+            // 
+            this.userControlBackToDashboardLink1.Location = new System.Drawing.Point(34, 519);
+            this.userControlBackToDashboardLink1.Name = "userControlBackToDashboardLink1";
+            this.userControlBackToDashboardLink1.Size = new System.Drawing.Size(115, 13);
+            this.userControlBackToDashboardLink1.TabIndex = 24;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(34, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(199, 110);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 41;
+            this.pictureBox1.TabStop = false;
+            // 
+            // lblCurrentTime
+            // 
+            this.lblCurrentTime.AutoSize = true;
+            this.lblCurrentTime.Location = new System.Drawing.Point(248, 64);
+            this.lblCurrentTime.Name = "lblCurrentTime";
+            this.lblCurrentTime.Size = new System.Drawing.Size(30, 13);
+            this.lblCurrentTime.TabIndex = 40;
+            this.lblCurrentTime.Text = "Time";
+            // 
+            // lblUserName
+            // 
+            this.lblUserName.AutoSize = true;
+            this.lblUserName.Location = new System.Drawing.Point(248, 92);
+            this.lblUserName.Name = "lblUserName";
+            this.lblUserName.Size = new System.Drawing.Size(57, 13);
+            this.lblUserName.TabIndex = 39;
+            this.lblUserName.Text = "UserName";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(247, 26);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(95, 24);
+            this.label2.TabIndex = 38;
+            this.label2.Text = "Expenses";
+            // 
             // FormExpenses
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(697, 468);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.dataGridExpenses);
+            this.ClientSize = new System.Drawing.Size(723, 558);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lblCurrentTime);
             this.Controls.Add(this.lblUserName);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.userControlBackToDashboardLink1);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.dataGridExpenses);
             this.Name = "FormExpenses";
             this.Text = "Expenses";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridExpenses)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label lblCurrentTime;
-        private System.Windows.Forms.Label lblUserName;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridExpenses;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button1;
+        private UserControlBackToDashboardLink userControlBackToDashboardLink1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label lblCurrentTime;
+        private System.Windows.Forms.Label lblUserName;
+        private System.Windows.Forms.Label label2;
     }
 }

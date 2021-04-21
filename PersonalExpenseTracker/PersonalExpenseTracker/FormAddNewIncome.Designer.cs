@@ -29,6 +29,7 @@ namespace PersonalExpenseTracker
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAddNewIncome));
             this.button1 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -39,14 +40,15 @@ namespace PersonalExpenseTracker
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.lblCurrentTime = new System.Windows.Forms.Label();
-            this.lblUserName = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.linkForgotPassword = new System.Windows.Forms.LinkLabel();
+            this.userControlBackToDashboardLink1 = new PersonalExpenseTracker.UserControlBackToDashboardLink();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lblCurrentTime = new System.Windows.Forms.Label();
+            this.lblUserName = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -136,44 +138,6 @@ namespace PersonalExpenseTracker
             this.label3.TabIndex = 35;
             this.label3.Text = "Code";
             // 
-            // lblCurrentTime
-            // 
-            this.lblCurrentTime.AutoSize = true;
-            this.lblCurrentTime.Location = new System.Drawing.Point(628, 45);
-            this.lblCurrentTime.Name = "lblCurrentTime";
-            this.lblCurrentTime.Size = new System.Drawing.Size(30, 13);
-            this.lblCurrentTime.TabIndex = 34;
-            this.lblCurrentTime.Text = "Time";
-            // 
-            // lblUserName
-            // 
-            this.lblUserName.AutoSize = true;
-            this.lblUserName.Location = new System.Drawing.Point(533, 45);
-            this.lblUserName.Name = "lblUserName";
-            this.lblUserName.Size = new System.Drawing.Size(57, 13);
-            this.lblUserName.TabIndex = 33;
-            this.lblUserName.Text = "UserName";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(255, 40);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(130, 20);
-            this.label2.TabIndex = 32;
-            this.label2.Text = "Add New Income";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(22, 35);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(211, 31);
-            this.label1.TabIndex = 31;
-            this.label1.Text = "Expense Guide";
-            // 
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
@@ -198,23 +162,61 @@ namespace PersonalExpenseTracker
             this.comboBox3.Size = new System.Drawing.Size(226, 21);
             this.comboBox3.TabIndex = 50;
             // 
-            // linkForgotPassword
+            // userControlBackToDashboardLink1
             // 
-            this.linkForgotPassword.AutoSize = true;
-            this.linkForgotPassword.Location = new System.Drawing.Point(29, 376);
-            this.linkForgotPassword.Name = "linkForgotPassword";
-            this.linkForgotPassword.Size = new System.Drawing.Size(115, 13);
-            this.linkForgotPassword.TabIndex = 64;
-            this.linkForgotPassword.TabStop = true;
-            this.linkForgotPassword.Text = "Go back to Dashboard";
-            this.linkForgotPassword.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.goBackToDashboard);
+            this.userControlBackToDashboardLink1.Location = new System.Drawing.Point(32, 368);
+            this.userControlBackToDashboardLink1.Name = "userControlBackToDashboardLink1";
+            this.userControlBackToDashboardLink1.Size = new System.Drawing.Size(144, 21);
+            this.userControlBackToDashboardLink1.TabIndex = 69;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(32, 3);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(199, 110);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 73;
+            this.pictureBox1.TabStop = false;
+            // 
+            // lblCurrentTime
+            // 
+            this.lblCurrentTime.AutoSize = true;
+            this.lblCurrentTime.Location = new System.Drawing.Point(246, 55);
+            this.lblCurrentTime.Name = "lblCurrentTime";
+            this.lblCurrentTime.Size = new System.Drawing.Size(30, 13);
+            this.lblCurrentTime.TabIndex = 72;
+            this.lblCurrentTime.Text = "Time";
+            // 
+            // lblUserName
+            // 
+            this.lblUserName.AutoSize = true;
+            this.lblUserName.Location = new System.Drawing.Point(246, 83);
+            this.lblUserName.Name = "lblUserName";
+            this.lblUserName.Size = new System.Drawing.Size(57, 13);
+            this.lblUserName.TabIndex = 71;
+            this.lblUserName.Text = "UserName";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(245, 17);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(157, 24);
+            this.label2.TabIndex = 70;
+            this.label2.Text = "Add New Income";
             // 
             // FormAddNewIncome
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 411);
-            this.Controls.Add(this.linkForgotPassword);
+            this.ClientSize = new System.Drawing.Size(730, 404);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.lblCurrentTime);
+            this.Controls.Add(this.lblUserName);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.userControlBackToDashboardLink1);
             this.Controls.Add(this.comboBox3);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.comboBox1);
@@ -228,12 +230,9 @@ namespace PersonalExpenseTracker
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.lblCurrentTime);
-            this.Controls.Add(this.lblUserName);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.Name = "FormAddNewIncome";
             this.Text = "FormAddNewIncome";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -251,13 +250,13 @@ namespace PersonalExpenseTracker
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label lblCurrentTime;
-        private System.Windows.Forms.Label lblUserName;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.LinkLabel linkForgotPassword;
+        private UserControlBackToDashboardLink userControlBackToDashboardLink1;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label lblCurrentTime;
+        private System.Windows.Forms.Label lblUserName;
+        private System.Windows.Forms.Label label2;
     }
 }

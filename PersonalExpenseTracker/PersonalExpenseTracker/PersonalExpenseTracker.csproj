@@ -201,6 +201,12 @@
     <Compile Include="UserBankAccountDetailsData.cs" />
     <Compile Include="UserCardDetailsData.cs" />
     <Compile Include="UserContactsData.cs" />
+    <Compile Include="UserControlBackToDashboardLink.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlBackToDashboardLink.Designer.cs">
+      <DependentUpon>UserControlBackToDashboardLink.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserCredentialsData.cs" />
     <Compile Include="UserDetails.cs" />
     <Compile Include="UserEventsData.cs" />
@@ -261,6 +267,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="UserControlBackToDashboardLink.resx">
+      <DependentUpon>UserControlBackToDashboardLink.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="ExpenseGuide.xsc">
       <DependentUpon>ExpenseGuide.xsd</DependentUpon>
     </None>
@@ -308,6 +317,7 @@
       <LastGenOutput>ExpenseGuideDB.cs</LastGenOutput>
       <DependentUpon>ExpenseGuideDB.edmx</DependentUpon>
     </Content>
+    <None Include="Resources\EG Logo.png" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

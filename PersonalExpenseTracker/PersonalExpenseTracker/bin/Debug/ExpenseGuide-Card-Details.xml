@@ -1,11 +1,11 @@
 <?xml version="1.0" standalone="yes"?>
 <ExpenseGuide xmlns="http://tempuri.org/ExpenseGuide.xsd">
   <CardDetail>
-    <CardNumber>HSBC-4598-0293-02</CardNumber>
+    <CardNumber>test124</CardNumber>
     <CardID>1</CardID>
-    <CardNameToDisplay>HSCB PLa</CardNameToDisplay>
-    <CardBankName>HSBC</CardBankName>
-    <CardDateOfExpiry>03/20</CardDateOfExpiry>
-    <FK_UserID>1</FK_UserID>
+    <CardNameToDisplay>TestCard</CardNameToDisplay>
+    <CardBankName>Test</CardBankName>
+    <CardDateOfExpiry>08/22</CardDateOfExpiry>
+    <FK_UserID>2</FK_UserID>
   </CardDetail>
 </ExpenseGuide>

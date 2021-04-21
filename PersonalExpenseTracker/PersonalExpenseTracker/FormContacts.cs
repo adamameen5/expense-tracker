@@ -23,6 +23,7 @@ namespace PersonalExpenseTracker
         {
             InitializeComponent();
             lblCurrentTime.Text = DateTime.Now.ToString("f");
+            lblUserName.Text = FormLogin.globalLoggedInUserName;
             if (File.Exists("ExpenseGuide.xml") == true)
             {
                 this.myDataSet.ReadXml("ExpenseGuide.xml");

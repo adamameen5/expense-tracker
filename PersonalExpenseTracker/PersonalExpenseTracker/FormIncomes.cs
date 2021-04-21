@@ -15,6 +15,15 @@ namespace PersonalExpenseTracker
         public FormIncomes()
         {
             InitializeComponent();
+            lblCurrentTime.Text = DateTime.Now.ToString("f");
+            lblUserName.Text = FormLogin.globalLoggedInUserName;
+        }
+
+        private void toggleAddNewIncome(object sender, EventArgs e)
+        {
+            FormAddNewIncome formAddNewIncome = new FormAddNewIncome();
+            formAddNewIncome.Show();
+            this.Hide();
         }
     }
 }

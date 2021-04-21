@@ -29,8 +29,7 @@ namespace PersonalExpenseTracker
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormSignUp));
             this.label3 = new System.Windows.Forms.Label();
             this.userName = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -43,32 +42,15 @@ namespace PersonalExpenseTracker
             this.confirmPassword = new System.Windows.Forms.TextBox();
             this.linkForgotPassword = new System.Windows.Forms.LinkLabel();
             this.btnSubmit = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label2 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(133, 36);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(246, 37);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Expense Guide";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(218, 84);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(77, 24);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Sign Up";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(134, 148);
+            this.label3.Location = new System.Drawing.Point(149, 217);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(55, 13);
             this.label3.TabIndex = 4;
@@ -76,7 +58,7 @@ namespace PersonalExpenseTracker
             // 
             // userName
             // 
-            this.userName.Location = new System.Drawing.Point(137, 164);
+            this.userName.Location = new System.Drawing.Point(152, 233);
             this.userName.Name = "userName";
             this.userName.Size = new System.Drawing.Size(239, 20);
             this.userName.TabIndex = 5;
@@ -84,7 +66,7 @@ namespace PersonalExpenseTracker
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(134, 200);
+            this.label4.Location = new System.Drawing.Point(149, 269);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(32, 13);
             this.label4.TabIndex = 6;
@@ -92,7 +74,7 @@ namespace PersonalExpenseTracker
             // 
             // email
             // 
-            this.email.Location = new System.Drawing.Point(137, 216);
+            this.email.Location = new System.Drawing.Point(152, 285);
             this.email.Name = "email";
             this.email.Size = new System.Drawing.Size(239, 20);
             this.email.TabIndex = 7;
@@ -100,7 +82,7 @@ namespace PersonalExpenseTracker
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(134, 253);
+            this.label5.Location = new System.Drawing.Point(149, 322);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(65, 13);
             this.label5.TabIndex = 8;
@@ -108,7 +90,7 @@ namespace PersonalExpenseTracker
             // 
             // nicNumber
             // 
-            this.nicNumber.Location = new System.Drawing.Point(137, 269);
+            this.nicNumber.Location = new System.Drawing.Point(152, 338);
             this.nicNumber.Name = "nicNumber";
             this.nicNumber.Size = new System.Drawing.Size(239, 20);
             this.nicNumber.TabIndex = 9;
@@ -116,7 +98,7 @@ namespace PersonalExpenseTracker
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(134, 305);
+            this.label6.Location = new System.Drawing.Point(149, 374);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(53, 13);
             this.label6.TabIndex = 10;
@@ -124,7 +106,7 @@ namespace PersonalExpenseTracker
             // 
             // password
             // 
-            this.password.Location = new System.Drawing.Point(137, 321);
+            this.password.Location = new System.Drawing.Point(152, 390);
             this.password.Name = "password";
             this.password.Size = new System.Drawing.Size(239, 20);
             this.password.TabIndex = 11;
@@ -133,7 +115,7 @@ namespace PersonalExpenseTracker
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(134, 358);
+            this.label7.Location = new System.Drawing.Point(149, 427);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(90, 13);
             this.label7.TabIndex = 12;
@@ -141,7 +123,7 @@ namespace PersonalExpenseTracker
             // 
             // confirmPassword
             // 
-            this.confirmPassword.Location = new System.Drawing.Point(137, 374);
+            this.confirmPassword.Location = new System.Drawing.Point(152, 443);
             this.confirmPassword.Name = "confirmPassword";
             this.confirmPassword.Size = new System.Drawing.Size(239, 20);
             this.confirmPassword.TabIndex = 13;
@@ -150,7 +132,7 @@ namespace PersonalExpenseTracker
             // linkForgotPassword
             // 
             this.linkForgotPassword.AutoSize = true;
-            this.linkForgotPassword.Location = new System.Drawing.Point(134, 412);
+            this.linkForgotPassword.Location = new System.Drawing.Point(149, 481);
             this.linkForgotPassword.Name = "linkForgotPassword";
             this.linkForgotPassword.Size = new System.Drawing.Size(136, 13);
             this.linkForgotPassword.TabIndex = 14;
@@ -162,7 +144,7 @@ namespace PersonalExpenseTracker
             // 
             this.btnSubmit.BackColor = System.Drawing.Color.DodgerBlue;
             this.btnSubmit.ForeColor = System.Drawing.Color.White;
-            this.btnSubmit.Location = new System.Drawing.Point(182, 451);
+            this.btnSubmit.Location = new System.Drawing.Point(197, 520);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(148, 43);
             this.btnSubmit.TabIndex = 15;
@@ -170,11 +152,33 @@ namespace PersonalExpenseTracker
             this.btnSubmit.UseVisualStyleBackColor = false;
             this.btnSubmit.Click += new System.EventHandler(this.validateUserInfo);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(166, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(199, 139);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 59;
+            this.pictureBox1.TabStop = false;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Cambria", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(239, 168);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(53, 15);
+            this.label2.TabIndex = 58;
+            this.label2.Text = "Sign Up";
+            // 
             // FormSignUp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(544, 538);
+            this.ClientSize = new System.Drawing.Size(544, 588);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.btnSubmit);
             this.Controls.Add(this.linkForgotPassword);
             this.Controls.Add(this.confirmPassword);
@@ -187,19 +191,15 @@ namespace PersonalExpenseTracker
             this.Controls.Add(this.label4);
             this.Controls.Add(this.userName);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.Name = "FormSignUp";
             this.Text = "FormSignUp";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox userName;
         private System.Windows.Forms.Label label4;
@@ -212,5 +212,7 @@ namespace PersonalExpenseTracker
         private System.Windows.Forms.TextBox confirmPassword;
         private System.Windows.Forms.LinkLabel linkForgotPassword;
         private System.Windows.Forms.Button btnSubmit;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label2;
     }
 }

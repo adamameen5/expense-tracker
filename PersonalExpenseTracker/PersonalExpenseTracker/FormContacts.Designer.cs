@@ -30,13 +30,15 @@ namespace PersonalExpenseTracker
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.lblCurrentTime = new System.Windows.Forms.Label();
-            this.lblUserName = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormContacts));
             this.tabContacts = new System.Windows.Forms.TabControl();
             this.tabPayor = new System.Windows.Forms.TabPage();
             this.dataGridPayor = new System.Windows.Forms.DataGridView();
+            this.userNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.passwordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.credentialsIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nICDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.credentialsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.expenseGuideBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.expenseGuide = new PersonalExpenseTracker.ExpenseGuide();
@@ -44,11 +46,11 @@ namespace PersonalExpenseTracker
             this.dataGridPayee = new System.Windows.Forms.DataGridView();
             this.button4 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.userNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.emailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.passwordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.credentialsIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nICDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lblCurrentTime = new System.Windows.Forms.Label();
+            this.lblUserName = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.userControlBackToDashboardLink1 = new PersonalExpenseTracker.UserControlBackToDashboardLink();
             this.tabContacts.SuspendLayout();
             this.tabPayor.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridPayor)).BeginInit();
@@ -57,51 +59,14 @@ namespace PersonalExpenseTracker
             ((System.ComponentModel.ISupportInitialize)(this.expenseGuide)).BeginInit();
             this.tabPayee.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridPayee)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // lblCurrentTime
-            // 
-            this.lblCurrentTime.AutoSize = true;
-            this.lblCurrentTime.Location = new System.Drawing.Point(505, 40);
-            this.lblCurrentTime.Name = "lblCurrentTime";
-            this.lblCurrentTime.Size = new System.Drawing.Size(30, 13);
-            this.lblCurrentTime.TabIndex = 10;
-            this.lblCurrentTime.Text = "Time";
-            // 
-            // lblUserName
-            // 
-            this.lblUserName.AutoSize = true;
-            this.lblUserName.Location = new System.Drawing.Point(427, 40);
-            this.lblUserName.Name = "lblUserName";
-            this.lblUserName.Size = new System.Drawing.Size(57, 13);
-            this.lblUserName.TabIndex = 9;
-            this.lblUserName.Text = "UserName";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(279, 34);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(82, 24);
-            this.label2.TabIndex = 8;
-            this.label2.Text = "Contacts";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(27, 28);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(246, 37);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "Expense Guide";
             // 
             // tabContacts
             // 
             this.tabContacts.Controls.Add(this.tabPayor);
             this.tabContacts.Controls.Add(this.tabPayee);
-            this.tabContacts.Location = new System.Drawing.Point(34, 99);
+            this.tabContacts.Location = new System.Drawing.Point(29, 173);
             this.tabContacts.Name = "tabContacts";
             this.tabContacts.SelectedIndex = 0;
             this.tabContacts.Size = new System.Drawing.Size(612, 293);
@@ -135,6 +100,37 @@ namespace PersonalExpenseTracker
             this.dataGridPayor.Size = new System.Drawing.Size(604, 267);
             this.dataGridPayor.TabIndex = 0;
             this.dataGridPayor.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridPayor_CellContentClick);
+            // 
+            // userNameDataGridViewTextBoxColumn
+            // 
+            this.userNameDataGridViewTextBoxColumn.DataPropertyName = "UserName";
+            this.userNameDataGridViewTextBoxColumn.HeaderText = "UserName";
+            this.userNameDataGridViewTextBoxColumn.Name = "userNameDataGridViewTextBoxColumn";
+            // 
+            // emailDataGridViewTextBoxColumn
+            // 
+            this.emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
+            this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
+            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
+            // 
+            // passwordDataGridViewTextBoxColumn
+            // 
+            this.passwordDataGridViewTextBoxColumn.DataPropertyName = "Password";
+            this.passwordDataGridViewTextBoxColumn.HeaderText = "Password";
+            this.passwordDataGridViewTextBoxColumn.Name = "passwordDataGridViewTextBoxColumn";
+            // 
+            // credentialsIDDataGridViewTextBoxColumn
+            // 
+            this.credentialsIDDataGridViewTextBoxColumn.DataPropertyName = "CredentialsID";
+            this.credentialsIDDataGridViewTextBoxColumn.HeaderText = "CredentialsID";
+            this.credentialsIDDataGridViewTextBoxColumn.Name = "credentialsIDDataGridViewTextBoxColumn";
+            this.credentialsIDDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // nICDataGridViewTextBoxColumn
+            // 
+            this.nICDataGridViewTextBoxColumn.DataPropertyName = "NIC";
+            this.nICDataGridViewTextBoxColumn.HeaderText = "NIC";
+            this.nICDataGridViewTextBoxColumn.Name = "nICDataGridViewTextBoxColumn";
             // 
             // credentialsBindingSource
             // 
@@ -174,7 +170,7 @@ namespace PersonalExpenseTracker
             // 
             this.button4.BackColor = System.Drawing.Color.DodgerBlue;
             this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(34, 416);
+            this.button4.Location = new System.Drawing.Point(27, 492);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(148, 43);
             this.button4.TabIndex = 21;
@@ -186,7 +182,7 @@ namespace PersonalExpenseTracker
             // 
             this.button1.BackColor = System.Drawing.Color.DodgerBlue;
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(213, 416);
+            this.button1.Location = new System.Drawing.Point(206, 492);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(148, 43);
             this.button1.TabIndex = 22;
@@ -194,49 +190,64 @@ namespace PersonalExpenseTracker
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.toggleAddNewPayeeView);
             // 
-            // userNameDataGridViewTextBoxColumn
+            // pictureBox1
             // 
-            this.userNameDataGridViewTextBoxColumn.DataPropertyName = "UserName";
-            this.userNameDataGridViewTextBoxColumn.HeaderText = "UserName";
-            this.userNameDataGridViewTextBoxColumn.Name = "userNameDataGridViewTextBoxColumn";
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(29, 24);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(199, 110);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 41;
+            this.pictureBox1.TabStop = false;
             // 
-            // emailDataGridViewTextBoxColumn
+            // lblCurrentTime
             // 
-            this.emailDataGridViewTextBoxColumn.DataPropertyName = "Email";
-            this.emailDataGridViewTextBoxColumn.HeaderText = "Email";
-            this.emailDataGridViewTextBoxColumn.Name = "emailDataGridViewTextBoxColumn";
+            this.lblCurrentTime.AutoSize = true;
+            this.lblCurrentTime.Location = new System.Drawing.Point(243, 76);
+            this.lblCurrentTime.Name = "lblCurrentTime";
+            this.lblCurrentTime.Size = new System.Drawing.Size(30, 13);
+            this.lblCurrentTime.TabIndex = 40;
+            this.lblCurrentTime.Text = "Time";
             // 
-            // passwordDataGridViewTextBoxColumn
+            // lblUserName
             // 
-            this.passwordDataGridViewTextBoxColumn.DataPropertyName = "Password";
-            this.passwordDataGridViewTextBoxColumn.HeaderText = "Password";
-            this.passwordDataGridViewTextBoxColumn.Name = "passwordDataGridViewTextBoxColumn";
+            this.lblUserName.AutoSize = true;
+            this.lblUserName.Location = new System.Drawing.Point(243, 104);
+            this.lblUserName.Name = "lblUserName";
+            this.lblUserName.Size = new System.Drawing.Size(57, 13);
+            this.lblUserName.TabIndex = 39;
+            this.lblUserName.Text = "UserName";
             // 
-            // credentialsIDDataGridViewTextBoxColumn
+            // label2
             // 
-            this.credentialsIDDataGridViewTextBoxColumn.DataPropertyName = "CredentialsID";
-            this.credentialsIDDataGridViewTextBoxColumn.HeaderText = "CredentialsID";
-            this.credentialsIDDataGridViewTextBoxColumn.Name = "credentialsIDDataGridViewTextBoxColumn";
-            this.credentialsIDDataGridViewTextBoxColumn.Visible = false;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(242, 38);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(82, 24);
+            this.label2.TabIndex = 38;
+            this.label2.Text = "Contacts";
             // 
-            // nICDataGridViewTextBoxColumn
+            // userControlBackToDashboardLink1
             // 
-            this.nICDataGridViewTextBoxColumn.DataPropertyName = "NIC";
-            this.nICDataGridViewTextBoxColumn.HeaderText = "NIC";
-            this.nICDataGridViewTextBoxColumn.Name = "nICDataGridViewTextBoxColumn";
+            this.userControlBackToDashboardLink1.Location = new System.Drawing.Point(27, 554);
+            this.userControlBackToDashboardLink1.Name = "userControlBackToDashboardLink1";
+            this.userControlBackToDashboardLink1.Size = new System.Drawing.Size(148, 16);
+            this.userControlBackToDashboardLink1.TabIndex = 42;
             // 
             // FormContacts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(683, 493);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.tabContacts);
+            this.ClientSize = new System.Drawing.Size(683, 592);
+            this.Controls.Add(this.userControlBackToDashboardLink1);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lblCurrentTime);
             this.Controls.Add(this.lblUserName);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.tabContacts);
             this.MaximizeBox = false;
             this.Name = "FormContacts";
             this.Text = "FormContacts";
@@ -249,17 +260,13 @@ namespace PersonalExpenseTracker
             ((System.ComponentModel.ISupportInitialize)(this.expenseGuide)).EndInit();
             this.tabPayee.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridPayee)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label lblCurrentTime;
-        private System.Windows.Forms.Label lblUserName;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TabControl tabContacts;
         private System.Windows.Forms.TabPage tabPayor;
         private System.Windows.Forms.TabPage tabPayee;
@@ -275,5 +282,10 @@ namespace PersonalExpenseTracker
         private System.Windows.Forms.DataGridViewTextBoxColumn passwordDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn credentialsIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nICDataGridViewTextBoxColumn;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label lblCurrentTime;
+        private System.Windows.Forms.Label lblUserName;
+        private System.Windows.Forms.Label label2;
+        private UserControlBackToDashboardLink userControlBackToDashboardLink1;
     }
 }
