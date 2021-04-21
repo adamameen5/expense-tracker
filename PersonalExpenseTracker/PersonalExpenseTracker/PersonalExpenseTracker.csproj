@@ -197,6 +197,7 @@
     <Compile Include="User.cs">
       <DependentUpon>ExpenseGuideDB.tt</DependentUpon>
     </Compile>
+    <Compile Include="UserAccountsModel.cs" />
     <Compile Include="UserBankAccountDetailsData.cs" />
     <Compile Include="UserCardDetailsData.cs" />
     <Compile Include="UserCredentialsData.cs" />

@@ -83,10 +83,10 @@ namespace PersonalExpenseTracker
             //forwarding the data (interacting with the model class, saving the data permanently in the db)
             //here we save the bank account details and card details permanently in the db
 
-            UserModel userModel = new UserModel();
+            UserAccountsModel userAccountsModel = new UserAccountsModel();
 
-            bankAccountSaved = userModel.saveBankAccountDetails(glblUserID, bankAccountDetailsData);
-            cardSaved = userModel.saveCardDetails(glblUserID, cardDetailData);
+            bankAccountSaved = userAccountsModel.saveBankAccountDetails(glblUserID, bankAccountDetailsData);
+            cardSaved = userAccountsModel.saveCardDetails(glblUserID, cardDetailData);
 
             if (bankAccountSaved && cardSaved)
             {
