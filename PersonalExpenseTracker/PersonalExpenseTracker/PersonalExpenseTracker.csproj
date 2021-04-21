@@ -69,7 +69,13 @@
     <Compile Include="CardDetail.cs">
       <DependentUpon>ExpenseGuideDB.tt</DependentUpon>
     </Compile>
+    <Compile Include="Contact.cs">
+      <DependentUpon>ExpenseGuideDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="Credentials.cs">
+      <DependentUpon>ExpenseGuideDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Event.cs">
       <DependentUpon>ExpenseGuideDB.tt</DependentUpon>
     </Compile>
     <Compile Include="ExpenseGuide.Designer.cs">
@@ -185,6 +191,9 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RedirectToDashboard.cs" />
+    <Compile Include="Transaction.cs">
+      <DependentUpon>ExpenseGuideDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="User.cs">
       <DependentUpon>ExpenseGuideDB.tt</DependentUpon>
     </Compile>

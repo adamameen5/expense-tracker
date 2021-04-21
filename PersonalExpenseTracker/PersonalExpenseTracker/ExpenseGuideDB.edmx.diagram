@@ -5,13 +5,20 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="5763028c578c4bea9f38a2c5d711cb35" Name="Diagram1" >
-        <EntityTypeShape EntityType="ExpenseGuideDB.Credentials" Width="1.5" PointX="1.5" PointY="1.125" />
+        <EntityTypeShape EntityType="ExpenseGuideDB.Credentials" Width="1.5" PointX="0.5" PointY="0.5" />
         <EntityTypeShape EntityType="ExpenseGuideDB.User" Width="1.5" PointX="4.25" PointY="1.375" />
         <AssociationConnector Association="ExpenseGuideDB.CredentialsUser" />
-        <EntityTypeShape EntityType="ExpenseGuideDB.CardDetail" Width="1.5" PointX="7.75" PointY="1.625" />
+        <EntityTypeShape EntityType="ExpenseGuideDB.CardDetail" Width="1.5" PointX="3.375" PointY="4.625" />
         <AssociationConnector Association="ExpenseGuideDB.CardDetailUser" />
-        <EntityTypeShape EntityType="ExpenseGuideDB.BankAccountDetail" Width="1.5" PointX="10.75" PointY="2.75" />
+        <EntityTypeShape EntityType="ExpenseGuideDB.BankAccountDetail" Width="1.5" PointX="0.625" PointY="3" />
         <AssociationConnector Association="ExpenseGuideDB.BankAccountDetailUser" />
+        <EntityTypeShape EntityType="ExpenseGuideDB.Contact" Width="1.5" PointX="6.625" PointY="3.5" />
+        <AssociationConnector Association="ExpenseGuideDB.ContactUser" />
+        <EntityTypeShape EntityType="ExpenseGuideDB.Transaction" Width="1.5" PointX="8.75" PointY="1.625" />
+        <AssociationConnector Association="ExpenseGuideDB.UserTransaction" />
+        <AssociationConnector Association="ExpenseGuideDB.TransactionContact" />
+        <EntityTypeShape EntityType="ExpenseGuideDB.Event" Width="1.5" PointX="6.5" PointY="0.5" />
+        <AssociationConnector Association="ExpenseGuideDB.EventUser" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

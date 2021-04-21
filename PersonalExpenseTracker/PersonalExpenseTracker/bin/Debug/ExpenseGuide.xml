@@ -96,6 +96,22 @@
     <NIC>93838V</NIC>
     <FK_UserID>12</FK_UserID>
   </Credentials>
+  <Credentials>
+    <UserName>aaa</UserName>
+    <Email>aaaa</Email>
+    <Password>aaaa</Password>
+    <CredentialsID>13</CredentialsID>
+    <NIC>aaaa</NIC>
+    <FK_UserID>13</FK_UserID>
+  </Credentials>
+  <Credentials>
+    <UserName>adam</UserName>
+    <Email>adam@gmail.com</Email>
+    <Password>adam</Password>
+    <CredentialsID>14</CredentialsID>
+    <NIC>93939V</NIC>
+    <FK_UserID>14</FK_UserID>
+  </Credentials>
   <User>
     <UserID>1</UserID>
     <DateOfBirth>to-be-filled</DateOfBirth>
@@ -142,6 +158,14 @@
   </User>
   <User>
     <UserID>12</UserID>
+    <DateOfBirth>to-be-filled</DateOfBirth>
+  </User>
+  <User>
+    <UserID>13</UserID>
+    <DateOfBirth>to-be-filled</DateOfBirth>
+  </User>
+  <User>
+    <UserID>14</UserID>
     <DateOfBirth>to-be-filled</DateOfBirth>
   </User>
 </ExpenseGuide>

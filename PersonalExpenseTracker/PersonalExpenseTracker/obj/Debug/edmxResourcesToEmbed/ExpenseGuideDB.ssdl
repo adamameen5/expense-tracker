@@ -5,6 +5,9 @@
     <EntitySet Name="Users" EntityType="ExpenseGuideDB.Store.Users" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="CardDetails" EntityType="ExpenseGuideDB.Store.CardDetails" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="BankAccountDetails" EntityType="ExpenseGuideDB.Store.BankAccountDetails" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Contacts" EntityType="ExpenseGuideDB.Store.Contacts" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Transactions" EntityType="ExpenseGuideDB.Store.Transactions" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Events" EntityType="ExpenseGuideDB.Store.Events" store:Type="Tables" Schema="dbo" />
     <AssociationSet Name="CredentialsUser" Association="ExpenseGuideDB.Store.CredentialsUser">
       <End Role="Credentials" EntitySet="Credentials" />
       <End Role="User" EntitySet="Users" />
@@ -15,6 +18,22 @@
     </AssociationSet>
     <AssociationSet Name="BankAccountDetailUser" Association="ExpenseGuideDB.Store.BankAccountDetailUser">
       <End Role="BankAccountDetail" EntitySet="BankAccountDetails" />
+      <End Role="User" EntitySet="Users" />
+    </AssociationSet>
+    <AssociationSet Name="ContactUser" Association="ExpenseGuideDB.Store.ContactUser">
+      <End Role="Contact" EntitySet="Contacts" />
+      <End Role="User" EntitySet="Users" />
+    </AssociationSet>
+    <AssociationSet Name="UserTransaction" Association="ExpenseGuideDB.Store.UserTransaction">
+      <End Role="User" EntitySet="Users" />
+      <End Role="Transaction" EntitySet="Transactions" />
+    </AssociationSet>
+    <AssociationSet Name="TransactionContact" Association="ExpenseGuideDB.Store.TransactionContact">
+      <End Role="Transaction" EntitySet="Transactions" />
+      <End Role="Contact" EntitySet="Contacts" />
+    </AssociationSet>
+    <AssociationSet Name="EventUser" Association="ExpenseGuideDB.Store.EventUser">
+      <End Role="Event" EntitySet="Events" />
       <End Role="User" EntitySet="Users" />
     </AssociationSet>
   </EntityContainer>
@@ -62,6 +81,46 @@
     <Property Name="BankAccountNameToDisplay" Type="nvarchar(max)" Nullable="false" />
     <Property Name="UserId" Type="int" Nullable="false" />
   </EntityType>
+  <EntityType Name="Contacts">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ContactName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ContactDescription" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ContactType" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ContactTelephoneNumber" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Transactions">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TransactionDate" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="TransactionContactName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="TransactionAmount" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="TransactionEvent" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="TransactionAssociatedAccount" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="TransactionType" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="TransactionCode" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="ContactId" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Events">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EventDate" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="EventCode" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="EventName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="EventRecurring" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="EventType" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="EventCategory" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="EventAssociatedContact" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+  </EntityType>
   <Association Name="CredentialsUser">
     <End Role="Credentials" Type="ExpenseGuideDB.Store.Credentials" Multiplicity="*" />
     <End Role="User" Type="ExpenseGuideDB.Store.Users" Multiplicity="1" />
@@ -94,6 +153,54 @@
         <PropertyRef Name="Id" />
       </Principal>
       <Dependent Role="BankAccountDetail">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="ContactUser">
+    <End Role="Contact" Type="ExpenseGuideDB.Store.Contacts" Multiplicity="*" />
+    <End Role="User" Type="ExpenseGuideDB.Store.Users" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Contact">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UserTransaction">
+    <End Role="User" Type="ExpenseGuideDB.Store.Users" Multiplicity="1" />
+    <End Role="Transaction" Type="ExpenseGuideDB.Store.Transactions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Transaction">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="TransactionContact">
+    <End Role="Transaction" Type="ExpenseGuideDB.Store.Transactions" Multiplicity="*" />
+    <End Role="Contact" Type="ExpenseGuideDB.Store.Contacts" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Contact">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Transaction">
+        <PropertyRef Name="ContactId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="EventUser">
+    <End Role="Event" Type="ExpenseGuideDB.Store.Events" Multiplicity="*" />
+    <End Role="User" Type="ExpenseGuideDB.Store.Users" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Event">
         <PropertyRef Name="UserId" />
       </Dependent>
     </ReferentialConstraint>
