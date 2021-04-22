@@ -32,6 +32,7 @@ namespace PersonalExpenseTracker
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormContacts));
             this.tabContacts = new System.Windows.Forms.TabControl();
             this.tabPayor = new System.Windows.Forms.TabPage();
+            this.dataGridPayor = new System.Windows.Forms.DataGridView();
             this.tabPayee = new System.Windows.Forms.TabPage();
             this.dataGridPayee = new System.Windows.Forms.DataGridView();
             this.button4 = new System.Windows.Forms.Button();
@@ -40,14 +41,14 @@ namespace PersonalExpenseTracker
             this.lblCurrentTime = new System.Windows.Forms.Label();
             this.lblUserName = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.dataGridPayor = new System.Windows.Forms.DataGridView();
+            this.btnRefresh = new System.Windows.Forms.Button();
             this.userControlBackToDashboardLink1 = new PersonalExpenseTracker.UserControlBackToDashboardLink();
             this.tabContacts.SuspendLayout();
             this.tabPayor.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridPayor)).BeginInit();
             this.tabPayee.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridPayee)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridPayor)).BeginInit();
             this.SuspendLayout();
             // 
             // tabContacts
@@ -59,6 +60,8 @@ namespace PersonalExpenseTracker
             this.tabContacts.SelectedIndex = 0;
             this.tabContacts.Size = new System.Drawing.Size(612, 293);
             this.tabContacts.TabIndex = 11;
+            this.tabContacts.SelectedIndexChanged += new System.EventHandler(this.TabControlChanged);
+            this.tabContacts.ContextMenuStripChanged += new System.EventHandler(this.LoadContactsData);
             // 
             // tabPayor
             // 
@@ -70,6 +73,16 @@ namespace PersonalExpenseTracker
             this.tabPayor.TabIndex = 0;
             this.tabPayor.Text = "Payor";
             this.tabPayor.UseVisualStyleBackColor = true;
+            // 
+            // dataGridPayor
+            // 
+            this.dataGridPayor.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridPayor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridPayor.Location = new System.Drawing.Point(0, 0);
+            this.dataGridPayor.Name = "dataGridPayor";
+            this.dataGridPayor.Size = new System.Drawing.Size(604, 267);
+            this.dataGridPayor.TabIndex = 0;
+            this.dataGridPayor.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.editPayor);
             // 
             // tabPayee
             // 
@@ -84,6 +97,7 @@ namespace PersonalExpenseTracker
             // 
             // dataGridPayee
             // 
+            this.dataGridPayee.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridPayee.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridPayee.Location = new System.Drawing.Point(0, 0);
             this.dataGridPayee.Name = "dataGridPayee";
@@ -152,14 +166,15 @@ namespace PersonalExpenseTracker
             this.label2.TabIndex = 38;
             this.label2.Text = "Contacts";
             // 
-            // dataGridPayor
+            // btnRefresh
             // 
-            this.dataGridPayor.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridPayor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridPayor.Location = new System.Drawing.Point(0, 0);
-            this.dataGridPayor.Name = "dataGridPayor";
-            this.dataGridPayor.Size = new System.Drawing.Size(604, 267);
-            this.dataGridPayor.TabIndex = 0;
+            this.btnRefresh.Location = new System.Drawing.Point(471, 166);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(166, 23);
+            this.btnRefresh.TabIndex = 43;
+            this.btnRefresh.Text = "Refresh Records";
+            this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.refreshData);
             // 
             // userControlBackToDashboardLink1
             // 
@@ -173,6 +188,7 @@ namespace PersonalExpenseTracker
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(683, 592);
+            this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.userControlBackToDashboardLink1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lblCurrentTime);
@@ -187,10 +203,10 @@ namespace PersonalExpenseTracker
             this.Load += new System.EventHandler(this.FormContacts_Load);
             this.tabContacts.ResumeLayout(false);
             this.tabPayor.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridPayor)).EndInit();
             this.tabPayee.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridPayee)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridPayor)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -209,5 +225,6 @@ namespace PersonalExpenseTracker
         private System.Windows.Forms.Label label2;
         private UserControlBackToDashboardLink userControlBackToDashboardLink1;
         private System.Windows.Forms.DataGridView dataGridPayor;
+        private System.Windows.Forms.Button btnRefresh;
     }
 }

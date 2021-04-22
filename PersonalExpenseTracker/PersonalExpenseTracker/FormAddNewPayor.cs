@@ -43,7 +43,10 @@ namespace PersonalExpenseTracker
             else
             {
                 addNewPayor();
+                
             }
+
+            
         }
 
         private void addNewPayor()

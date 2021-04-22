@@ -19,6 +19,10 @@ namespace PersonalExpenseTracker
         //Creating a dataset instance
         ExpenseGuide myDataSet = new ExpenseGuide();
 
+
+        /*
+         * Deafult form constructor
+         */
         public FormContacts()
         {
             InitializeComponent();
@@ -30,34 +34,55 @@ namespace PersonalExpenseTracker
             }
         }
 
+
         private void toggleAddNewPayorView(object sender, EventArgs e)
         {
+
             FormAddNewPayor formPayor = new FormAddNewPayor();
             formPayor.ShowDialog();
 
         }
 
+
         private void toggleAddNewPayeeView(object sender, EventArgs e)
         {
             FormAddNewPayee formPayee = new FormAddNewPayee();
             formPayee.ShowDialog();
+
         }
+
 
         private void FormContacts_Load(object sender, EventArgs e)
         {
-            //this.UserDataSet = this.myDataSet;
-            //this.expenseGuide = this.UserDataSet;
-            //this.dataGridPayor.DataSource = this.expenseGuide;
-            //this.dataGridPayor.DataMember = "Contact";
+            RefreshPayorData();  
+        }
 
-            //DataGrid dataGrid1 = new DataGrid();
+
+        private void dataGridPayor_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            Console.WriteLine("test");
+        }
+
+
+        private void editPayor(object sender, DataGridViewCellEventArgs e)
+        {
+            Console.WriteLine("test");
+            DataGridViewRow getRow = dataGridPayor.Rows[e.RowIndex];
+            Console.WriteLine(this.dataGridPayor.CurrentRow.Cells[0].Value.ToString());
+            Console.WriteLine(this.dataGridPayor.CurrentRow.Cells[1].Value.ToString());
+        }
+
+
+        public void RefreshPayorData()
+        {
             ExpenseGuideDBContainer db = new ExpenseGuideDBContainer();
 
             var custQuery =
                 from cust in db.Contacts
-                where cust.UserId == FormLogin.globalLoggedInUserID && cust.ContactType=="Payor"
+                where cust.UserId == FormLogin.globalLoggedInUserID && cust.ContactType == "Payor"
                 select new
                 {
+                    ID = cust.Id,
                     Name = cust.ContactName,
                     Description = cust.ContactDescription,
                     TelephoneNumber = cust.ContactTelephoneNumber,
@@ -65,11 +90,51 @@ namespace PersonalExpenseTracker
                 };
 
             dataGridPayor.DataSource = custQuery.ToList();
+            dataGridPayor.Columns[0].Visible = false;
         }
 
-        private void dataGridPayor_CellContentClick(object sender, DataGridViewCellEventArgs e)
+
+        public void RefreshPayeeData()
         {
-            Console.WriteLine("test");
+            ExpenseGuideDBContainer db = new ExpenseGuideDBContainer();
+
+            var custQuery =
+                from cust in db.Contacts
+                where cust.UserId == FormLogin.globalLoggedInUserID && cust.ContactType == "Payee"
+                select new
+                {
+                    ID = cust.Id,
+                    Name = cust.ContactName,
+                    Description = cust.ContactDescription,
+                    TelephoneNumber = cust.ContactTelephoneNumber,
+                    Type = cust.ContactType
+                };
+
+            dataGridPayee.DataSource = custQuery.ToList();
+            dataGridPayee.Columns[0].Visible = false;
+        }
+
+
+        private void refreshData(object sender, EventArgs e)
+        {
+            RefreshPayorData();
+            RefreshPayeeData();
+        }
+
+        private void LoadContactsData(object sender, EventArgs e)
+        {
+
+        }
+
+
+        private void TabControlChanged(object sender, EventArgs e)
+        {
+            if (tabContacts.SelectedIndex == 0){
+                RefreshPayorData();
+            } else if(tabContacts.SelectedIndex == 1)
+            {
+                RefreshPayeeData();
+            }
         }
     }
 }
