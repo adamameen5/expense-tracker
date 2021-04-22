@@ -66,21 +66,21 @@ namespace PersonalExpenseTracker
             this.eventRecuringSameDayEveryMonth = new System.Windows.Forms.RadioButton();
             this.eventTypeAppointment = new System.Windows.Forms.RadioButton();
             this.eventTypeTask = new System.Windows.Forms.RadioButton();
-            this.eventTypeExpense = new System.Windows.Forms.RadioButton();
-            this.evenTypeIncome = new System.Windows.Forms.RadioButton();
-            this.eventTypeJustAnEvent = new System.Windows.Forms.RadioButton();
+            this.eventCategoryExpense = new System.Windows.Forms.RadioButton();
+            this.evenCategoryIncome = new System.Windows.Forms.RadioButton();
+            this.eventCategoryJustAnEvent = new System.Windows.Forms.RadioButton();
             this.button1 = new System.Windows.Forms.Button();
-            this.eventCategory = new System.Windows.Forms.ComboBox();
+            this.eventContact = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
@@ -428,38 +428,38 @@ namespace PersonalExpenseTracker
             this.eventTypeTask.Text = "Task";
             this.eventTypeTask.UseVisualStyleBackColor = true;
             // 
-            // eventTypeExpense
+            // eventCategoryExpense
             // 
-            this.eventTypeExpense.AutoSize = true;
-            this.eventTypeExpense.Location = new System.Drawing.Point(6, 2);
-            this.eventTypeExpense.Name = "eventTypeExpense";
-            this.eventTypeExpense.Size = new System.Drawing.Size(66, 17);
-            this.eventTypeExpense.TabIndex = 48;
-            this.eventTypeExpense.TabStop = true;
-            this.eventTypeExpense.Text = "Expense";
-            this.eventTypeExpense.UseVisualStyleBackColor = true;
+            this.eventCategoryExpense.AutoSize = true;
+            this.eventCategoryExpense.Location = new System.Drawing.Point(6, 2);
+            this.eventCategoryExpense.Name = "eventCategoryExpense";
+            this.eventCategoryExpense.Size = new System.Drawing.Size(66, 17);
+            this.eventCategoryExpense.TabIndex = 48;
+            this.eventCategoryExpense.TabStop = true;
+            this.eventCategoryExpense.Text = "Expense";
+            this.eventCategoryExpense.UseVisualStyleBackColor = true;
             // 
-            // evenTypeIncome
+            // evenCategoryIncome
             // 
-            this.evenTypeIncome.AutoSize = true;
-            this.evenTypeIncome.Location = new System.Drawing.Point(6, 24);
-            this.evenTypeIncome.Name = "evenTypeIncome";
-            this.evenTypeIncome.Size = new System.Drawing.Size(60, 17);
-            this.evenTypeIncome.TabIndex = 49;
-            this.evenTypeIncome.TabStop = true;
-            this.evenTypeIncome.Text = "Income";
-            this.evenTypeIncome.UseVisualStyleBackColor = true;
+            this.evenCategoryIncome.AutoSize = true;
+            this.evenCategoryIncome.Location = new System.Drawing.Point(6, 24);
+            this.evenCategoryIncome.Name = "evenCategoryIncome";
+            this.evenCategoryIncome.Size = new System.Drawing.Size(60, 17);
+            this.evenCategoryIncome.TabIndex = 49;
+            this.evenCategoryIncome.TabStop = true;
+            this.evenCategoryIncome.Text = "Income";
+            this.evenCategoryIncome.UseVisualStyleBackColor = true;
             // 
-            // eventTypeJustAnEvent
+            // eventCategoryJustAnEvent
             // 
-            this.eventTypeJustAnEvent.AutoSize = true;
-            this.eventTypeJustAnEvent.Location = new System.Drawing.Point(6, 46);
-            this.eventTypeJustAnEvent.Name = "eventTypeJustAnEvent";
-            this.eventTypeJustAnEvent.Size = new System.Drawing.Size(89, 17);
-            this.eventTypeJustAnEvent.TabIndex = 50;
-            this.eventTypeJustAnEvent.TabStop = true;
-            this.eventTypeJustAnEvent.Text = "Just an event";
-            this.eventTypeJustAnEvent.UseVisualStyleBackColor = true;
+            this.eventCategoryJustAnEvent.AutoSize = true;
+            this.eventCategoryJustAnEvent.Location = new System.Drawing.Point(6, 46);
+            this.eventCategoryJustAnEvent.Name = "eventCategoryJustAnEvent";
+            this.eventCategoryJustAnEvent.Size = new System.Drawing.Size(89, 17);
+            this.eventCategoryJustAnEvent.TabIndex = 50;
+            this.eventCategoryJustAnEvent.TabStop = true;
+            this.eventCategoryJustAnEvent.Text = "Just an event";
+            this.eventCategoryJustAnEvent.UseVisualStyleBackColor = true;
             // 
             // button1
             // 
@@ -471,14 +471,15 @@ namespace PersonalExpenseTracker
             this.button1.TabIndex = 52;
             this.button1.Text = "Save";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.validateEventInfo);
             // 
-            // eventCategory
+            // eventContact
             // 
-            this.eventCategory.FormattingEnabled = true;
-            this.eventCategory.Location = new System.Drawing.Point(99, 350);
-            this.eventCategory.Name = "eventCategory";
-            this.eventCategory.Size = new System.Drawing.Size(226, 21);
-            this.eventCategory.TabIndex = 53;
+            this.eventContact.FormattingEnabled = true;
+            this.eventContact.Location = new System.Drawing.Point(99, 350);
+            this.eventContact.Name = "eventContact";
+            this.eventContact.Size = new System.Drawing.Size(226, 21);
+            this.eventContact.TabIndex = 53;
             // 
             // panel1
             // 
@@ -486,7 +487,7 @@ namespace PersonalExpenseTracker
             this.panel1.Controls.Add(this.panel5);
             this.panel1.Controls.Add(this.panel4);
             this.panel1.Controls.Add(this.panel3);
-            this.panel1.Controls.Add(this.eventCategory);
+            this.panel1.Controls.Add(this.eventContact);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.eventName);
             this.panel1.Controls.Add(this.label10);
@@ -504,14 +505,15 @@ namespace PersonalExpenseTracker
             this.panel1.Size = new System.Drawing.Size(344, 437);
             this.panel1.TabIndex = 32;
             // 
-            // panel3
+            // panel5
             // 
-            this.panel3.Controls.Add(this.eventRecuringSameDayEveryMonth);
-            this.panel3.Controls.Add(this.eventRecurringEveryday);
-            this.panel3.Location = new System.Drawing.Point(101, 158);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(226, 46);
-            this.panel3.TabIndex = 54;
+            this.panel5.Controls.Add(this.eventCategoryJustAnEvent);
+            this.panel5.Controls.Add(this.evenCategoryIncome);
+            this.panel5.Controls.Add(this.eventCategoryExpense);
+            this.panel5.Location = new System.Drawing.Point(99, 272);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(227, 68);
+            this.panel5.TabIndex = 56;
             // 
             // panel4
             // 
@@ -522,15 +524,14 @@ namespace PersonalExpenseTracker
             this.panel4.Size = new System.Drawing.Size(227, 50);
             this.panel4.TabIndex = 55;
             // 
-            // panel5
+            // panel3
             // 
-            this.panel5.Controls.Add(this.eventTypeJustAnEvent);
-            this.panel5.Controls.Add(this.evenTypeIncome);
-            this.panel5.Controls.Add(this.eventTypeExpense);
-            this.panel5.Location = new System.Drawing.Point(99, 272);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(227, 68);
-            this.panel5.TabIndex = 56;
+            this.panel3.Controls.Add(this.eventRecuringSameDayEveryMonth);
+            this.panel3.Controls.Add(this.eventRecurringEveryday);
+            this.panel3.Location = new System.Drawing.Point(101, 158);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(226, 46);
+            this.panel3.TabIndex = 54;
             // 
             // FormEvents
             // 
@@ -553,12 +554,12 @@ namespace PersonalExpenseTracker
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -601,11 +602,11 @@ namespace PersonalExpenseTracker
         private System.Windows.Forms.RadioButton eventRecuringSameDayEveryMonth;
         private System.Windows.Forms.RadioButton eventTypeAppointment;
         private System.Windows.Forms.RadioButton eventTypeTask;
-        private System.Windows.Forms.RadioButton eventTypeExpense;
-        private System.Windows.Forms.RadioButton evenTypeIncome;
-        private System.Windows.Forms.RadioButton eventTypeJustAnEvent;
+        private System.Windows.Forms.RadioButton eventCategoryExpense;
+        private System.Windows.Forms.RadioButton evenCategoryIncome;
+        private System.Windows.Forms.RadioButton eventCategoryJustAnEvent;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ComboBox eventCategory;
+        private System.Windows.Forms.ComboBox eventContact;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Panel panel4;

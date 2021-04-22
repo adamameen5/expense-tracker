@@ -79,6 +79,7 @@
     <Compile Include="Event.cs">
       <DependentUpon>ExpenseGuideDB.tt</DependentUpon>
     </Compile>
+    <Compile Include="EventsModel.cs" />
     <Compile Include="ExpenseGuide.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
