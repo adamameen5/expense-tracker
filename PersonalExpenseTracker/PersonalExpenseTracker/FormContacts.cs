@@ -24,9 +24,9 @@ namespace PersonalExpenseTracker
             InitializeComponent();
             lblCurrentTime.Text = DateTime.Now.ToString("f");
             lblUserName.Text = FormLogin.globalLoggedInUserName;
-            if (File.Exists("ExpenseGuide.xml") == true)
+            if (File.Exists("ExpenseGuide-Contact-Details.xml") == true)
             {
-                this.myDataSet.ReadXml("ExpenseGuide.xml");
+                this.myDataSet.ReadXml("ExpenseGuide-Contact-Details.xml");
             }
         }
 
@@ -45,10 +45,26 @@ namespace PersonalExpenseTracker
 
         private void FormContacts_Load(object sender, EventArgs e)
         {
-            this.UserDataSet = this.myDataSet;
-            this.expenseGuide = this.UserDataSet;
-            this.dataGridPayor.DataSource = this.expenseGuide;
-            this.dataGridPayor.DataMember = "Contact";
+            //this.UserDataSet = this.myDataSet;
+            //this.expenseGuide = this.UserDataSet;
+            //this.dataGridPayor.DataSource = this.expenseGuide;
+            //this.dataGridPayor.DataMember = "Contact";
+
+            //DataGrid dataGrid1 = new DataGrid();
+            ExpenseGuideDBContainer db = new ExpenseGuideDBContainer();
+
+            var custQuery =
+                from cust in db.Contacts
+                where cust.UserId == FormLogin.globalLoggedInUserID && cust.ContactType=="Payor"
+                select new
+                {
+                    Name = cust.ContactName,
+                    Description = cust.ContactDescription,
+                    TelephoneNumber = cust.ContactTelephoneNumber,
+                    Type = cust.ContactType
+                };
+
+            dataGridPayor.DataSource = custQuery.ToList();
         }
 
         private void dataGridPayor_CellContentClick(object sender, DataGridViewCellEventArgs e)

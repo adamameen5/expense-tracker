@@ -29,11 +29,9 @@ namespace PersonalExpenseTracker
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormContacts));
             this.tabContacts = new System.Windows.Forms.TabControl();
             this.tabPayor = new System.Windows.Forms.TabPage();
-            this.dataGridPayor = new System.Windows.Forms.DataGridView();
             this.tabPayee = new System.Windows.Forms.TabPage();
             this.dataGridPayee = new System.Windows.Forms.DataGridView();
             this.button4 = new System.Windows.Forms.Button();
@@ -42,25 +40,14 @@ namespace PersonalExpenseTracker
             this.lblCurrentTime = new System.Windows.Forms.Label();
             this.lblUserName = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.dataGridPayor = new System.Windows.Forms.DataGridView();
             this.userControlBackToDashboardLink1 = new PersonalExpenseTracker.UserControlBackToDashboardLink();
-            this.expenseGuide = new PersonalExpenseTracker.ExpenseGuide();
-            this.expenseGuideBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.contactBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.contactIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.contactNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.contactDescriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.contactTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fKUserIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.contactTelephoneNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabContacts.SuspendLayout();
             this.tabPayor.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridPayor)).BeginInit();
             this.tabPayee.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridPayee)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.expenseGuide)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.expenseGuideBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.contactBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridPayor)).BeginInit();
             this.SuspendLayout();
             // 
             // tabContacts
@@ -83,23 +70,6 @@ namespace PersonalExpenseTracker
             this.tabPayor.TabIndex = 0;
             this.tabPayor.Text = "Payor";
             this.tabPayor.UseVisualStyleBackColor = true;
-            // 
-            // dataGridPayor
-            // 
-            this.dataGridPayor.AutoGenerateColumns = false;
-            this.dataGridPayor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridPayor.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.contactIDDataGridViewTextBoxColumn,
-            this.contactNameDataGridViewTextBoxColumn,
-            this.contactDescriptionDataGridViewTextBoxColumn,
-            this.contactTypeDataGridViewTextBoxColumn,
-            this.fKUserIDDataGridViewTextBoxColumn,
-            this.contactTelephoneNumberDataGridViewTextBoxColumn});
-            this.dataGridPayor.DataSource = this.contactBindingSource;
-            this.dataGridPayor.Location = new System.Drawing.Point(0, -3);
-            this.dataGridPayor.Name = "dataGridPayor";
-            this.dataGridPayor.Size = new System.Drawing.Size(604, 267);
-            this.dataGridPayor.TabIndex = 0;
             // 
             // tabPayee
             // 
@@ -182,63 +152,21 @@ namespace PersonalExpenseTracker
             this.label2.TabIndex = 38;
             this.label2.Text = "Contacts";
             // 
+            // dataGridPayor
+            // 
+            this.dataGridPayor.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridPayor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridPayor.Location = new System.Drawing.Point(0, 0);
+            this.dataGridPayor.Name = "dataGridPayor";
+            this.dataGridPayor.Size = new System.Drawing.Size(604, 267);
+            this.dataGridPayor.TabIndex = 0;
+            // 
             // userControlBackToDashboardLink1
             // 
             this.userControlBackToDashboardLink1.Location = new System.Drawing.Point(27, 554);
             this.userControlBackToDashboardLink1.Name = "userControlBackToDashboardLink1";
             this.userControlBackToDashboardLink1.Size = new System.Drawing.Size(148, 16);
             this.userControlBackToDashboardLink1.TabIndex = 42;
-            // 
-            // expenseGuide
-            // 
-            this.expenseGuide.DataSetName = "ExpenseGuide";
-            this.expenseGuide.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // expenseGuideBindingSource
-            // 
-            this.expenseGuideBindingSource.DataSource = this.expenseGuide;
-            this.expenseGuideBindingSource.Position = 0;
-            // 
-            // contactBindingSource
-            // 
-            this.contactBindingSource.DataMember = "Contact";
-            this.contactBindingSource.DataSource = this.expenseGuide;
-            // 
-            // contactIDDataGridViewTextBoxColumn
-            // 
-            this.contactIDDataGridViewTextBoxColumn.DataPropertyName = "ContactID";
-            this.contactIDDataGridViewTextBoxColumn.HeaderText = "ContactID";
-            this.contactIDDataGridViewTextBoxColumn.Name = "contactIDDataGridViewTextBoxColumn";
-            // 
-            // contactNameDataGridViewTextBoxColumn
-            // 
-            this.contactNameDataGridViewTextBoxColumn.DataPropertyName = "ContactName";
-            this.contactNameDataGridViewTextBoxColumn.HeaderText = "ContactName";
-            this.contactNameDataGridViewTextBoxColumn.Name = "contactNameDataGridViewTextBoxColumn";
-            // 
-            // contactDescriptionDataGridViewTextBoxColumn
-            // 
-            this.contactDescriptionDataGridViewTextBoxColumn.DataPropertyName = "ContactDescription";
-            this.contactDescriptionDataGridViewTextBoxColumn.HeaderText = "ContactDescription";
-            this.contactDescriptionDataGridViewTextBoxColumn.Name = "contactDescriptionDataGridViewTextBoxColumn";
-            // 
-            // contactTypeDataGridViewTextBoxColumn
-            // 
-            this.contactTypeDataGridViewTextBoxColumn.DataPropertyName = "ContactType";
-            this.contactTypeDataGridViewTextBoxColumn.HeaderText = "ContactType";
-            this.contactTypeDataGridViewTextBoxColumn.Name = "contactTypeDataGridViewTextBoxColumn";
-            // 
-            // fKUserIDDataGridViewTextBoxColumn
-            // 
-            this.fKUserIDDataGridViewTextBoxColumn.DataPropertyName = "FK_UserID";
-            this.fKUserIDDataGridViewTextBoxColumn.HeaderText = "FK_UserID";
-            this.fKUserIDDataGridViewTextBoxColumn.Name = "fKUserIDDataGridViewTextBoxColumn";
-            // 
-            // contactTelephoneNumberDataGridViewTextBoxColumn
-            // 
-            this.contactTelephoneNumberDataGridViewTextBoxColumn.DataPropertyName = "ContactTelephoneNumber";
-            this.contactTelephoneNumberDataGridViewTextBoxColumn.HeaderText = "ContactTelephoneNumber";
-            this.contactTelephoneNumberDataGridViewTextBoxColumn.Name = "contactTelephoneNumberDataGridViewTextBoxColumn";
             // 
             // FormContacts
             // 
@@ -259,13 +187,10 @@ namespace PersonalExpenseTracker
             this.Load += new System.EventHandler(this.FormContacts_Load);
             this.tabContacts.ResumeLayout(false);
             this.tabPayor.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridPayor)).EndInit();
             this.tabPayee.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridPayee)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.expenseGuide)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.expenseGuideBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.contactBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridPayor)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -284,14 +209,5 @@ namespace PersonalExpenseTracker
         private System.Windows.Forms.Label label2;
         private UserControlBackToDashboardLink userControlBackToDashboardLink1;
         private System.Windows.Forms.DataGridView dataGridPayor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn contactIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn contactNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn contactDescriptionDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn contactTypeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fKUserIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn contactTelephoneNumberDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource contactBindingSource;
-        private ExpenseGuide expenseGuide;
-        private System.Windows.Forms.BindingSource expenseGuideBindingSource;
     }
 }

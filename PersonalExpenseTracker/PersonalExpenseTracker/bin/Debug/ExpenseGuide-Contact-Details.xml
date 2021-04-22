@@ -2,10 +2,10 @@
 <ExpenseGuide xmlns="http://tempuri.org/ExpenseGuide.xsd">
   <Contact>
     <ContactID>1</ContactID>
-    <ContactName>Hathim</ContactName>
-    <ContactDescription>transfer</ContactDescription>
-    <ContactType>Payee</ContactType>
+    <ContactName>Finacne</ContactName>
+    <ContactDescription>dedei</ContactDescription>
+    <ContactType>Payor</ContactType>
     <FK_UserID>1</FK_UserID>
-    <ContactTelephoneNumber>02938212</ContactTelephoneNumber>
+    <ContactTelephoneNumber>2020202</ContactTelephoneNumber>
   </Contact>
 </ExpenseGuide>
