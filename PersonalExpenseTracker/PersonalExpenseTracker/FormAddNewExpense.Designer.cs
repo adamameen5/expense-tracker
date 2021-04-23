@@ -33,16 +33,16 @@ namespace PersonalExpenseTracker
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.email = new System.Windows.Forms.TextBox();
+            this.expenseCode = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.expenseDate = new System.Windows.Forms.DateTimePicker();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.expenseAmount = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.expensePayee = new System.Windows.Forms.ComboBox();
+            this.expenseEvent = new System.Windows.Forms.ComboBox();
+            this.expenseAccount = new System.Windows.Forms.ComboBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblCurrentTime = new System.Windows.Forms.Label();
             this.lblUserName = new System.Windows.Forms.Label();
@@ -78,13 +78,13 @@ namespace PersonalExpenseTracker
             this.label5.TabIndex = 21;
             this.label5.Text = "Event";
             // 
-            // email
+            // expenseCode
             // 
-            this.email.Location = new System.Drawing.Point(70, 160);
-            this.email.Name = "email";
-            this.email.ReadOnly = true;
-            this.email.Size = new System.Drawing.Size(226, 20);
-            this.email.TabIndex = 22;
+            this.expenseCode.Location = new System.Drawing.Point(70, 160);
+            this.expenseCode.Name = "expenseCode";
+            this.expenseCode.ReadOnly = true;
+            this.expenseCode.Size = new System.Drawing.Size(226, 20);
+            this.expenseCode.TabIndex = 22;
             // 
             // label6
             // 
@@ -95,12 +95,12 @@ namespace PersonalExpenseTracker
             this.label6.TabIndex = 25;
             this.label6.Text = "Date";
             // 
-            // dateTimePicker1
+            // expenseDate
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(436, 160);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(226, 20);
-            this.dateTimePicker1.TabIndex = 26;
+            this.expenseDate.Location = new System.Drawing.Point(436, 160);
+            this.expenseDate.Name = "expenseDate";
+            this.expenseDate.Size = new System.Drawing.Size(226, 20);
+            this.expenseDate.TabIndex = 26;
             // 
             // label7
             // 
@@ -120,12 +120,12 @@ namespace PersonalExpenseTracker
             this.label8.TabIndex = 28;
             this.label8.Text = "Account";
             // 
-            // textBox1
+            // expenseAmount
             // 
-            this.textBox1.Location = new System.Drawing.Point(436, 210);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(226, 20);
-            this.textBox1.TabIndex = 29;
+            this.expenseAmount.Location = new System.Drawing.Point(436, 210);
+            this.expenseAmount.Name = "expenseAmount";
+            this.expenseAmount.Size = new System.Drawing.Size(226, 20);
+            this.expenseAmount.TabIndex = 29;
             // 
             // button1
             // 
@@ -137,30 +137,32 @@ namespace PersonalExpenseTracker
             this.button1.TabIndex = 30;
             this.button1.Text = "Save";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.validateExpenseInfo);
             // 
-            // comboBox1
+            // expensePayee
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(70, 210);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(226, 21);
-            this.comboBox1.TabIndex = 31;
+            this.expensePayee.FormattingEnabled = true;
+            this.expensePayee.Location = new System.Drawing.Point(70, 210);
+            this.expensePayee.Name = "expensePayee";
+            this.expensePayee.Size = new System.Drawing.Size(226, 21);
+            this.expensePayee.TabIndex = 31;
+            this.expensePayee.SelectedIndexChanged += new System.EventHandler(this.OnChangePayeeDropdown);
             // 
-            // comboBox2
+            // expenseEvent
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(70, 260);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(226, 21);
-            this.comboBox2.TabIndex = 32;
+            this.expenseEvent.FormattingEnabled = true;
+            this.expenseEvent.Location = new System.Drawing.Point(70, 260);
+            this.expenseEvent.Name = "expenseEvent";
+            this.expenseEvent.Size = new System.Drawing.Size(226, 21);
+            this.expenseEvent.TabIndex = 32;
             // 
-            // comboBox3
+            // expenseAccount
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(436, 260);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(226, 21);
-            this.comboBox3.TabIndex = 33;
+            this.expenseAccount.FormattingEnabled = true;
+            this.expenseAccount.Location = new System.Drawing.Point(436, 260);
+            this.expenseAccount.Name = "expenseAccount";
+            this.expenseAccount.Size = new System.Drawing.Size(226, 21);
+            this.expenseAccount.TabIndex = 33;
             // 
             // pictureBox1
             // 
@@ -217,16 +219,16 @@ namespace PersonalExpenseTracker
             this.Controls.Add(this.lblCurrentTime);
             this.Controls.Add(this.lblUserName);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.comboBox3);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.expenseAccount);
+            this.Controls.Add(this.expenseEvent);
+            this.Controls.Add(this.expensePayee);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.expenseAmount);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.expenseDate);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.email);
+            this.Controls.Add(this.expenseCode);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -242,16 +244,16 @@ namespace PersonalExpenseTracker
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox email;
+        private System.Windows.Forms.TextBox expenseCode;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker expenseDate;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox expenseAmount;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox expensePayee;
+        private System.Windows.Forms.ComboBox expenseEvent;
+        private System.Windows.Forms.ComboBox expenseAccount;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lblCurrentTime;
         private System.Windows.Forms.Label lblUserName;

@@ -39,16 +39,24 @@ namespace PersonalExpenseTracker
         {
 
             FormAddNewPayor formPayor = new FormAddNewPayor();
-            formPayor.ShowDialog();
+            DialogResult result = formPayor.ShowDialog();
 
+            if (result == DialogResult.Cancel)
+            {
+                RefreshPayorData();
+            }
         }
 
 
         private void toggleAddNewPayeeView(object sender, EventArgs e)
         {
             FormAddNewPayee formPayee = new FormAddNewPayee();
-            formPayee.ShowDialog();
+            DialogResult result = formPayee.ShowDialog();
 
+            if (result == DialogResult.Cancel)
+            {
+                RefreshPayeeData();
+            }
         }
 
 

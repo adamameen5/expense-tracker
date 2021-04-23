@@ -44,9 +44,7 @@ namespace PersonalExpenseTracker
             {
                 addNewPayor();
                 
-            }
-
-            
+            }            
         }
 
         private void addNewPayor()
@@ -84,7 +82,7 @@ namespace PersonalExpenseTracker
             {
                 //show success message if the data was added succesfully
                 MessageBox.Show(String.Format(Properties.Resources.PAYOR_DETAILS_SUCCESSFULLY_SAVED), "Success");
-
+                
                 resetTextFields();
             }
         }

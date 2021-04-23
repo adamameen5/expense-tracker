@@ -89,6 +89,15 @@ namespace PersonalExpenseTracker.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Expense details were successfully added to the transactions table!.
+        /// </summary>
+        internal static string EXPENSE_DETAILS_SUCCESSFULLY_SAVED {
+            get {
+                return ResourceManager.GetString("EXPENSE_DETAILS_SUCCESSFULLY_SAVED", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Your financial details were successfully added!.
         /// </summary>
         internal static string FINANCIAL_DETAILS_SUCCESSFULLY_ADDED {

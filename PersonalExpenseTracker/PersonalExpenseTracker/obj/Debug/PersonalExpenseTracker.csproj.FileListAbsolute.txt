@@ -100,3 +100,4 @@ C:\ADAMLK\EAD\EAD_Final_3\expense-tracker\PersonalExpenseTracker\PersonalExpense
 C:\ADAMLK\EAD\EAD_Final_3\expense-tracker\PersonalExpenseTracker\PersonalExpenseTracker\obj\Debug\PersonalExpenseTracker.csproj.CopyComplete
 C:\ADAMLK\EAD\EAD_Final_3\expense-tracker\PersonalExpenseTracker\PersonalExpenseTracker\obj\Debug\PersonalExpenseTracker.exe
 C:\ADAMLK\EAD\EAD_Final_3\expense-tracker\PersonalExpenseTracker\PersonalExpenseTracker\obj\Debug\PersonalExpenseTracker.pdb
+C:\ADAMLK\EAD\EAD_Final_3\expense-tracker\PersonalExpenseTracker\PersonalExpenseTracker\obj\Debug\PersonalExpenseTracker.csprojAssemblyReference.cache

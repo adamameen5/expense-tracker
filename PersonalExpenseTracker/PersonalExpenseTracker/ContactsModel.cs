@@ -23,7 +23,7 @@ namespace PersonalExpenseTracker
                 ExpenseGuideDBContainer db = new ExpenseGuideDBContainer();
                 db.Contacts.Add(contactRecord);
                 db.SaveChanges();
-
+                
                 return true;
             }
             catch (Exception ex)
