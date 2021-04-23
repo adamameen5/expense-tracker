@@ -44,6 +44,7 @@ namespace PersonalExpenseTracker
             // 
             // dataGridExpenses
             // 
+            this.dataGridExpenses.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridExpenses.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridExpenses.Location = new System.Drawing.Point(34, 144);
             this.dataGridExpenses.Name = "dataGridExpenses";

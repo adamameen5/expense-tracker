@@ -17,13 +17,42 @@ namespace PersonalExpenseTracker
             InitializeComponent();
             lblCurrentTime.Text = DateTime.Now.ToString("f");
             lblUserName.Text = FormLogin.globalLoggedInUserName;
+            RefreshExpensesData();
         }
 
         private void toggleAddNewExpense(object sender, EventArgs e)
         {
             FormAddNewExpense formAddNewExpns = new FormAddNewExpense();
-            formAddNewExpns.Show();
-            this.Hide();
+            DialogResult result = formAddNewExpns.ShowDialog();
+
+            if (result == DialogResult.Cancel)
+            {
+                RefreshExpensesData();
+            }
+        }
+
+
+        public void RefreshExpensesData()
+        {
+            ExpenseGuideDBContainer db = new ExpenseGuideDBContainer();
+
+            var expenseQuery =
+                from expenses in db.Transactions
+                where expenses.UserId == FormLogin.globalLoggedInUserID && expenses.TransactionType == "Expense"
+                select new
+                {
+                    ID = expenses.Id,
+                    Date = expenses.TransactionDate,
+                    PaidFor = expenses.TransactionContactName,
+                    Amount = expenses.TransactionAmount,
+                    Event = expenses.TransactionEvent,
+                    FromAccount = expenses.TransactionAssociatedAccount,
+                    ContactId = expenses.ContactId
+                };
+
+            dataGridExpenses.DataSource = expenseQuery.ToList();
+            dataGridExpenses.Columns[0].Visible = false;
+            dataGridExpenses.Columns[6].Visible = false;
         }
     }
 }
