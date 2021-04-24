@@ -38,6 +38,7 @@ namespace PersonalExpenseTracker
             this.lblUserName = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.userControlBackToDashboardLink1 = new PersonalExpenseTracker.UserControlBackToDashboardLink();
+            this.btnUpdateRecord = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridIncomes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -73,6 +74,7 @@ namespace PersonalExpenseTracker
             this.dataGridIncomes.Name = "dataGridIncomes";
             this.dataGridIncomes.Size = new System.Drawing.Size(614, 284);
             this.dataGridIncomes.TabIndex = 28;
+            this.dataGridIncomes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GetRowContent);
             // 
             // pictureBox1
             // 
@@ -119,11 +121,25 @@ namespace PersonalExpenseTracker
             this.userControlBackToDashboardLink1.Size = new System.Drawing.Size(196, 40);
             this.userControlBackToDashboardLink1.TabIndex = 42;
             // 
+            // btnUpdateRecord
+            // 
+            this.btnUpdateRecord.BackColor = System.Drawing.Color.LightSlateGray;
+            this.btnUpdateRecord.ForeColor = System.Drawing.Color.White;
+            this.btnUpdateRecord.Location = new System.Drawing.Point(364, 450);
+            this.btnUpdateRecord.Name = "btnUpdateRecord";
+            this.btnUpdateRecord.Size = new System.Drawing.Size(148, 43);
+            this.btnUpdateRecord.TabIndex = 43;
+            this.btnUpdateRecord.Text = "Update Record";
+            this.btnUpdateRecord.UseVisualStyleBackColor = false;
+            this.btnUpdateRecord.Visible = false;
+            this.btnUpdateRecord.Click += new System.EventHandler(this.UpdateIncomeRecord);
+            // 
             // FormIncomes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(696, 568);
+            this.Controls.Add(this.btnUpdateRecord);
             this.Controls.Add(this.userControlBackToDashboardLink1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lblCurrentTime);
@@ -151,5 +167,6 @@ namespace PersonalExpenseTracker
         private System.Windows.Forms.Label lblUserName;
         private System.Windows.Forms.Label label2;
         private UserControlBackToDashboardLink userControlBackToDashboardLink1;
+        private System.Windows.Forms.Button btnUpdateRecord;
     }
 }

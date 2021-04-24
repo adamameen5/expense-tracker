@@ -116,6 +116,24 @@ namespace PersonalExpenseTracker.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Income details were successfully added to the transactions table!.
+        /// </summary>
+        internal static string INCOME_DETAILS_SUCCESSFULLY_SAVED {
+            get {
+                return ResourceManager.GetString("INCOME_DETAILS_SUCCESSFULLY_SAVED", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Income details were successfully updated and saved in the transactions table!.
+        /// </summary>
+        internal static string INCOME_DETAILS_SUCCESSFULLY_UPDATED {
+            get {
+                return ResourceManager.GetString("INCOME_DETAILS_SUCCESSFULLY_UPDATED", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to The email or password you entered is not valid..
         /// </summary>
         internal static string INVALID_LOGIN_CREDENTIALS {

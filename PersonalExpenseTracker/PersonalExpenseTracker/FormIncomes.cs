@@ -12,6 +12,15 @@ namespace PersonalExpenseTracker
 {
     public partial class FormIncomes : Form
     {
+
+        String incomeIdToUpdate = "";
+        String incomeCodeToUpdate = "";
+        String incomeDateToUpdate = "";
+        String incomeContactNameToUpdate = "";
+        String incomeAmountToUpdate = "";
+        String incomeEventToUpdate = "";
+        String incomeAssociatedAccountToUpdate = "";
+
         public FormIncomes()
         {
             InitializeComponent();
@@ -54,6 +63,31 @@ namespace PersonalExpenseTracker
             dataGridIncomes.DataSource = incomesQuery.ToList();
             dataGridIncomes.Columns[0].Visible = false;
             dataGridIncomes.Columns[7].Visible = false;
+        }
+
+        private void UpdateIncomeRecord(object sender, EventArgs e)
+        {
+            FormAddNewIncome formAddNewIncm = new FormAddNewIncome();
+            formAddNewIncm.PopulateFieldsToUpdate(incomeIdToUpdate, incomeDateToUpdate, incomeContactNameToUpdate, incomeAmountToUpdate, incomeEventToUpdate, incomeAssociatedAccountToUpdate, incomeCodeToUpdate);
+            DialogResult result = formAddNewIncm.ShowDialog();
+
+            if (result == DialogResult.Cancel)
+            {
+                RefreshIncomesData();
+            }
+        }
+
+        private void GetRowContent(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridViewRow getRow = dataGridIncomes.Rows[e.RowIndex];
+            incomeIdToUpdate = this.dataGridIncomes.CurrentRow.Cells[0].Value.ToString();
+            incomeDateToUpdate = this.dataGridIncomes.CurrentRow.Cells[1].Value.ToString();
+            incomeContactNameToUpdate = this.dataGridIncomes.CurrentRow.Cells[2].Value.ToString();
+            incomeAmountToUpdate = this.dataGridIncomes.CurrentRow.Cells[3].Value.ToString();
+            incomeEventToUpdate = this.dataGridIncomes.CurrentRow.Cells[4].Value.ToString();
+            incomeAssociatedAccountToUpdate = this.dataGridIncomes.CurrentRow.Cells[5].Value.ToString();
+            incomeCodeToUpdate = this.dataGridIncomes.CurrentRow.Cells[6].Value.ToString();
+            btnUpdateRecord.Visible = true;
         }
     }
 }

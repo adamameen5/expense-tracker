@@ -16,6 +16,8 @@ namespace PersonalExpenseTracker
         private readonly IncomeModel helper = new IncomeModel();
         public int transactionAssociatedContactID = 0;
         public UserTransactionsData userTransactionsData { get; set; }
+        public int incomeIdToUpdate = 0;
+        public Boolean isAnUpdate = false;
 
         //Creating a dataset instance
         ExpenseGuide myDataSet = new ExpenseGuide();
@@ -68,7 +70,64 @@ namespace PersonalExpenseTracker
             }
             else
             {
-                SaveIncomeInfo();
+                if (!isAnUpdate)
+                {
+                    SaveIncomeInfo();
+                }
+                else
+                {
+                    UpdateIncomeInfo();
+                }
+            }
+        }
+
+
+        private void UpdateIncomeInfo()
+        {
+            Boolean transactionSaved = false;
+
+            this.userTransactionsData = new UserTransactionsData();
+            this.userTransactionsData.transactionDate = this.incomeDate.Text.Trim();
+            this.userTransactionsData.transactionContactName = this.incomePayor.Text.Trim();
+            this.userTransactionsData.transactionAmount = this.incomeAmount.Text.Trim();
+            this.userTransactionsData.transactionEvent = this.incomeEvent.Text.Trim();
+            this.userTransactionsData.transactionAssociatedAccount = this.incomeAccount.Text.Trim();
+            this.userTransactionsData.transactionType = "Income";
+            this.userTransactionsData.transactionCode = this.incomeCode.Text.Trim();
+
+
+            ////add the data onto the memory resident database
+            //ExpenseGuide.TransactionRow transactionRow = this.myDataSet.Transaction.FindByTransactionID(incomeIdToUpdate);
+            //transactionRow.TransactionDate = this.userTransactionsData.transactionDate;
+            //transactionRow.TransactionContactName = this.userTransactionsData.transactionContactName;
+            //transactionRow.TransactionAmount = this.userTransactionsData.transactionAmount;
+            //transactionRow.TransactionEvent = this.userTransactionsData.transactionEvent;
+            //transactionRow.TransactionAssociatedAccount = this.userTransactionsData.transactionAssociatedAccount;
+            //transactionRow.TransactionType = this.userTransactionsData.transactionType;
+            //transactionRow.TransactionCode = this.userTransactionsData.transactionCode;
+            //transactionRow.FK_UserID = currentUserId;
+            //transactionRow.FK_ContactID = transactionAssociatedContactID;
+
+            //// adding the data to the respective instances
+            //this.myDataSet.Transaction.AddTransactionRow(transactionRow);
+            //this.myDataSet.AcceptChanges();
+
+            ////serialize it to disc
+            //this.myDataSet.WriteXml("ExpenseGuide.xml");
+
+            //forwarding the data (interacting with the model class, saving the data permanently in the db)
+            //here we save the contact details permanently in the db
+
+
+            transactionSaved = helper.UpdateIncomeInfo(incomeIdToUpdate, userTransactionsData);
+
+            if (transactionSaved)
+            {
+                //show success message if the data was added succesfully
+                MessageBox.Show(String.Format(Properties.Resources.INCOME_DETAILS_SUCCESSFULLY_UPDATED), "Update Success");
+
+                ResetTextFields();
+                incomeCode.Text = helper.GetTransactionCode();
             }
         }
 
@@ -151,7 +210,7 @@ namespace PersonalExpenseTracker
             if (transactionSaved)
             {
                 //show success message if the data was added succesfully
-                MessageBox.Show(String.Format(Properties.Resources.EXPENSE_DETAILS_SUCCESSFULLY_SAVED), "Success");
+                MessageBox.Show(String.Format(Properties.Resources.INCOME_DETAILS_SUCCESSFULLY_SAVED), "Success");
 
                 ResetTextFields();
                 incomeCode.Text = helper.GetTransactionCode();
@@ -173,6 +232,20 @@ namespace PersonalExpenseTracker
         private void onChangePayorDropdown(object sender, EventArgs e)
         {
             transactionAssociatedContactID = helper.GetContactID(incomePayor.Text.Trim());
+        }
+
+
+        public void PopulateFieldsToUpdate(String incID, String incDate, String incContact, String incAmount, String incEvent, String incAccount, String incCode)
+        {
+
+            incomeIdToUpdate = Int32.Parse(incID);
+            incomeDate.Text = incDate;
+            incomePayor.Text = incContact;
+            incomeAmount.Text = incAmount;
+            incomeEvent.Text = incEvent;
+            incomeAccount.Text = incAccount;
+            incomeCode.Text = incCode;
+            isAnUpdate = true;
         }
     }
 }

@@ -152,7 +152,7 @@ namespace PersonalExpenseTracker
             this.myDataSet.AcceptChanges();
 
             //serialize it to disc
-            this.myDataSet.Contact.WriteXml("ExpenseGuide.xml");
+            this.myDataSet.WriteXml("ExpenseGuide.xml");
 
             //forwarding the data (interacting with the model class, saving the data permanently in the db)
             //here we save the contact details permanently in the db
@@ -186,23 +186,23 @@ namespace PersonalExpenseTracker
 
 
             //add the data onto the memory resident database
-            //ExpenseGuide.TransactionRow transactionRow = this.myDataSet.Transaction.NewTransactionRow();
-            //transactionRow.TransactionDate = this.userTransactionsData.transactionDate;
-            //transactionRow.TransactionContactName = this.userTransactionsData.transactionContactName;
-            //transactionRow.TransactionAmount = this.userTransactionsData.transactionAmount;
-            //transactionRow.TransactionEvent = this.userTransactionsData.transactionEvent;
-            //transactionRow.TransactionAssociatedAccount = this.userTransactionsData.transactionAssociatedAccount;
-            //transactionRow.TransactionType = this.userTransactionsData.transactionType;
-            //transactionRow.TransactionCode = this.userTransactionsData.transactionCode;
-            //transactionRow.FK_UserID = currentUserId;
-            //transactionRow.FK_ContactID = transactionAssociatedContactID;
+            ExpenseGuide.TransactionRow transactionRow = this.myDataSet.Transaction.FindByTransactionID(expenseIdToUpdate);
+            transactionRow.TransactionDate = this.userTransactionsData.transactionDate;
+            transactionRow.TransactionContactName = this.userTransactionsData.transactionContactName;
+            transactionRow.TransactionAmount = this.userTransactionsData.transactionAmount;
+            transactionRow.TransactionEvent = this.userTransactionsData.transactionEvent;
+            transactionRow.TransactionAssociatedAccount = this.userTransactionsData.transactionAssociatedAccount;
+            transactionRow.TransactionType = this.userTransactionsData.transactionType;
+            transactionRow.TransactionCode = this.userTransactionsData.transactionCode;
+            transactionRow.FK_UserID = currentUserId;
+            transactionRow.FK_ContactID = transactionAssociatedContactID;
 
             // adding the data to the respective instances
-            //this.myDataSet.Transaction.AddTransactionRow(transactionRow);
-            //this.myDataSet.AcceptChanges();
+            this.myDataSet.Transaction.AddTransactionRow(transactionRow);
+            this.myDataSet.AcceptChanges();
 
             //serialize it to disc
-            //this.myDataSet.Contact.WriteXml("ExpenseGuide.xml");
+            this.myDataSet.WriteXml("ExpenseGuide.xml");
 
             //forwarding the data (interacting with the model class, saving the data permanently in the db)
             //here we save the contact details permanently in the db
