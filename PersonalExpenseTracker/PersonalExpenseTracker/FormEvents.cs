@@ -17,6 +17,8 @@ namespace PersonalExpenseTracker
         //Creating a dataset instance
         ExpenseGuide myDataSet = new ExpenseGuide();
 
+        EventsModel helper = new EventsModel();
+
         public String txtEventDate = "";
         public String txtEventCode = "";
         public String txtEventName = "";
@@ -24,20 +26,22 @@ namespace PersonalExpenseTracker
         public String txtEventType = "";
         public String txtEventCategory = "";
         public String txtEventAssociatedContact = "";
+        public String contactTypeToShow = "All";
 
         public FormEvents()
         {
             InitializeComponent();
             lblCurrentTime.Text = DateTime.Now.ToString("f");
             lblUserName.Text = FormLogin.globalLoggedInUserName;
+            eventCode.Text = helper.GetEventCode();
+            LoadComboBoxEventContactData(contactTypeToShow);
         }
 
         private void validateEventInfo(object sender, EventArgs e)
         {
             
             txtEventDate = this.eventDate.Text.Trim();
-            //txtEventCode = this.eventCode.Text.Trim();
-            txtEventCode = "AUTO-GEN";
+            txtEventCode = this.eventCode.Text.Trim();
             txtEventName = this.eventName.Text.Trim();
 
             if (eventRecurringEveryday.Checked)
@@ -131,6 +135,42 @@ namespace PersonalExpenseTracker
         private void resetTextFields()
         {
             
+        }
+
+
+        private void LoadComboBoxEventContactData(String typeOfContact)
+        {
+            List<String> contactData = new List<String>();
+            contactData = helper.GetListOfContacts(contactTypeToShow);
+
+            foreach (String item in contactData)
+            {
+                eventContact.Items.Add(item);
+            }
+        }
+
+        private void ExpenseChanged(object sender, EventArgs e)
+        {
+            eventContact.Text = "";
+            eventContact.Items.Clear();
+            contactTypeToShow = "Payee";
+            LoadComboBoxEventContactData(contactTypeToShow);
+        }
+
+        private void IncomeChanged(object sender, EventArgs e)
+        {
+            eventContact.Text = "";
+            eventContact.Items.Clear();
+            contactTypeToShow = "Payor";
+            LoadComboBoxEventContactData(contactTypeToShow);
+        }
+
+        private void JustAnEventChanged(object sender, EventArgs e)
+        {
+            eventContact.Text = "";
+            eventContact.Items.Clear();
+            contactTypeToShow = "All";
+            LoadComboBoxEventContactData(contactTypeToShow);
         }
     }
 }

@@ -109,5 +109,44 @@ namespace PersonalExpenseTracker
                 return false;
             }
         }
+
+
+        public Boolean UpdateExpenseInfo(int id, UserTransactionsData info)
+        {
+            try
+            {
+                Transaction transactionRecord = new Transaction();
+
+                transactionRecord.TransactionDate = info.transactionDate;
+                transactionRecord.TransactionContactName = info.transactionContactName;
+                transactionRecord.TransactionAmount = info.transactionAmount;
+                transactionRecord.TransactionEvent = info.transactionEvent;
+                transactionRecord.TransactionAssociatedAccount = info.transactionAssociatedAccount;
+                transactionRecord.TransactionType = info.transactionType;
+                transactionRecord.TransactionCode = info.transactionCode;
+
+                // Update to database
+                ExpenseGuideDBContainer db = new ExpenseGuideDBContainer();
+
+                using (var context = new ExpenseGuideDBContainer())
+                {
+                    var std = context.Transactions.Find(id);
+                    std.TransactionDate = info.transactionDate;
+                    std.TransactionContactName = info.transactionContactName;
+                    std.TransactionAmount = info.transactionAmount;
+                    std.TransactionEvent = info.transactionEvent;
+                    context.SaveChanges();
+                }
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                return false;
+            }
+
+            
+        }
     }
 }

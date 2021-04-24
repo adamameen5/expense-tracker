@@ -438,6 +438,7 @@ namespace PersonalExpenseTracker
             this.eventCategoryExpense.TabStop = true;
             this.eventCategoryExpense.Text = "Expense";
             this.eventCategoryExpense.UseVisualStyleBackColor = true;
+            this.eventCategoryExpense.CheckedChanged += new System.EventHandler(this.ExpenseChanged);
             // 
             // evenCategoryIncome
             // 
@@ -449,6 +450,7 @@ namespace PersonalExpenseTracker
             this.evenCategoryIncome.TabStop = true;
             this.evenCategoryIncome.Text = "Income";
             this.evenCategoryIncome.UseVisualStyleBackColor = true;
+            this.evenCategoryIncome.CheckedChanged += new System.EventHandler(this.IncomeChanged);
             // 
             // eventCategoryJustAnEvent
             // 
@@ -460,6 +462,7 @@ namespace PersonalExpenseTracker
             this.eventCategoryJustAnEvent.TabStop = true;
             this.eventCategoryJustAnEvent.Text = "Just an event";
             this.eventCategoryJustAnEvent.UseVisualStyleBackColor = true;
+            this.eventCategoryJustAnEvent.CheckedChanged += new System.EventHandler(this.JustAnEventChanged);
             // 
             // button1
             // 

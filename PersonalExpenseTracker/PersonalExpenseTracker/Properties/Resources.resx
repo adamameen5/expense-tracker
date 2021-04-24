@@ -130,6 +130,9 @@
   <data name="EXPENSE_DETAILS_SUCCESSFULLY_SAVED" xml:space="preserve">
     <value>Expense details were successfully added to the transactions table!</value>
   </data>
+  <data name="EXPENSE_DETAILS_SUCCESSFULLY_UPDATED" xml:space="preserve">
+    <value>Expense details were successfully updated and saved in the transactions table!</value>
+  </data>
   <data name="FINANCIAL_DETAILS_SUCCESSFULLY_ADDED" xml:space="preserve">
     <value>Your financial details were successfully added!</value>
   </data>

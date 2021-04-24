@@ -18,6 +18,8 @@ namespace PersonalExpenseTracker
         private readonly ExpenseModel helper = new ExpenseModel();
         public int transactionAssociatedContactID = 0;
         public UserTransactionsData userTransactionsData { get; set; }
+        public int expenseIdToUpdate = 0;
+        public Boolean isAnUpdate = false;
 
         //Creating a dataset instance
         ExpenseGuide myDataSet = new ExpenseGuide();
@@ -107,7 +109,14 @@ namespace PersonalExpenseTracker
             }
             else
             {
-                SaveExpenseInfo();
+                if (!isAnUpdate)
+                {
+                    SaveExpenseInfo();
+                } else
+                {
+                    UpdateExpenseInfo();
+                }
+                
             }
         }
 
@@ -154,7 +163,57 @@ namespace PersonalExpenseTracker
             if (transactionSaved)
             {
                 //show success message if the data was added succesfully
-                MessageBox.Show(String.Format(Properties.Resources.EXPENSE_DETAILS_SUCCESSFULLY_SAVED), "Success");
+                MessageBox.Show(String.Format(Properties.Resources.EXPENSE_DETAILS_SUCCESSFULLY_SAVED), "Insert Success");
+
+                ResetTextFields();
+                expenseCode.Text = helper.GetTransactionCode();
+            }
+        }
+
+
+        private void UpdateExpenseInfo()
+        {
+            Boolean transactionSaved = false;
+
+            this.userTransactionsData = new UserTransactionsData();
+            this.userTransactionsData.transactionDate = this.expenseDate.Text.Trim();
+            this.userTransactionsData.transactionContactName = this.expensePayee.Text.Trim();
+            this.userTransactionsData.transactionAmount = this.expenseAmount.Text.Trim();
+            this.userTransactionsData.transactionEvent = this.expenseEvent.Text.Trim();
+            this.userTransactionsData.transactionAssociatedAccount = this.expenseAccount.Text.Trim();
+            this.userTransactionsData.transactionType = "Expense";
+            this.userTransactionsData.transactionCode = this.expenseCode.Text.Trim();
+
+
+            //add the data onto the memory resident database
+            //ExpenseGuide.TransactionRow transactionRow = this.myDataSet.Transaction.NewTransactionRow();
+            //transactionRow.TransactionDate = this.userTransactionsData.transactionDate;
+            //transactionRow.TransactionContactName = this.userTransactionsData.transactionContactName;
+            //transactionRow.TransactionAmount = this.userTransactionsData.transactionAmount;
+            //transactionRow.TransactionEvent = this.userTransactionsData.transactionEvent;
+            //transactionRow.TransactionAssociatedAccount = this.userTransactionsData.transactionAssociatedAccount;
+            //transactionRow.TransactionType = this.userTransactionsData.transactionType;
+            //transactionRow.TransactionCode = this.userTransactionsData.transactionCode;
+            //transactionRow.FK_UserID = currentUserId;
+            //transactionRow.FK_ContactID = transactionAssociatedContactID;
+
+            // adding the data to the respective instances
+            //this.myDataSet.Transaction.AddTransactionRow(transactionRow);
+            //this.myDataSet.AcceptChanges();
+
+            //serialize it to disc
+            //this.myDataSet.Contact.WriteXml("ExpenseGuide.xml");
+
+            //forwarding the data (interacting with the model class, saving the data permanently in the db)
+            //here we save the contact details permanently in the db
+
+
+            transactionSaved = helper.UpdateExpenseInfo(expenseIdToUpdate, userTransactionsData);
+
+            if (transactionSaved)
+            {
+                //show success message if the data was added succesfully
+                MessageBox.Show(String.Format(Properties.Resources.EXPENSE_DETAILS_SUCCESSFULLY_UPDATED), "Update Success");
 
                 ResetTextFields();
                 expenseCode.Text = helper.GetTransactionCode();
@@ -176,6 +235,20 @@ namespace PersonalExpenseTracker
             this.expenseEvent.Text = "";
             this.expenseAccount.Text = "";
             transactionAssociatedContactID = 0;
+        }
+        
+
+        public void PopulateFieldsToUpdate(String expID, String expDate, String expContact, String expAmount, String expEvent, String expAccount , String expCode)
+        {
+
+            expenseIdToUpdate = Int32.Parse(expID);
+            expenseDate.Text = expDate;
+            expensePayee.Text = expContact;
+            expenseAmount.Text = expAmount;
+            expenseEvent.Text = expEvent; 
+            expenseAccount.Text = expAccount;
+            expenseCode.Text = expCode;
+            isAnUpdate = true;
         }
     }
 }
