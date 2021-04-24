@@ -47,12 +47,13 @@ namespace PersonalExpenseTracker
                     Amount = expenses.TransactionAmount,
                     Event = expenses.TransactionEvent,
                     FromAccount = expenses.TransactionAssociatedAccount,
+                    TransactionCode = expenses.TransactionCode,
                     ContactId = expenses.ContactId
                 };
 
             dataGridExpenses.DataSource = expenseQuery.ToList();
             dataGridExpenses.Columns[0].Visible = false;
-            dataGridExpenses.Columns[6].Visible = false;
+            dataGridExpenses.Columns[7].Visible = false;
         }
     }
 }

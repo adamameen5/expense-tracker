@@ -31,18 +31,18 @@ namespace PersonalExpenseTracker
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAddNewIncome));
             this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.incomeAmount = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.incomeDate = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
-            this.email = new System.Windows.Forms.TextBox();
+            this.incomeCode = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.incomePayor = new System.Windows.Forms.ComboBox();
+            this.incomeEvent = new System.Windows.Forms.ComboBox();
+            this.incomeAccount = new System.Windows.Forms.ComboBox();
             this.userControlBackToDashboardLink1 = new PersonalExpenseTracker.UserControlBackToDashboardLink();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblCurrentTime = new System.Windows.Forms.Label();
@@ -61,13 +61,14 @@ namespace PersonalExpenseTracker
             this.button1.TabIndex = 47;
             this.button1.Text = "Save";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.validateIncomeInfo);
             // 
-            // textBox1
+            // incomeAmount
             // 
-            this.textBox1.Location = new System.Drawing.Point(449, 185);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(226, 20);
-            this.textBox1.TabIndex = 46;
+            this.incomeAmount.Location = new System.Drawing.Point(449, 185);
+            this.incomeAmount.Name = "incomeAmount";
+            this.incomeAmount.Size = new System.Drawing.Size(226, 20);
+            this.incomeAmount.TabIndex = 46;
             // 
             // label8
             // 
@@ -87,12 +88,12 @@ namespace PersonalExpenseTracker
             this.label7.TabIndex = 44;
             this.label7.Text = "Amount";
             // 
-            // dateTimePicker1
+            // incomeDate
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(449, 135);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(226, 20);
-            this.dateTimePicker1.TabIndex = 43;
+            this.incomeDate.Location = new System.Drawing.Point(449, 135);
+            this.incomeDate.Name = "incomeDate";
+            this.incomeDate.Size = new System.Drawing.Size(226, 20);
+            this.incomeDate.TabIndex = 43;
             // 
             // label6
             // 
@@ -103,13 +104,13 @@ namespace PersonalExpenseTracker
             this.label6.TabIndex = 41;
             this.label6.Text = "Date";
             // 
-            // email
+            // incomeCode
             // 
-            this.email.Location = new System.Drawing.Point(83, 135);
-            this.email.Name = "email";
-            this.email.ReadOnly = true;
-            this.email.Size = new System.Drawing.Size(226, 20);
-            this.email.TabIndex = 38;
+            this.incomeCode.Location = new System.Drawing.Point(83, 135);
+            this.incomeCode.Name = "incomeCode";
+            this.incomeCode.ReadOnly = true;
+            this.incomeCode.Size = new System.Drawing.Size(226, 20);
+            this.incomeCode.TabIndex = 38;
             // 
             // label5
             // 
@@ -138,29 +139,30 @@ namespace PersonalExpenseTracker
             this.label3.TabIndex = 35;
             this.label3.Text = "Code";
             // 
-            // comboBox1
+            // incomePayor
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(83, 185);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(226, 21);
-            this.comboBox1.TabIndex = 48;
+            this.incomePayor.FormattingEnabled = true;
+            this.incomePayor.Location = new System.Drawing.Point(83, 185);
+            this.incomePayor.Name = "incomePayor";
+            this.incomePayor.Size = new System.Drawing.Size(226, 21);
+            this.incomePayor.TabIndex = 48;
+            this.incomePayor.SelectedIndexChanged += new System.EventHandler(this.onChangePayorDropdown);
             // 
-            // comboBox2
+            // incomeEvent
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(83, 235);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(226, 21);
-            this.comboBox2.TabIndex = 49;
+            this.incomeEvent.FormattingEnabled = true;
+            this.incomeEvent.Location = new System.Drawing.Point(83, 235);
+            this.incomeEvent.Name = "incomeEvent";
+            this.incomeEvent.Size = new System.Drawing.Size(226, 21);
+            this.incomeEvent.TabIndex = 49;
             // 
-            // comboBox3
+            // incomeAccount
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(449, 235);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(226, 21);
-            this.comboBox3.TabIndex = 50;
+            this.incomeAccount.FormattingEnabled = true;
+            this.incomeAccount.Location = new System.Drawing.Point(449, 235);
+            this.incomeAccount.Name = "incomeAccount";
+            this.incomeAccount.Size = new System.Drawing.Size(226, 21);
+            this.incomeAccount.TabIndex = 50;
             // 
             // userControlBackToDashboardLink1
             // 
@@ -217,16 +219,16 @@ namespace PersonalExpenseTracker
             this.Controls.Add(this.lblUserName);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.userControlBackToDashboardLink1);
-            this.Controls.Add(this.comboBox3);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.incomeAccount);
+            this.Controls.Add(this.incomeEvent);
+            this.Controls.Add(this.incomePayor);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.incomeAmount);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.incomeDate);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.email);
+            this.Controls.Add(this.incomeCode);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -241,18 +243,18 @@ namespace PersonalExpenseTracker
         #endregion
 
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox incomeAmount;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker incomeDate;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox email;
+        private System.Windows.Forms.TextBox incomeCode;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox incomePayor;
+        private System.Windows.Forms.ComboBox incomeEvent;
+        private System.Windows.Forms.ComboBox incomeAccount;
         private UserControlBackToDashboardLink userControlBackToDashboardLink1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lblCurrentTime;

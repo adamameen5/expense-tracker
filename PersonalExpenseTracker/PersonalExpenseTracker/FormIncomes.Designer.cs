@@ -32,13 +32,13 @@ namespace PersonalExpenseTracker
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormIncomes));
             this.button1 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            this.dataGridExpenses = new System.Windows.Forms.DataGridView();
+            this.dataGridIncomes = new System.Windows.Forms.DataGridView();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblCurrentTime = new System.Windows.Forms.Label();
             this.lblUserName = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.userControlBackToDashboardLink1 = new PersonalExpenseTracker.UserControlBackToDashboardLink();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridExpenses)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridIncomes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -65,13 +65,14 @@ namespace PersonalExpenseTracker
             this.button4.UseVisualStyleBackColor = false;
             this.button4.Click += new System.EventHandler(this.toggleAddNewIncome);
             // 
-            // dataGridExpenses
+            // dataGridIncomes
             // 
-            this.dataGridExpenses.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridExpenses.Location = new System.Drawing.Point(33, 140);
-            this.dataGridExpenses.Name = "dataGridExpenses";
-            this.dataGridExpenses.Size = new System.Drawing.Size(614, 284);
-            this.dataGridExpenses.TabIndex = 28;
+            this.dataGridIncomes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridIncomes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridIncomes.Location = new System.Drawing.Point(33, 140);
+            this.dataGridIncomes.Name = "dataGridIncomes";
+            this.dataGridIncomes.Size = new System.Drawing.Size(614, 284);
+            this.dataGridIncomes.TabIndex = 28;
             // 
             // pictureBox1
             // 
@@ -130,10 +131,10 @@ namespace PersonalExpenseTracker
             this.Controls.Add(this.label2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button4);
-            this.Controls.Add(this.dataGridExpenses);
+            this.Controls.Add(this.dataGridIncomes);
             this.Name = "FormIncomes";
             this.Text = "FormIncomes";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridExpenses)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridIncomes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -144,7 +145,7 @@ namespace PersonalExpenseTracker
 
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.DataGridView dataGridExpenses;
+        private System.Windows.Forms.DataGridView dataGridIncomes;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lblCurrentTime;
         private System.Windows.Forms.Label lblUserName;
