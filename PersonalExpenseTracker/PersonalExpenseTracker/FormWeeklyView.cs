@@ -16,12 +16,11 @@ namespace PersonalExpenseTracker
         private ExpenseModel helper = new ExpenseModel();
         public DateTime selectedDate = new DateTime();
         private GroupBox[] _groupBoxes;
-        private readonly ExpenseGuide _dataset;
 
-        public FormWeeklyView(ref ExpenseGuide dataset)
+        public FormWeeklyView()
         {
             InitializeComponent();
-            _dataset = dataset;
+            
         }
 
         private void DatePicked(object sender, DateRangeEventArgs e)

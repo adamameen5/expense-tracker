@@ -18,7 +18,6 @@ namespace PersonalExpenseTracker
         {
             InitializeComponent();
             _transaction = transaction;
-            //Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
 
             SetUpViewData();
         }
@@ -29,7 +28,7 @@ namespace PersonalExpenseTracker
             lblTransactionName.Text = _transaction.transactionEvent;
             lblContact.Text = _transaction.transactionContactName;
             lblAmount.Text = "Rs." + _transaction.transactionAmount;
-            //this.BackColor = Color.FromName(_transaction.FinancialAccountRow.Color);
+            
         }
     }
 }

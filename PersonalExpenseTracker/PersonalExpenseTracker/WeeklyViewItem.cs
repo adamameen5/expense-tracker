@@ -29,7 +29,7 @@ namespace PersonalExpenseTracker
 
         private void SetUpViewData()
         {
-            long amount = 0;
+            decimal amount = 0;
             int ySpacer = 3;
             foreach (var item in _transactions)
             {
@@ -37,10 +37,10 @@ namespace PersonalExpenseTracker
                 dayItem.Location = new Point(3, ySpacer);
                 panelItems.Controls.Add(dayItem);
                 ySpacer += dayItem.Height + 3;
-                amount += long.Parse(item.transactionAmount);
+                amount += decimal.Parse(item.transactionAmount);
             }
 
-            lblTotalExpenses.Text = amount.ToString();
+            lblTotalExpenses.Text = "Total Expenses: Rs."+amount.ToString();
         }
     }
 }

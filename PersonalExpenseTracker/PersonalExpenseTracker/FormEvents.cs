@@ -175,7 +175,7 @@ namespace PersonalExpenseTracker
 
         private void ShowWeeklyView(object sender, EventArgs e)
         {
-            FormWeeklyView frm = new FormWeeklyView(ref myDataSet);
+            FormWeeklyView frm = new FormWeeklyView();
             frm.Show();
             this.Hide();
         }

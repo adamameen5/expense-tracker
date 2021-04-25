@@ -12,8 +12,7 @@ namespace PersonalExpenseTracker
         
         int userId = FormLogin.globalLoggedInUserID;
 
-        private ExpenseGuide _dataset = FormDashboard._dataset;
-
+        
         public String GetTransactionCode()
         {
             String code = "";
@@ -32,19 +31,12 @@ namespace PersonalExpenseTracker
 
             using (var context = new ExpenseGuideDBContainer())
             {
-                var x= context.Transactions.Where(t => t.UserId == 1 && t.TransactionType == "Expense" && (t.TransactionDate.Value.Year == selectedDate.Year && t.TransactionDate.Value.Month == selectedDate.Month && t.TransactionDate.Value.Day == selectedDate.Day)).ToList();
+                var x= context.Transactions.Where(t => t.UserId == userId && t.TransactionType == "Expense" && (t.TransactionDate.Value.Year == selectedDate.Year && t.TransactionDate.Value.Month == selectedDate.Month && t.TransactionDate.Value.Day == selectedDate.Day)).ToList();
 
-                //var listOfExpenses = _dataset.Transaction.Where(t => t.FK_UserID == 1 && t.TransactionType == "Expense").ToList();
-                
                 foreach (var item in x)
                 {
                     expensesListForWeeklyView.Add(new UserTransactionDataForWeeklyView(item.TransactionDate.Value,item.TransactionContactName,item.TransactionAmount,item.TransactionEvent,item.TransactionAssociatedAccount, item.TransactionType,item.TransactionCode));
-                }
-
-                //foreach (var item in x)
-                //{
-                //    expensesListForWeeklyView.Add(x);
-                //}
+                }               
 
                 return expensesListForWeeklyView;
             }

@@ -66,12 +66,13 @@ namespace PersonalExpenseTracker
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.BackColor = System.Drawing.Color.AliceBlue;
+            this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Controls.Add(this.lblAmount);
             this.Controls.Add(this.lblContact);
             this.Controls.Add(this.lblTransactionName);
             this.Name = "WeeklyViewItemComponent";
-            this.Size = new System.Drawing.Size(123, 74);
+            this.Size = new System.Drawing.Size(120, 72);
             this.ResumeLayout(false);
             this.PerformLayout();
 
