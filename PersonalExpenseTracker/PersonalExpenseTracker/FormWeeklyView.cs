@@ -13,7 +13,7 @@ namespace PersonalExpenseTracker
 {
     public partial class FormWeeklyView : Form
     {
-        private ExpenseModel helper = new ExpenseModel();
+        private EventsModel helper = new EventsModel();
         public DateTime selectedDate = new DateTime();
         private GroupBox[] _groupBoxes;
 

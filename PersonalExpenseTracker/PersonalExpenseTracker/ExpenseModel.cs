@@ -25,24 +25,6 @@ namespace PersonalExpenseTracker
         }
 
 
-        public List<UserTransactionDataForWeeklyView> GetListOfTransactions(DateTime selectedDate)
-        {
-            List<UserTransactionDataForWeeklyView> expensesListForWeeklyView = new List<UserTransactionDataForWeeklyView>();
-
-            using (var context = new ExpenseGuideDBContainer())
-            {
-                var x= context.Transactions.Where(t => t.UserId == userId && (t.TransactionDate.Value.Year == selectedDate.Year && t.TransactionDate.Value.Month == selectedDate.Month && t.TransactionDate.Value.Day == selectedDate.Day)).ToList();
-
-                foreach (var item in x)
-                {
-                    expensesListForWeeklyView.Add(new UserTransactionDataForWeeklyView(item.TransactionDate.Value,item.TransactionContactName,item.TransactionAmount,item.TransactionEvent,item.TransactionAssociatedAccount, item.TransactionType,item.TransactionCode));
-                }               
-
-                return expensesListForWeeklyView;
-            }
-        }
-
-
         public List<String> GetListOfPayee()
         {
             List<String> payeeNameList = new List<String>();

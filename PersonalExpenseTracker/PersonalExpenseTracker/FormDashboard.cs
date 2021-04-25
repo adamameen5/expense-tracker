@@ -63,5 +63,12 @@ namespace PersonalExpenseTracker
             formEvent.Show();
             this.Hide();
         }
+
+        private void Logout(object sender, EventArgs e)
+        {
+            FormLogin frm = new FormLogin();
+            frm.Show();
+            this.Close();
+        }
     }
 }

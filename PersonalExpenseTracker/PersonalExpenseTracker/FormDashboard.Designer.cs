@@ -39,7 +39,7 @@ namespace PersonalExpenseTracker
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
+            this.bntLogout = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblCurrentTime = new System.Windows.Forms.Label();
             this.lblUserName = new System.Windows.Forms.Label();
@@ -152,16 +152,17 @@ namespace PersonalExpenseTracker
             this.button8.Text = "Savings";
             this.button8.UseVisualStyleBackColor = false;
             // 
-            // button9
+            // bntLogout
             // 
-            this.button9.BackColor = System.Drawing.Color.Gray;
-            this.button9.ForeColor = System.Drawing.Color.White;
-            this.button9.Location = new System.Drawing.Point(214, 367);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(120, 43);
-            this.button9.TabIndex = 25;
-            this.button9.Text = "Help";
-            this.button9.UseVisualStyleBackColor = false;
+            this.bntLogout.BackColor = System.Drawing.Color.Gray;
+            this.bntLogout.ForeColor = System.Drawing.Color.White;
+            this.bntLogout.Location = new System.Drawing.Point(214, 367);
+            this.bntLogout.Name = "bntLogout";
+            this.bntLogout.Size = new System.Drawing.Size(120, 43);
+            this.bntLogout.TabIndex = 25;
+            this.bntLogout.Text = "Logout";
+            this.bntLogout.UseVisualStyleBackColor = false;
+            this.bntLogout.Click += new System.EventHandler(this.Logout);
             // 
             // pictureBox1
             // 
@@ -210,7 +211,7 @@ namespace PersonalExpenseTracker
             this.Controls.Add(this.lblCurrentTime);
             this.Controls.Add(this.lblUserName);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.button9);
+            this.Controls.Add(this.bntLogout);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.button7);
             this.Controls.Add(this.button8);
@@ -238,7 +239,7 @@ namespace PersonalExpenseTracker
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button bntLogout;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lblCurrentTime;
         private System.Windows.Forms.Label lblUserName;

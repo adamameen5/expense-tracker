@@ -78,7 +78,6 @@ C:\ADAMLK\EAD\EAD_Final_3\expense-tracker\PersonalExpenseTracker\PersonalExpense
 C:\ADAMLK\EAD\EAD_Final_3\expense-tracker\PersonalExpenseTracker\PersonalExpenseTracker\bin\Debug\EntityFramework.SqlServer.xml
 C:\ADAMLK\EAD\EAD_Final_3\expense-tracker\PersonalExpenseTracker\PersonalExpenseTracker\bin\Debug\Newtonsoft.Json.xml
 C:\ADAMLK\EAD\EAD_Final_3\expense-tracker\PersonalExpenseTracker\PersonalExpenseTracker\bin\Debug\Syncfusion.Shared.Base.xml
-C:\ADAMLK\EAD\EAD_Final_3\expense-tracker\PersonalExpenseTracker\PersonalExpenseTracker\obj\Debug\PersonalExpenseTracker.csprojAssemblyReference.cache
 C:\ADAMLK\EAD\EAD_Final_3\expense-tracker\PersonalExpenseTracker\PersonalExpenseTracker\obj\Debug\PersonalExpenseTracker.FormAddNewPayee.resources
 C:\ADAMLK\EAD\EAD_Final_3\expense-tracker\PersonalExpenseTracker\PersonalExpenseTracker\obj\Debug\PersonalExpenseTracker.FormAddNewPayor.resources
 C:\ADAMLK\EAD\EAD_Final_3\expense-tracker\PersonalExpenseTracker\PersonalExpenseTracker\obj\Debug\PersonalExpenseTracker.FormEvents.resources
