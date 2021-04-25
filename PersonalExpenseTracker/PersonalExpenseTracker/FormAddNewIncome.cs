@@ -50,20 +50,20 @@ namespace PersonalExpenseTracker
         private void validateIncomeInfo(object sender, EventArgs e)
         {
             String txtIncomeCode = "";
-            String txtIncomeDate = "";
+            DateTime txtIncomeDate = new DateTime();
             String txtIncomePayor = "";
             String txtIncomeAmount = "";
             String txtIncomeEvent = "";
             String txtIncomeAccount = "";
 
             txtIncomeCode = this.incomeCode.Text.Trim();
-            txtIncomeDate = this.incomeDate.Text.Trim();
+            txtIncomeDate = this.incomeDate.Value;
             txtIncomePayor = this.incomePayor.Text.Trim();
             txtIncomeAmount = this.incomeAmount.Text.Trim();
             txtIncomeEvent = this.incomeEvent.Text.Trim();
             txtIncomeAccount = this.incomeAccount.Text.Trim();
 
-            if (txtIncomeCode == "" || txtIncomeDate == "" || txtIncomePayor == "" || txtIncomeAmount == "" || txtIncomeEvent == "" || txtIncomeAccount == "")
+            if (txtIncomeCode == "" || txtIncomeDate == null || txtIncomePayor == "" || txtIncomeAmount == "" || txtIncomeEvent == "" || txtIncomeAccount == "")
             {
                 MessageBox.Show(String.Format(Properties.Resources.ALL_FIELDS_REQUIRED_MESSAGE), "Fields required");
                 return;
@@ -87,7 +87,7 @@ namespace PersonalExpenseTracker
             Boolean transactionSaved = false;
 
             this.userTransactionsData = new UserTransactionsData();
-            this.userTransactionsData.transactionDate = this.incomeDate.Text.Trim();
+            this.userTransactionsData.transactionDate = this.incomeDate.Value;
             this.userTransactionsData.transactionContactName = this.incomePayor.Text.Trim();
             this.userTransactionsData.transactionAmount = this.incomeAmount.Text.Trim();
             this.userTransactionsData.transactionEvent = this.incomeEvent.Text.Trim();
@@ -173,7 +173,7 @@ namespace PersonalExpenseTracker
             Boolean transactionSaved = false;
 
             this.userTransactionsData = new UserTransactionsData();
-            this.userTransactionsData.transactionDate = this.incomeDate.Text.Trim();
+            this.userTransactionsData.transactionDate = this.incomeDate.Value;
             this.userTransactionsData.transactionContactName = this.incomePayor.Text.Trim();
             this.userTransactionsData.transactionAmount = this.incomeAmount.Text.Trim();
             this.userTransactionsData.transactionEvent = this.incomeEvent.Text.Trim();

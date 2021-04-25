@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 04/21/2021 05:54:38
+-- Date Created: 04/25/2021 06:40:25
 -- Generated from EDMX file: C:\ADAMLK\EAD\EAD_Final_3\expense-tracker\PersonalExpenseTracker\PersonalExpenseTracker\ExpenseGuideDB.edmx
 -- --------------------------------------------------
 
@@ -26,6 +26,18 @@ GO
 IF OBJECT_ID(N'[dbo].[FK_BankAccountDetailUser]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[BankAccountDetails] DROP CONSTRAINT [FK_BankAccountDetailUser];
 GO
+IF OBJECT_ID(N'[dbo].[FK_ContactUser]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Contacts] DROP CONSTRAINT [FK_ContactUser];
+GO
+IF OBJECT_ID(N'[dbo].[FK_UserTransaction]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Transactions] DROP CONSTRAINT [FK_UserTransaction];
+GO
+IF OBJECT_ID(N'[dbo].[FK_TransactionContact]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Transactions] DROP CONSTRAINT [FK_TransactionContact];
+GO
+IF OBJECT_ID(N'[dbo].[FK_EventUser]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Events] DROP CONSTRAINT [FK_EventUser];
+GO
 
 -- --------------------------------------------------
 -- Dropping existing tables
@@ -42,6 +54,15 @@ IF OBJECT_ID(N'[dbo].[CardDetails]', 'U') IS NOT NULL
 GO
 IF OBJECT_ID(N'[dbo].[BankAccountDetails]', 'U') IS NOT NULL
     DROP TABLE [dbo].[BankAccountDetails];
+GO
+IF OBJECT_ID(N'[dbo].[Contacts]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Contacts];
+GO
+IF OBJECT_ID(N'[dbo].[Transactions]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Transactions];
+GO
+IF OBJECT_ID(N'[dbo].[Events]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Events];
 GO
 
 -- --------------------------------------------------
@@ -84,10 +105,10 @@ GO
 -- Creating table 'BankAccountDetails'
 CREATE TABLE [dbo].[BankAccountDetails] (
     [Id] int IDENTITY(1,1) NOT NULL,
-    [BankAccountNumber] nvarchar(max)  NOT NULL,
-    [BankAccountBankName] nvarchar(max)  NOT NULL,
-    [BankAccountBranchName] nvarchar(max)  NOT NULL,
-    [BankAccountNameToDisplay] nvarchar(max)  NOT NULL,
+    [BankAccountNumber] nvarchar(max)  NULL,
+    [BankAccountBankName] nvarchar(max)  NULL,
+    [BankAccountBranchName] nvarchar(max)  NULL,
+    [BankAccountNameToDisplay] nvarchar(max)  NULL,
     [UserId] int  NOT NULL
 );
 GO
@@ -95,10 +116,10 @@ GO
 -- Creating table 'Contacts'
 CREATE TABLE [dbo].[Contacts] (
     [Id] int IDENTITY(1,1) NOT NULL,
-    [ContactName] nvarchar(max)  NOT NULL,
-    [ContactDescription] nvarchar(max)  NOT NULL,
-    [ContactType] nvarchar(max)  NOT NULL,
-    [ContactTelephoneNumber] nvarchar(max)  NOT NULL,
+    [ContactName] nvarchar(max)  NULL,
+    [ContactDescription] nvarchar(max)  NULL,
+    [ContactType] nvarchar(max)  NULL,
+    [ContactTelephoneNumber] nvarchar(max)  NULL,
     [UserId] int  NOT NULL
 );
 GO
@@ -106,13 +127,13 @@ GO
 -- Creating table 'Transactions'
 CREATE TABLE [dbo].[Transactions] (
     [Id] int IDENTITY(1,1) NOT NULL,
-    [TransactionDate] nvarchar(max)  NOT NULL,
-    [TransactionContactName] nvarchar(max)  NOT NULL,
-    [TransactionAmount] nvarchar(max)  NOT NULL,
-    [TransactionEvent] nvarchar(max)  NOT NULL,
-    [TransactionAssociatedAccount] nvarchar(max)  NOT NULL,
-    [TransactionType] nvarchar(max)  NOT NULL,
-    [TransactionCode] nvarchar(max)  NOT NULL,
+    [TransactionDate] datetime  NULL,
+    [TransactionContactName] nvarchar(max)  NULL,
+    [TransactionAmount] nvarchar(max)  NULL,
+    [TransactionEvent] nvarchar(max)  NULL,
+    [TransactionAssociatedAccount] nvarchar(max)  NULL,
+    [TransactionType] nvarchar(max)  NULL,
+    [TransactionCode] nvarchar(max)  NULL,
     [UserId] int  NOT NULL,
     [ContactId] int  NULL
 );
@@ -121,13 +142,13 @@ GO
 -- Creating table 'Events'
 CREATE TABLE [dbo].[Events] (
     [Id] int IDENTITY(1,1) NOT NULL,
-    [EventDate] nvarchar(max)  NOT NULL,
-    [EventCode] nvarchar(max)  NOT NULL,
-    [EventName] nvarchar(max)  NOT NULL,
-    [EventRecurring] nvarchar(max)  NOT NULL,
-    [EventType] nvarchar(max)  NOT NULL,
-    [EventCategory] nvarchar(max)  NOT NULL,
-    [EventAssociatedContact] nvarchar(max)  NOT NULL,
+    [EventDate] datetime  NULL,
+    [EventCode] nvarchar(max)  NULL,
+    [EventName] nvarchar(max)  NULL,
+    [EventRecurring] nvarchar(max)  NULL,
+    [EventType] nvarchar(max)  NULL,
+    [EventCategory] nvarchar(max)  NULL,
+    [EventAssociatedContact] nvarchar(max)  NULL,
     [UserId] int  NOT NULL
 );
 GO

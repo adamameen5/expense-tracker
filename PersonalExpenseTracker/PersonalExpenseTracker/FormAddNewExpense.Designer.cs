@@ -97,6 +97,8 @@ namespace PersonalExpenseTracker
             // 
             // expenseDate
             // 
+            this.expenseDate.CustomFormat = "dd/MM/yyyy";
+            this.expenseDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.expenseDate.Location = new System.Drawing.Point(436, 160);
             this.expenseDate.Name = "expenseDate";
             this.expenseDate.Size = new System.Drawing.Size(226, 20);

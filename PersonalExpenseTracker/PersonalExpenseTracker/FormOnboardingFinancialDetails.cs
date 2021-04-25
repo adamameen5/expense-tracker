@@ -27,7 +27,7 @@ namespace PersonalExpenseTracker
 
         private void enterFinancialDetails(object sender, EventArgs e)
         {
-            glblUserID = FormLogin.globalLoggedInUserID;
+            glblUserID = FormSignUp.glblUserID;
             Boolean bankAccountSaved = false;
             Boolean cardSaved = false;
 

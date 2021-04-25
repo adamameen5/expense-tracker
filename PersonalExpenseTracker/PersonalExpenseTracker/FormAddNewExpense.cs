@@ -89,20 +89,20 @@ namespace PersonalExpenseTracker
         private void validateExpenseInfo(object sender, EventArgs e)
         {
             String txtExpenseCode = "";
-            String txtExpenseDate = "";
+            DateTime txtExpenseDate = new DateTime();
             String txtExpensePayee = "";
             String txtExpenseAmount = "";
             String txtExpenseEvent = "";
             String txtExpenseAccount = "";
 
             txtExpenseCode = this.expenseCode.Text.Trim();
-            txtExpenseDate = this.expenseDate.Text.Trim();
+            txtExpenseDate = this.expenseDate.Value;
             txtExpensePayee = this.expensePayee.Text.Trim();
             txtExpenseAmount = this.expenseAmount.Text.Trim();
             txtExpenseEvent = this.expenseEvent.Text.Trim();
             txtExpenseAccount = this.expenseAccount.Text.Trim();
 
-            if (txtExpenseCode == "" || txtExpenseDate == "" || txtExpensePayee == "" || txtExpenseAmount == "" || txtExpenseEvent == "" || txtExpenseAccount == "")
+            if (txtExpenseCode == "" || txtExpenseDate == null || txtExpensePayee == "" || txtExpenseAmount == "" || txtExpenseEvent == "" || txtExpenseAccount == "")
             {
                 MessageBox.Show(String.Format(Properties.Resources.ALL_FIELDS_REQUIRED_MESSAGE), "Fields required");
                 return;
@@ -126,7 +126,7 @@ namespace PersonalExpenseTracker
             Boolean transactionSaved = false;
 
             this.userTransactionsData = new UserTransactionsData();
-            this.userTransactionsData.transactionDate = this.expenseDate.Text.Trim();
+            this.userTransactionsData.transactionDate = this.expenseDate.Value;
             this.userTransactionsData.transactionContactName = this.expensePayee.Text.Trim();
             this.userTransactionsData.transactionAmount = this.expenseAmount.Text.Trim();
             this.userTransactionsData.transactionEvent = this.expenseEvent.Text.Trim();
@@ -176,7 +176,7 @@ namespace PersonalExpenseTracker
             Boolean transactionSaved = false;
 
             this.userTransactionsData = new UserTransactionsData();
-            this.userTransactionsData.transactionDate = this.expenseDate.Text.Trim();
+            this.userTransactionsData.transactionDate = this.expenseDate.Value;
             this.userTransactionsData.transactionContactName = this.expensePayee.Text.Trim();
             this.userTransactionsData.transactionAmount = this.expenseAmount.Text.Trim();
             this.userTransactionsData.transactionEvent = this.expenseEvent.Text.Trim();

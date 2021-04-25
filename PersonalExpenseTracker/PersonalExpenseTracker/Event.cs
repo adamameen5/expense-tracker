@@ -15,7 +15,7 @@ namespace PersonalExpenseTracker
     public partial class Event
     {
         public int Id { get; set; }
-        public string EventDate { get; set; }
+        public Nullable<System.DateTime> EventDate { get; set; }
         public string EventCode { get; set; }
         public string EventName { get; set; }
         public string EventRecurring { get; set; }

@@ -13,7 +13,7 @@ namespace PersonalExpenseTracker
 
     public class UserTransactionsData
     {
-        public String transactionDate { get; set; }
+        public DateTime transactionDate { get; set; }
         public String transactionContactName { get; set; }
         public String transactionAmount { get; set; }
         public String transactionEvent { get; set; }

@@ -2369,7 +2369,7 @@ namespace PersonalExpenseTracker {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public TransactionRow AddTransactionRow(string TransactionDate, string TransactionContactName, string TransactionAmount, string TransactionEvent, string TransactionAssociatedAccount, string TransactionType, string TransactionCode, UserRow parentUserRowByUser_Transaction, ContactRow parentContactRowByContact_Transaction) {
+            public TransactionRow AddTransactionRow(System.DateTime TransactionDate, string TransactionContactName, string TransactionAmount, string TransactionEvent, string TransactionAssociatedAccount, string TransactionType, string TransactionCode, UserRow parentUserRowByUser_Transaction, ContactRow parentContactRowByContact_Transaction) {
                 TransactionRow rowTransactionRow = ((TransactionRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -2434,7 +2434,7 @@ namespace PersonalExpenseTracker {
             private void InitClass() {
                 this.columnTransactionID = new global::System.Data.DataColumn("TransactionID", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTransactionID);
-                this.columnTransactionDate = new global::System.Data.DataColumn("TransactionDate", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnTransactionDate = new global::System.Data.DataColumn("TransactionDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTransactionDate);
                 this.columnTransactionContactName = new global::System.Data.DataColumn("TransactionContactName", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnTransactionContactName);
@@ -2751,7 +2751,7 @@ namespace PersonalExpenseTracker {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public EventRow AddEventRow(string EventDate, string EventCode, string EventName, string EventRecurring, string EventType, string EventCategory, string EventAssociatedContact, UserRow parentUserRowByUser_Event) {
+            public EventRow AddEventRow(System.DateTime EventDate, string EventCode, string EventName, string EventRecurring, string EventType, string EventCategory, string EventAssociatedContact, UserRow parentUserRowByUser_Event) {
                 EventRow rowEventRow = ((EventRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -2811,7 +2811,7 @@ namespace PersonalExpenseTracker {
             private void InitClass() {
                 this.columnEventID = new global::System.Data.DataColumn("EventID", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnEventID);
-                this.columnEventDate = new global::System.Data.DataColumn("EventDate", typeof(string), null, global::System.Data.MappingType.Element);
+                this.columnEventDate = new global::System.Data.DataColumn("EventDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnEventDate);
                 this.columnEventCode = new global::System.Data.DataColumn("EventCode", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnEventCode);
@@ -3940,10 +3940,10 @@ namespace PersonalExpenseTracker {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string TransactionDate {
+            public System.DateTime TransactionDate {
                 get {
                     try {
-                        return ((string)(this[this.tableTransaction.TransactionDateColumn]));
+                        return ((global::System.DateTime)(this[this.tableTransaction.TransactionDateColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'TransactionDate\' in table \'Transaction\' is DBNull.", e);
@@ -4241,10 +4241,10 @@ namespace PersonalExpenseTracker {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string EventDate {
+            public System.DateTime EventDate {
                 get {
                     try {
-                        return ((string)(this[this.tableEvent.EventDateColumn]));
+                        return ((global::System.DateTime)(this[this.tableEvent.EventDateColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
                         throw new global::System.Data.StrongTypingException("The value for column \'EventDate\' in table \'Event\' is DBNull.", e);

@@ -15,7 +15,7 @@ namespace PersonalExpenseTracker
     public partial class Transaction
     {
         public int Id { get; set; }
-        public string TransactionDate { get; set; }
+        public Nullable<System.DateTime> TransactionDate { get; set; }
         public string TransactionContactName { get; set; }
         public string TransactionAmount { get; set; }
         public string TransactionEvent { get; set; }

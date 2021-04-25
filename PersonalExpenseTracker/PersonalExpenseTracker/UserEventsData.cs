@@ -11,7 +11,7 @@ namespace PersonalExpenseTracker
      */
     public class UserEventsData
     {
-        public String eventDate { get; set; }
+        public DateTime eventDate { get; set; }
         public String eventCode { get; set; }
         public String eventName { get; set; }
         public String eventRecurring { get; set; }

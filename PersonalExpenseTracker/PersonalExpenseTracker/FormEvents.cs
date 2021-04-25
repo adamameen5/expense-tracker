@@ -19,7 +19,7 @@ namespace PersonalExpenseTracker
 
         EventsModel helper = new EventsModel();
 
-        public String txtEventDate = "";
+        public DateTime txtEventDate = new DateTime();
         public String txtEventCode = "";
         public String txtEventName = "";
         public String txtEventRecurring = "";
@@ -40,7 +40,7 @@ namespace PersonalExpenseTracker
         private void validateEventInfo(object sender, EventArgs e)
         {
             
-            txtEventDate = this.eventDate.Text.Trim();
+            txtEventDate = this.eventDate.Value;
             txtEventCode = this.eventCode.Text.Trim();
             txtEventName = this.eventName.Text.Trim();
 
@@ -75,7 +75,7 @@ namespace PersonalExpenseTracker
 
             txtEventAssociatedContact = eventContact.Text;
 
-            if (txtEventAssociatedContact == "" || txtEventCategory == "" || txtEventDate == "" || txtEventName == "" || txtEventRecurring == "" || txtEventType == "")
+            if (txtEventAssociatedContact == "" || txtEventCategory == "" || txtEventDate == null || txtEventName == "" || txtEventRecurring == "" || txtEventType == "")
             {
                 MessageBox.Show(String.Format(Properties.Resources.ALL_FIELDS_REQUIRED_MESSAGE), "Fields required");
                 return;

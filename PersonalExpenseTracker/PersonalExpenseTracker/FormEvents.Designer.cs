@@ -310,6 +310,8 @@ namespace PersonalExpenseTracker
             // 
             // eventDate
             // 
+            this.eventDate.CustomFormat = "dd/MM/yyyy";
+            this.eventDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.eventDate.Location = new System.Drawing.Point(101, 57);
             this.eventDate.Name = "eventDate";
             this.eventDate.Size = new System.Drawing.Size(226, 20);

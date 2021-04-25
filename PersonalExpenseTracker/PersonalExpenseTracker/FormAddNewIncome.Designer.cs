@@ -90,6 +90,8 @@ namespace PersonalExpenseTracker
             // 
             // incomeDate
             // 
+            this.incomeDate.CustomFormat = "dd/MM/yyyy";
+            this.incomeDate.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.incomeDate.Location = new System.Drawing.Point(449, 135);
             this.incomeDate.Name = "incomeDate";
             this.incomeDate.Size = new System.Drawing.Size(226, 20);

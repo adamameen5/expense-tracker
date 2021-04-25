@@ -2,10 +2,10 @@
 <ExpenseGuide xmlns="http://tempuri.org/ExpenseGuide.xsd">
   <BankAccountDetail>
     <BankAccountID>1</BankAccountID>
-    <BankAccountNumber>73737</BankAccountNumber>
+    <BankAccountNumber>amana-202920</BankAccountNumber>
     <BankAccountBankName>Amana</BankAccountBankName>
-    <BankAccountBranchName>Hiu</BankAccountBranchName>
-    <BankAccountNameToDisplay>28282</BankAccountNameToDisplay>
-    <FK_UserID>2</FK_UserID>
+    <BankAccountBranchName>Dehiwela</BankAccountBranchName>
+    <BankAccountNameToDisplay>AmanaDehi</BankAccountNameToDisplay>
+    <FK_UserID>1</FK_UserID>
   </BankAccountDetail>
 </ExpenseGuide>

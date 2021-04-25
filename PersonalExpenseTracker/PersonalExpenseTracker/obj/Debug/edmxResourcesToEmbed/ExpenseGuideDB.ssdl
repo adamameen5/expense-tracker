@@ -75,10 +75,10 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="BankAccountNumber" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="BankAccountBankName" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="BankAccountBranchName" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="BankAccountNameToDisplay" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="BankAccountNumber" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="BankAccountBankName" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="BankAccountBranchName" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="BankAccountNameToDisplay" Type="nvarchar(max)" Nullable="true" />
     <Property Name="UserId" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Contacts">
@@ -86,10 +86,10 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="ContactName" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="ContactDescription" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="ContactType" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="ContactTelephoneNumber" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ContactName" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="ContactDescription" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="ContactType" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="ContactTelephoneNumber" Type="nvarchar(max)" Nullable="true" />
     <Property Name="UserId" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="Transactions">
@@ -97,13 +97,13 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="TransactionDate" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="TransactionContactName" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="TransactionAmount" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="TransactionEvent" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="TransactionAssociatedAccount" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="TransactionType" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="TransactionCode" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="TransactionDate" Type="datetime" Nullable="true" />
+    <Property Name="TransactionContactName" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="TransactionAmount" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="TransactionEvent" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="TransactionAssociatedAccount" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="TransactionType" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="TransactionCode" Type="nvarchar(max)" Nullable="true" />
     <Property Name="UserId" Type="int" Nullable="false" />
     <Property Name="ContactId" Type="int" Nullable="true" />
   </EntityType>
@@ -112,13 +112,13 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="EventDate" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="EventCode" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="EventName" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="EventRecurring" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="EventType" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="EventCategory" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="EventAssociatedContact" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="EventDate" Type="datetime" StoreGeneratedPattern="Identity" Nullable="true" />
+    <Property Name="EventCode" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="EventName" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="EventRecurring" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="EventType" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="EventCategory" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="EventAssociatedContact" Type="nvarchar(max)" Nullable="true" />
     <Property Name="UserId" Type="int" Nullable="false" />
   </EntityType>
   <Association Name="CredentialsUser">
