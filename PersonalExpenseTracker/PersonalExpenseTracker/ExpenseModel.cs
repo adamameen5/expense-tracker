@@ -31,7 +31,7 @@ namespace PersonalExpenseTracker
 
             using (var context = new ExpenseGuideDBContainer())
             {
-                var x= context.Transactions.Where(t => t.UserId == userId && t.TransactionType == "Expense" && (t.TransactionDate.Value.Year == selectedDate.Year && t.TransactionDate.Value.Month == selectedDate.Month && t.TransactionDate.Value.Day == selectedDate.Day)).ToList();
+                var x= context.Transactions.Where(t => t.UserId == userId && (t.TransactionDate.Value.Year == selectedDate.Year && t.TransactionDate.Value.Month == selectedDate.Month && t.TransactionDate.Value.Day == selectedDate.Day)).ToList();
 
                 foreach (var item in x)
                 {

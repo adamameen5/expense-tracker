@@ -25,6 +25,13 @@ namespace PersonalExpenseTracker
 
         private void SetUpViewData()
         {
+            if (_transaction.transactionType == "Expense")
+            {
+                this.BackColor = Color.Bisque;
+            } else
+            {
+                this.BackColor = Color.AliceBlue;
+            }
             lblTransactionName.Text = _transaction.transactionEvent;
             lblContact.Text = _transaction.transactionContactName;
             lblAmount.Text = "Rs." + _transaction.transactionAmount;

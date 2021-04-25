@@ -27,7 +27,7 @@ namespace PersonalExpenseTracker
         {
             dateToShowCalendar.MaxSelectionCount = 1;
             selectedDate = dateToShowCalendar.SelectionRange.Start;
-            foreach (var grp in Controls.OfType<GroupBox>().ToList())
+            foreach (var grp in Controls.OfType<GroupBox>().ToList().Where(x => x.Name != "groupBoxKey"))
             {
                 Controls.Remove(grp);
             }
@@ -45,7 +45,7 @@ namespace PersonalExpenseTracker
             {
                 xStartPoint += 5;
                 GroupBox groupBox = new GroupBox();
-                groupBox.Size = new Size(150, 375);
+                groupBox.Size = new Size(150, 395);
                 groupBox.Location = new Point(xStartPoint, yStartPoint);
                 this.Controls.Add(groupBox);
                 xStartPoint += groupBox.Width;
@@ -129,6 +129,14 @@ namespace PersonalExpenseTracker
                 selectedDate = selectedDate.AddDays(+1);
                 _groupBoxes[i].Controls.Add(item);
             }
+
+        }
+
+        private void RedirectToEventsPage(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            FormEvents frm = new FormEvents();
+            frm.Show();
+            this.Close();
 
         }
     }

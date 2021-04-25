@@ -31,6 +31,7 @@ namespace PersonalExpenseTracker
         {
             this.panelItems = new System.Windows.Forms.Panel();
             this.lblTotalExpenses = new System.Windows.Forms.Label();
+            this.lblTotalIncomes = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // panelItems
@@ -56,15 +57,29 @@ namespace PersonalExpenseTracker
             this.lblTotalExpenses.Text = "Total Expenses";
             this.lblTotalExpenses.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // lblTotalIncomes
+            // 
+            this.lblTotalIncomes.AutoSize = true;
+            this.lblTotalIncomes.BackColor = System.Drawing.Color.DodgerBlue;
+            this.lblTotalIncomes.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotalIncomes.ForeColor = System.Drawing.Color.White;
+            this.lblTotalIncomes.Location = new System.Drawing.Point(3, 348);
+            this.lblTotalIncomes.Name = "lblTotalIncomes";
+            this.lblTotalIncomes.Size = new System.Drawing.Size(74, 13);
+            this.lblTotalIncomes.TabIndex = 2;
+            this.lblTotalIncomes.Text = "Total Incomes";
+            this.lblTotalIncomes.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // WeeklyViewItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DodgerBlue;
+            this.Controls.Add(this.lblTotalIncomes);
             this.Controls.Add(this.lblTotalExpenses);
             this.Controls.Add(this.panelItems);
             this.Name = "WeeklyViewItem";
-            this.Size = new System.Drawing.Size(150, 360);
+            this.Size = new System.Drawing.Size(150, 383);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -74,5 +89,6 @@ namespace PersonalExpenseTracker
 
         private System.Windows.Forms.Panel panelItems;
         private System.Windows.Forms.Label lblTotalExpenses;
+        private System.Windows.Forms.Label lblTotalIncomes;
     }
 }

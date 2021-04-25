@@ -2,10 +2,18 @@
 <ExpenseGuide xmlns="http://tempuri.org/ExpenseGuide.xsd">
   <Contact>
     <ContactID>1</ContactID>
-    <ContactName>SLT</ContactName>
-    <ContactDescription>Bill payment</ContactDescription>
+    <ContactName>testpayee2</ContactName>
+    <ContactDescription>jdheudhe</ContactDescription>
     <ContactType>Payee</ContactType>
-    <FK_UserID>1</FK_UserID>
-    <ContactTelephoneNumber>0297721</ContactTelephoneNumber>
+    <FK_UserID>2</FK_UserID>
+    <ContactTelephoneNumber>28282</ContactTelephoneNumber>
+  </Contact>
+  <Contact>
+    <ContactID>2</ContactID>
+    <ContactName>testpayee4</ContactName>
+    <ContactDescription>33333</ContactDescription>
+    <ContactType>Payee</ContactType>
+    <FK_UserID>2</FK_UserID>
+    <ContactTelephoneNumber>3223</ContactTelephoneNumber>
   </Contact>
 </ExpenseGuide>

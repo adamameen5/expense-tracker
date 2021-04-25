@@ -76,7 +76,6 @@
     <Compile Include="Credentials.cs">
       <DependentUpon>ExpenseGuideDB.tt</DependentUpon>
     </Compile>
-    <Compile Include="DataManager.cs" />
     <Compile Include="Event.cs">
       <DependentUpon>ExpenseGuideDB.tt</DependentUpon>
     </Compile>
