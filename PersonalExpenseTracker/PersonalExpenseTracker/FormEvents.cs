@@ -172,5 +172,12 @@ namespace PersonalExpenseTracker
             contactTypeToShow = "All";
             LoadComboBoxEventContactData(contactTypeToShow);
         }
+
+        private void ShowWeeklyView(object sender, EventArgs e)
+        {
+            FormWeeklyView frm = new FormWeeklyView(ref myDataSet);
+            frm.Show();
+            this.Hide();
+        }
     }
 }

@@ -232,6 +232,7 @@ namespace PersonalExpenseTracker
             this.button2.TabIndex = 53;
             this.button2.Text = "Weekly View";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.ShowWeeklyView);
             // 
             // button3
             // 

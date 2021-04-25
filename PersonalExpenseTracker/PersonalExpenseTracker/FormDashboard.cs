@@ -12,11 +12,22 @@ namespace PersonalExpenseTracker
 {
     public partial class FormDashboard : Form
     {
+        public static ExpenseGuide _dataset;
+        private FormWeeklyView _weeklyViewController;
+
         public FormDashboard()
         {
             InitializeComponent();
             lblCurrentTime.Text = DateTime.Now.ToString("f");
             lblUserName.Text = FormLogin.globalLoggedInUserName;
+
+            Task datasetLoader = Task.Run(() =>
+            {
+                _dataset = DataManager.GetDataSetInstance();
+            });
+            datasetLoader.Wait();
+
+            _weeklyViewController = new FormWeeklyView(ref _dataset);
         }
 
         private void toggleUserInfoView(object sender, EventArgs e)

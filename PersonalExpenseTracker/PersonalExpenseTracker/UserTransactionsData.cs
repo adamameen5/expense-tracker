@@ -21,5 +21,7 @@ namespace PersonalExpenseTracker
         public String transactionType { get; set; }
         public String transactionCode { get; set; }
 
+        
+
     }
 }

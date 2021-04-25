@@ -76,6 +76,7 @@
     <Compile Include="Credentials.cs">
       <DependentUpon>ExpenseGuideDB.tt</DependentUpon>
     </Compile>
+    <Compile Include="DataManager.cs" />
     <Compile Include="Event.cs">
       <DependentUpon>ExpenseGuideDB.tt</DependentUpon>
     </Compile>
@@ -191,6 +192,12 @@
     <Compile Include="FormSignUp.Designer.cs">
       <DependentUpon>FormSignUp.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormWeeklyView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormWeeklyView.Designer.cs">
+      <DependentUpon>FormWeeklyView.cs</DependentUpon>
+    </Compile>
     <Compile Include="IncomeModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -215,7 +222,20 @@
     <Compile Include="UserDetails.cs" />
     <Compile Include="UserEventsData.cs" />
     <Compile Include="UserModel.cs" />
+    <Compile Include="UserTransactionDataForWeeklyView.cs" />
     <Compile Include="UserTransactionsData.cs" />
+    <Compile Include="WeeklyViewItem.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="WeeklyViewItem.Designer.cs">
+      <DependentUpon>WeeklyViewItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WeeklyViewItemComponent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="WeeklyViewItemComponent.Designer.cs">
+      <DependentUpon>WeeklyViewItemComponent.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="FormAddNewPayee.resx">
       <DependentUpon>FormAddNewPayee.cs</DependentUpon>
     </EmbeddedResource>
@@ -261,6 +281,9 @@
     <EmbeddedResource Include="FormSignUp.resx">
       <DependentUpon>FormSignUp.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormWeeklyView.resx">
+      <DependentUpon>FormWeeklyView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -273,6 +296,12 @@
     </Compile>
     <EmbeddedResource Include="UserControlBackToDashboardLink.resx">
       <DependentUpon>UserControlBackToDashboardLink.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WeeklyViewItem.resx">
+      <DependentUpon>WeeklyViewItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WeeklyViewItemComponent.resx">
+      <DependentUpon>WeeklyViewItemComponent.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="ExpenseGuide.xsc">
       <DependentUpon>ExpenseGuide.xsd</DependentUpon>

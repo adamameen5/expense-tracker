@@ -1,0 +1,35 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace PersonalExpenseTracker
+{
+    public partial class WeeklyViewItemComponent : UserControl
+    {
+        UserTransactionDataForWeeklyView _transaction;
+
+        public WeeklyViewItemComponent(UserTransactionDataForWeeklyView transaction)
+        {
+            InitializeComponent();
+            _transaction = transaction;
+            //Region = Region.FromHrgn(CreateRoundRectRgn(0, 0, Width, Height, 20, 20));
+
+            SetUpViewData();
+        }
+
+
+        private void SetUpViewData()
+        {
+            lblTransactionName.Text = _transaction.transactionEvent;
+            lblContact.Text = _transaction.transactionContactName;
+            lblAmount.Text = "Rs." + _transaction.transactionAmount;
+            //this.BackColor = Color.FromName(_transaction.FinancialAccountRow.Color);
+        }
+    }
+}

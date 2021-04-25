@@ -1,2 +1,27 @@
 <?xml version="1.0" standalone="yes"?>
-<ExpenseGuide xmlns="http://tempuri.org/ExpenseGuide.xsd" />
+<ExpenseGuide xmlns="http://tempuri.org/ExpenseGuide.xsd">
+  <Transaction>
+    <TransactionID>1</TransactionID>
+    <TransactionDate>2021-04-26T10:34:22+05:30</TransactionDate>
+    <TransactionContactName>SLT</TransactionContactName>
+    <TransactionAmount>500</TransactionAmount>
+    <TransactionEvent>Monthly Bill Payment</TransactionEvent>
+    <TransactionAssociatedAccount>AmanaDehi</TransactionAssociatedAccount>
+    <TransactionType>Expense</TransactionType>
+    <TransactionCode>U1-EXP-4</TransactionCode>
+    <FK_UserID>1</FK_UserID>
+    <FK_ContactID>2</FK_ContactID>
+  </Transaction>
+  <Transaction>
+    <TransactionID>2</TransactionID>
+    <TransactionDate>2021-04-27T10:34:37+05:30</TransactionDate>
+    <TransactionContactName>SLT</TransactionContactName>
+    <TransactionAmount>100</TransactionAmount>
+    <TransactionEvent>Monthly Bill Payment</TransactionEvent>
+    <TransactionAssociatedAccount>AmanaDehi</TransactionAssociatedAccount>
+    <TransactionType>Expense</TransactionType>
+    <TransactionCode>U1-EXP-5</TransactionCode>
+    <FK_UserID>1</FK_UserID>
+    <FK_ContactID>2</FK_ContactID>
+  </Transaction>
+</ExpenseGuide>
