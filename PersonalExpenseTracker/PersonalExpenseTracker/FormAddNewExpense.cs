@@ -33,6 +33,11 @@ namespace PersonalExpenseTracker
             LoadComboBoxPayeeData();
             LoadComboBoxEventData();
             LoadComboBoxAccountData();
+
+            if (File.Exists("ExpenseGuide.xml") == true)
+            {
+                this.myDataSet.ReadXml("ExpenseGuide.xml");
+            }
         }
 
         private void goBackToDashboard(object sender, LinkLabelLinkClickedEventArgs e)

@@ -1,2 +1,75 @@
 <?xml version="1.0" standalone="yes"?>
-<ExpenseGuide xmlns="http://tempuri.org/ExpenseGuide.xsd" />
+<ExpenseGuide xmlns="http://tempuri.org/ExpenseGuide.xsd">
+  <Transaction>
+    <TransactionID>1</TransactionID>
+    <TransactionDate>2021-04-25T23:27:31.8649784+05:30</TransactionDate>
+    <TransactionContactName>SLT</TransactionContactName>
+    <TransactionAmount>2123</TransactionAmount>
+    <TransactionEvent>Monthly Bill Payment</TransactionEvent>
+    <TransactionAssociatedAccount>AmanaDehi</TransactionAssociatedAccount>
+    <TransactionType>Expense</TransactionType>
+    <TransactionCode>U1-EXP-14</TransactionCode>
+    <FK_UserID>1</FK_UserID>
+    <FK_ContactID>2</FK_ContactID>
+  </Transaction>
+  <Transaction>
+    <TransactionID>2</TransactionID>
+    <TransactionDate>2021-04-25T23:28:07.4754178+05:30</TransactionDate>
+    <TransactionContactName>IFS</TransactionContactName>
+    <TransactionAmount>123</TransactionAmount>
+    <TransactionEvent>IFS Salary</TransactionEvent>
+    <TransactionAssociatedAccount>AmanaDehi</TransactionAssociatedAccount>
+    <TransactionType>Income</TransactionType>
+    <TransactionCode>U1-INC-6</TransactionCode>
+    <FK_UserID>1</FK_UserID>
+    <FK_ContactID>1</FK_ContactID>
+  </Transaction>
+  <Transaction>
+    <TransactionID>3</TransactionID>
+    <TransactionDate>2021-04-05T23:28:18+05:30</TransactionDate>
+    <TransactionContactName>IFS</TransactionContactName>
+    <TransactionAmount>11111</TransactionAmount>
+    <TransactionEvent>IFS Salary</TransactionEvent>
+    <TransactionAssociatedAccount>AmanaDehi</TransactionAssociatedAccount>
+    <TransactionType>Income</TransactionType>
+    <TransactionCode>U1-INC-7</TransactionCode>
+    <FK_UserID>1</FK_UserID>
+    <FK_ContactID>1</FK_ContactID>
+  </Transaction>
+  <Transaction>
+    <TransactionID>4</TransactionID>
+    <TransactionDate>2021-04-05T23:28:53+05:30</TransactionDate>
+    <TransactionContactName>SLT</TransactionContactName>
+    <TransactionAmount>3232</TransactionAmount>
+    <TransactionEvent>Monthly Bill Payment</TransactionEvent>
+    <TransactionAssociatedAccount>AmanaDehi</TransactionAssociatedAccount>
+    <TransactionType>Expense</TransactionType>
+    <TransactionCode>U1-EXP-15</TransactionCode>
+    <FK_UserID>1</FK_UserID>
+    <FK_ContactID>2</FK_ContactID>
+  </Transaction>
+  <Transaction>
+    <TransactionID>5</TransactionID>
+    <TransactionDate>2021-04-25T23:32:44.5505621+05:30</TransactionDate>
+    <TransactionContactName>SLT</TransactionContactName>
+    <TransactionAmount>223</TransactionAmount>
+    <TransactionEvent>Monthly Bill Payment</TransactionEvent>
+    <TransactionAssociatedAccount>AmanaDehi</TransactionAssociatedAccount>
+    <TransactionType>Expense</TransactionType>
+    <TransactionCode>U1-EXP-16</TransactionCode>
+    <FK_UserID>1</FK_UserID>
+    <FK_ContactID>2</FK_ContactID>
+  </Transaction>
+  <Transaction>
+    <TransactionID>6</TransactionID>
+    <TransactionDate>2021-04-25T23:33:25.0424874+05:30</TransactionDate>
+    <TransactionContactName>testpayee4</TransactionContactName>
+    <TransactionAmount>2222</TransactionAmount>
+    <TransactionEvent>shaml1 exp</TransactionEvent>
+    <TransactionAssociatedAccount>AmanaCol</TransactionAssociatedAccount>
+    <TransactionType>Expense</TransactionType>
+    <TransactionCode>U2-EXP-4</TransactionCode>
+    <FK_UserID>2</FK_UserID>
+    <FK_ContactID>1006</FK_ContactID>
+  </Transaction>
+</ExpenseGuide>

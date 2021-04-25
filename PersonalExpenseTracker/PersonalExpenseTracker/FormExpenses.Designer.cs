@@ -75,6 +75,7 @@ namespace PersonalExpenseTracker
             this.button1.TabIndex = 23;
             this.button1.Text = "Export as CSV";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.GenerateExpenseReport);
             // 
             // userControlBackToDashboardLink1
             // 

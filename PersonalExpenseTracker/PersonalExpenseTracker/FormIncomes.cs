@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ClosedXML.Excel;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,6 +21,8 @@ namespace PersonalExpenseTracker
         String incomeAmountToUpdate = "";
         String incomeEventToUpdate = "";
         String incomeAssociatedAccountToUpdate = "";
+
+        ExpenseGuide myDataSet = new ExpenseGuide();
 
         public FormIncomes()
         {
@@ -88,6 +91,40 @@ namespace PersonalExpenseTracker
             incomeAssociatedAccountToUpdate = this.dataGridIncomes.CurrentRow.Cells[5].Value.ToString();
             incomeCodeToUpdate = this.dataGridIncomes.CurrentRow.Cells[6].Value.ToString();
             btnUpdateRecord.Visible = true;
+        }
+
+
+        private void GenerateIncomeReport(object sender, EventArgs e)
+        {
+            ExpenseGuideDBContainer db = new ExpenseGuideDBContainer();
+
+            try
+            {
+                using (SaveFileDialog sfd = new SaveFileDialog() { Filter = "Excel Workbook|*.xlsx" })
+                {
+                    if (sfd.ShowDialog() == DialogResult.OK)
+                    {
+                        try
+                        {
+                            using (XLWorkbook workbook = new XLWorkbook())
+                            {
+                                workbook.Worksheets.Add(this.myDataSet.Transaction.Where(x => x.FK_UserID == FormLogin.globalLoggedInUserID && x.TransactionType == "Income").CopyToDataTable(), "Transaction");
+                                workbook.SaveAs(sfd.FileName);
+                            }
+                            MessageBox.Show("You have Successfully Downloaded the Report", "Message", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Message", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

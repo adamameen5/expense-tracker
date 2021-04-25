@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -31,6 +32,11 @@ namespace PersonalExpenseTracker
             LoadComboBoxPayorData();
             LoadComboBoxEventData();
             LoadComboBoxAccountData();
+            if (File.Exists("ExpenseGuide.xml") == true)
+            {
+                this.myDataSet.ReadXml("ExpenseGuide.xml");
+            }
+
         }
 
         private void goBackToDashboard(object sender, LinkLabelLinkClickedEventArgs e)
@@ -96,26 +102,26 @@ namespace PersonalExpenseTracker
             this.userTransactionsData.transactionCode = this.incomeCode.Text.Trim();
 
 
-            ////add the data onto the memory resident database
-            //ExpenseGuide.TransactionRow transactionRow = this.myDataSet.Transaction.FindByTransactionID(incomeIdToUpdate);
-            //transactionRow.TransactionDate = this.userTransactionsData.transactionDate;
-            //transactionRow.TransactionContactName = this.userTransactionsData.transactionContactName;
-            //transactionRow.TransactionAmount = this.userTransactionsData.transactionAmount;
-            //transactionRow.TransactionEvent = this.userTransactionsData.transactionEvent;
-            //transactionRow.TransactionAssociatedAccount = this.userTransactionsData.transactionAssociatedAccount;
-            //transactionRow.TransactionType = this.userTransactionsData.transactionType;
-            //transactionRow.TransactionCode = this.userTransactionsData.transactionCode;
-            //transactionRow.FK_UserID = currentUserId;
-            //transactionRow.FK_ContactID = transactionAssociatedContactID;
+            //add the data onto the memory resident database
+            ExpenseGuide.TransactionRow transactionRow = this.myDataSet.Transaction.FindByTransactionID(incomeIdToUpdate);
+            transactionRow.TransactionDate = this.userTransactionsData.transactionDate;
+            transactionRow.TransactionContactName = this.userTransactionsData.transactionContactName;
+            transactionRow.TransactionAmount = this.userTransactionsData.transactionAmount;
+            transactionRow.TransactionEvent = this.userTransactionsData.transactionEvent;
+            transactionRow.TransactionAssociatedAccount = this.userTransactionsData.transactionAssociatedAccount;
+            transactionRow.TransactionType = this.userTransactionsData.transactionType;
+            transactionRow.TransactionCode = this.userTransactionsData.transactionCode;
+            transactionRow.FK_UserID = currentUserId;
+            transactionRow.FK_ContactID = transactionAssociatedContactID;
 
-            //// adding the data to the respective instances
-            //this.myDataSet.Transaction.AddTransactionRow(transactionRow);
-            //this.myDataSet.AcceptChanges();
+            // adding the data to the respective instances
+            this.myDataSet.Transaction.AddTransactionRow(transactionRow);
+            this.myDataSet.AcceptChanges();
 
-            ////serialize it to disc
-            //this.myDataSet.WriteXml("ExpenseGuide.xml");
+            //serialize it to disc
+            this.myDataSet.WriteXml("ExpenseGuide.xml");
 
-            //forwarding the data (interacting with the model class, saving the data permanently in the db)
+            //forwarding the data(interacting with the model class, saving the data permanently in the db)
             //here we save the contact details permanently in the db
 
 
@@ -199,7 +205,7 @@ namespace PersonalExpenseTracker
             this.myDataSet.AcceptChanges();
 
             //serialize it to disc
-            this.myDataSet.Contact.WriteXml("ExpenseGuide.xml");
+            this.myDataSet.WriteXml("ExpenseGuide.xml");
 
             //forwarding the data (interacting with the model class, saving the data permanently in the db)
             //here we save the contact details permanently in the db
