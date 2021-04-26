@@ -1,75 +1,267 @@
 <?xml version="1.0" standalone="yes"?>
 <ExpenseGuide xmlns="http://tempuri.org/ExpenseGuide.xsd">
+  <Credentials>
+    <UserName>adam</UserName>
+    <Email>adam@gmail.com</Email>
+    <Password>adam</Password>
+    <CredentialsID>1</CredentialsID>
+    <NIC>92828V</NIC>
+    <FK_UserID>1</FK_UserID>
+  </Credentials>
+  <User>
+    <UserID>1</UserID>
+    <DateOfBirth>to-be-filled</DateOfBirth>
+  </User>
+  <BankAccountDetail>
+    <BankAccountID>1</BankAccountID>
+    <BankAccountNumber>aman-0987</BankAccountNumber>
+    <BankAccountBankName>Amana</BankAccountBankName>
+    <BankAccountBranchName>Dehiwela</BankAccountBranchName>
+    <BankAccountNameToDisplay>amana dehiwela</BankAccountNameToDisplay>
+    <FK_UserID>1</FK_UserID>
+  </BankAccountDetail>
+  <Contact>
+    <ContactID>1</ContactID>
+    <ContactName>IFS</ContactName>
+    <ContactDescription>Working company</ContactDescription>
+    <ContactType>Payor</ContactType>
+    <FK_UserID>1</FK_UserID>
+    <ContactTelephoneNumber>09988989</ContactTelephoneNumber>
+  </Contact>
+  <Contact>
+    <ContactID>2</ContactID>
+    <ContactName>Hathy</ContactName>
+    <ContactDescription>brother</ContactDescription>
+    <ContactType>Payor</ContactType>
+    <FK_UserID>1</FK_UserID>
+    <ContactTelephoneNumber>029338</ContactTelephoneNumber>
+  </Contact>
+  <Contact>
+    <ContactID>3</ContactID>
+    <ContactName>TestPayor1</ContactName>
+    <ContactDescription>TestPayor1wwwww</ContactDescription>
+    <ContactType>Payor</ContactType>
+    <FK_UserID>1</FK_UserID>
+    <ContactTelephoneNumber>22222</ContactTelephoneNumber>
+  </Contact>
+  <Contact>
+    <ContactID>4</ContactID>
+    <ContactName>TestPayor2</ContactName>
+    <ContactDescription>TestPayor23123</ContactDescription>
+    <ContactType>Payor</ContactType>
+    <FK_UserID>1</FK_UserID>
+    <ContactTelephoneNumber>938383</ContactTelephoneNumber>
+  </Contact>
+  <Contact>
+    <ContactID>5</ContactID>
+    <ContactName>TestPayee1</ContactName>
+    <ContactDescription>TestPayee1</ContactDescription>
+    <ContactType>Payee</ContactType>
+    <FK_UserID>1</FK_UserID>
+    <ContactTelephoneNumber>929292</ContactTelephoneNumber>
+  </Contact>
+  <Contact>
+    <ContactID>6</ContactID>
+    <ContactName>SLT</ContactName>
+    <ContactDescription>Telecommunication</ContactDescription>
+    <ContactType>Payee</ContactType>
+    <FK_UserID>1</FK_UserID>
+    <ContactTelephoneNumber>2929211</ContactTelephoneNumber>
+  </Contact>
+  <Contact>
+    <ContactID>7</ContactID>
+    <ContactName>Dialog</ContactName>
+    <ContactDescription>Brodband</ContactDescription>
+    <ContactType>Payee</ContactType>
+    <FK_UserID>1</FK_UserID>
+    <ContactTelephoneNumber>28822</ContactTelephoneNumber>
+  </Contact>
   <Transaction>
     <TransactionID>1</TransactionID>
-    <TransactionDate>2021-04-25T23:27:31.8649784+05:30</TransactionDate>
+    <TransactionDate>2021-04-26T03:00:06.9444839+05:30</TransactionDate>
     <TransactionContactName>SLT</TransactionContactName>
-    <TransactionAmount>2123</TransactionAmount>
-    <TransactionEvent>Monthly Bill Payment</TransactionEvent>
-    <TransactionAssociatedAccount>AmanaDehi</TransactionAssociatedAccount>
+    <TransactionAmount>600</TransactionAmount>
+    <TransactionEvent>Dialog Bill</TransactionEvent>
+    <TransactionAssociatedAccount>amana dehiwela</TransactionAssociatedAccount>
     <TransactionType>Expense</TransactionType>
-    <TransactionCode>U1-EXP-14</TransactionCode>
+    <TransactionCode>U1-EXP-1</TransactionCode>
     <FK_UserID>1</FK_UserID>
-    <FK_ContactID>2</FK_ContactID>
+    <FK_ContactID>6</FK_ContactID>
   </Transaction>
   <Transaction>
     <TransactionID>2</TransactionID>
-    <TransactionDate>2021-04-25T23:28:07.4754178+05:30</TransactionDate>
-    <TransactionContactName>IFS</TransactionContactName>
-    <TransactionAmount>123</TransactionAmount>
-    <TransactionEvent>IFS Salary</TransactionEvent>
-    <TransactionAssociatedAccount>AmanaDehi</TransactionAssociatedAccount>
-    <TransactionType>Income</TransactionType>
-    <TransactionCode>U1-INC-6</TransactionCode>
+    <TransactionDate>2021-03-10T03:01:06+05:30</TransactionDate>
+    <TransactionContactName>SLT</TransactionContactName>
+    <TransactionAmount>100</TransactionAmount>
+    <TransactionEvent>Dialog Bill</TransactionEvent>
+    <TransactionAssociatedAccount>amana dehiwela</TransactionAssociatedAccount>
+    <TransactionType>Expense</TransactionType>
+    <TransactionCode>U1-EXP-2</TransactionCode>
     <FK_UserID>1</FK_UserID>
-    <FK_ContactID>1</FK_ContactID>
+    <FK_ContactID>6</FK_ContactID>
   </Transaction>
   <Transaction>
     <TransactionID>3</TransactionID>
-    <TransactionDate>2021-04-05T23:28:18+05:30</TransactionDate>
-    <TransactionContactName>IFS</TransactionContactName>
-    <TransactionAmount>11111</TransactionAmount>
-    <TransactionEvent>IFS Salary</TransactionEvent>
-    <TransactionAssociatedAccount>AmanaDehi</TransactionAssociatedAccount>
+    <TransactionDate>2021-04-12T03:01:30+05:30</TransactionDate>
+    <TransactionContactName>SLT</TransactionContactName>
+    <TransactionAmount>199</TransactionAmount>
+    <TransactionEvent>TestExpense1</TransactionEvent>
+    <TransactionAssociatedAccount>amana dehiwela</TransactionAssociatedAccount>
+    <TransactionType>Expense</TransactionType>
+    <TransactionCode>U1-EXP-3</TransactionCode>
+    <FK_UserID>1</FK_UserID>
+    <FK_ContactID>6</FK_ContactID>
+  </Transaction>
+  <Transaction>
+    <TransactionID>4</TransactionID>
+    <TransactionDate>2021-04-30T03:01:47+05:30</TransactionDate>
+    <TransactionContactName>TestPayee1</TransactionContactName>
+    <TransactionAmount>100</TransactionAmount>
+    <TransactionEvent>TestExpense1</TransactionEvent>
+    <TransactionAssociatedAccount>amana dehiwela</TransactionAssociatedAccount>
+    <TransactionType>Expense</TransactionType>
+    <TransactionCode>U1-EXP-4</TransactionCode>
+    <FK_UserID>1</FK_UserID>
+    <FK_ContactID>5</FK_ContactID>
+  </Transaction>
+  <Transaction>
+    <TransactionID>5</TransactionID>
+    <TransactionDate>2021-05-07T03:02:00+05:30</TransactionDate>
+    <TransactionContactName>TestPayee1</TransactionContactName>
+    <TransactionAmount>600</TransactionAmount>
+    <TransactionEvent>Dialog Bill</TransactionEvent>
+    <TransactionAssociatedAccount>amana dehiwela</TransactionAssociatedAccount>
+    <TransactionType>Expense</TransactionType>
+    <TransactionCode>U1-EXP-5</TransactionCode>
+    <FK_UserID>1</FK_UserID>
+    <FK_ContactID>5</FK_ContactID>
+  </Transaction>
+  <Transaction>
+    <TransactionID>6</TransactionID>
+    <TransactionDate>2021-05-17T03:02:14+05:30</TransactionDate>
+    <TransactionContactName>SLT</TransactionContactName>
+    <TransactionAmount>1000</TransactionAmount>
+    <TransactionEvent>TestExpense1</TransactionEvent>
+    <TransactionAssociatedAccount>amana dehiwela</TransactionAssociatedAccount>
+    <TransactionType>Expense</TransactionType>
+    <TransactionCode>U1-EXP-6</TransactionCode>
+    <FK_UserID>1</FK_UserID>
+    <FK_ContactID>6</FK_ContactID>
+  </Transaction>
+  <Transaction>
+    <TransactionID>7</TransactionID>
+    <TransactionDate>2021-04-08T03:02:55+05:30</TransactionDate>
+    <TransactionContactName>TestPayor1</TransactionContactName>
+    <TransactionAmount>3000</TransactionAmount>
+    <TransactionEvent>Salary March</TransactionEvent>
+    <TransactionAssociatedAccount>amana dehiwela</TransactionAssociatedAccount>
     <TransactionType>Income</TransactionType>
-    <TransactionCode>U1-INC-7</TransactionCode>
+    <TransactionCode>U1-INC-1</TransactionCode>
+    <FK_UserID>1</FK_UserID>
+    <FK_ContactID>3</FK_ContactID>
+  </Transaction>
+  <Transaction>
+    <TransactionID>8</TransactionID>
+    <TransactionDate>2021-04-30T03:03:10+05:30</TransactionDate>
+    <TransactionContactName>TestPayor1</TransactionContactName>
+    <TransactionAmount>1441</TransactionAmount>
+    <TransactionEvent>Salary March</TransactionEvent>
+    <TransactionAssociatedAccount>amana dehiwela</TransactionAssociatedAccount>
+    <TransactionType>Income</TransactionType>
+    <TransactionCode>U1-INC-2</TransactionCode>
+    <FK_UserID>1</FK_UserID>
+    <FK_ContactID>3</FK_ContactID>
+  </Transaction>
+  <Transaction>
+    <TransactionID>9</TransactionID>
+    <TransactionDate>2021-03-16T03:03:27+05:30</TransactionDate>
+    <TransactionContactName>IFS</TransactionContactName>
+    <TransactionAmount>1998</TransactionAmount>
+    <TransactionEvent>Salary March</TransactionEvent>
+    <TransactionAssociatedAccount>amana dehiwela</TransactionAssociatedAccount>
+    <TransactionType>Income</TransactionType>
+    <TransactionCode>U1-INC-3</TransactionCode>
     <FK_UserID>1</FK_UserID>
     <FK_ContactID>1</FK_ContactID>
   </Transaction>
   <Transaction>
-    <TransactionID>4</TransactionID>
-    <TransactionDate>2021-04-05T23:28:53+05:30</TransactionDate>
-    <TransactionContactName>SLT</TransactionContactName>
-    <TransactionAmount>3232</TransactionAmount>
-    <TransactionEvent>Monthly Bill Payment</TransactionEvent>
-    <TransactionAssociatedAccount>AmanaDehi</TransactionAssociatedAccount>
-    <TransactionType>Expense</TransactionType>
-    <TransactionCode>U1-EXP-15</TransactionCode>
+    <TransactionID>10</TransactionID>
+    <TransactionDate>2021-03-23T03:03:42+05:30</TransactionDate>
+    <TransactionContactName>TestPayor1</TransactionContactName>
+    <TransactionAmount>600</TransactionAmount>
+    <TransactionEvent>Salary March</TransactionEvent>
+    <TransactionAssociatedAccount>amana dehiwela</TransactionAssociatedAccount>
+    <TransactionType>Income</TransactionType>
+    <TransactionCode>U1-INC-4</TransactionCode>
     <FK_UserID>1</FK_UserID>
-    <FK_ContactID>2</FK_ContactID>
+    <FK_ContactID>3</FK_ContactID>
   </Transaction>
   <Transaction>
-    <TransactionID>5</TransactionID>
-    <TransactionDate>2021-04-25T23:32:44.5505621+05:30</TransactionDate>
-    <TransactionContactName>SLT</TransactionContactName>
-    <TransactionAmount>223</TransactionAmount>
-    <TransactionEvent>Monthly Bill Payment</TransactionEvent>
-    <TransactionAssociatedAccount>AmanaDehi</TransactionAssociatedAccount>
+    <TransactionID>11</TransactionID>
+    <TransactionDate>2021-04-19T06:21:32+05:30</TransactionDate>
+    <TransactionContactName>TestPayee1</TransactionContactName>
+    <TransactionAmount>100000</TransactionAmount>
+    <TransactionEvent>Dialog Bill</TransactionEvent>
+    <TransactionAssociatedAccount>amana dehiwela</TransactionAssociatedAccount>
     <TransactionType>Expense</TransactionType>
-    <TransactionCode>U1-EXP-16</TransactionCode>
+    <TransactionCode>U1-EXP-7</TransactionCode>
     <FK_UserID>1</FK_UserID>
-    <FK_ContactID>2</FK_ContactID>
+    <FK_ContactID>5</FK_ContactID>
   </Transaction>
   <Transaction>
-    <TransactionID>6</TransactionID>
-    <TransactionDate>2021-04-25T23:33:25.0424874+05:30</TransactionDate>
-    <TransactionContactName>testpayee4</TransactionContactName>
-    <TransactionAmount>2222</TransactionAmount>
-    <TransactionEvent>shaml1 exp</TransactionEvent>
-    <TransactionAssociatedAccount>AmanaCol</TransactionAssociatedAccount>
-    <TransactionType>Expense</TransactionType>
-    <TransactionCode>U2-EXP-4</TransactionCode>
-    <FK_UserID>2</FK_UserID>
-    <FK_ContactID>1006</FK_ContactID>
+    <TransactionID>12</TransactionID>
+    <TransactionDate>2021-06-17T06:50:35+05:30</TransactionDate>
+    <TransactionContactName>IFS</TransactionContactName>
+    <TransactionAmount>900000</TransactionAmount>
+    <TransactionEvent>Salary March</TransactionEvent>
+    <TransactionAssociatedAccount>amana dehiwela</TransactionAssociatedAccount>
+    <TransactionType>Income</TransactionType>
+    <TransactionCode>U1-INC-5</TransactionCode>
+    <FK_UserID>1</FK_UserID>
+    <FK_ContactID>1</FK_ContactID>
   </Transaction>
+  <Event>
+    <EventID>1</EventID>
+    <EventDate>2021-04-26T02:56:26.3216977+05:30</EventDate>
+    <EventCode>U1-EVENT-1</EventCode>
+    <EventName>Salary March</EventName>
+    <EventRecurring>Same day, every month</EventRecurring>
+    <EventType>Appointment</EventType>
+    <EventCategory>Income</EventCategory>
+    <EventAssociatedContact>IFS</EventAssociatedContact>
+    <FK_UserID>1</FK_UserID>
+  </Event>
+  <Event>
+    <EventID>2</EventID>
+    <EventDate>2021-04-26T02:56:54.009276+05:30</EventDate>
+    <EventCode>U1-EVENT-2</EventCode>
+    <EventName>Dialog Bill</EventName>
+    <EventRecurring>Same day, every month</EventRecurring>
+    <EventType>Appointment</EventType>
+    <EventCategory>Expense</EventCategory>
+    <EventAssociatedContact>Dialog</EventAssociatedContact>
+    <FK_UserID>1</FK_UserID>
+  </Event>
+  <Event>
+    <EventID>3</EventID>
+    <EventDate>2021-04-26T02:57:36.9117381+05:30</EventDate>
+    <EventCode>U1-EVENT-3</EventCode>
+    <EventName>TestExpense1</EventName>
+    <EventRecurring>Everyday</EventRecurring>
+    <EventType>Appointment</EventType>
+    <EventCategory>Expense</EventCategory>
+    <EventAssociatedContact>TestPayee1</EventAssociatedContact>
+    <FK_UserID>1</FK_UserID>
+  </Event>
+  <Event>
+    <EventID>4</EventID>
+    <EventDate>2021-04-26T02:59:23.8485347+05:30</EventDate>
+    <EventCode>U1-EVENT-4</EventCode>
+    <EventName>TestIncome1</EventName>
+    <EventRecurring>Same day, every month</EventRecurring>
+    <EventType>Appointment</EventType>
+    <EventCategory>Income</EventCategory>
+    <EventAssociatedContact>Hathy</EventAssociatedContact>
+    <FK_UserID>1</FK_UserID>
+  </Event>
 </ExpenseGuide>

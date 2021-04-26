@@ -89,6 +89,15 @@ namespace PersonalExpenseTracker.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The Excel file was generated succesfully..
+        /// </summary>
+        internal static string EXCEL_FILE_CREATED_SUCCESFFUL_MESSAGE {
+            get {
+                return ResourceManager.GetString("EXCEL_FILE_CREATED_SUCCESFFUL_MESSAGE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Expense details were successfully added to the transactions table!.
         /// </summary>
         internal static string EXPENSE_DETAILS_SUCCESSFULLY_SAVED {

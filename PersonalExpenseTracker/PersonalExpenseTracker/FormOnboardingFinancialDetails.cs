@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,6 +24,10 @@ namespace PersonalExpenseTracker
         public FormOnboardingFinancialDetails()
         {
             InitializeComponent();
+            if (File.Exists("ExpenseGuide.xml") == true)
+            {
+                this.myDataSet.ReadXml("ExpenseGuide.xml");
+            }
         }
 
         private void enterFinancialDetails(object sender, EventArgs e)
@@ -53,7 +58,7 @@ namespace PersonalExpenseTracker
             this.myDataSet.AcceptChanges();
 
             //serialize it to disc
-            this.myDataSet.BankAccountDetail.WriteXml("ExpenseGuide-Bank-Account-Details.xml");
+            this.myDataSet.WriteXml("ExpenseGuide.xml");
 
 
             /*

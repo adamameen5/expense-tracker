@@ -210,7 +210,7 @@ namespace PersonalExpenseTracker
             //forwarding the data (interacting with the model class, saving the data permanently in the db)
             //here we save the contact details permanently in the db
 
-
+            //transactionSaved = Task.Run(() => helper.SaveIncomeInfoAsync(transactionAssociatedContactID, userTransactionsData));
             transactionSaved = helper.SaveIncomeInfo(transactionAssociatedContactID, userTransactionsData);
 
             if (transactionSaved)

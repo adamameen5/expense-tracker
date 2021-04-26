@@ -127,6 +127,9 @@
   <data name="EVENT_DETAILS_SUCCESSFULLY_SAVED" xml:space="preserve">
     <value>Event details were successfully added!</value>
   </data>
+  <data name="EXCEL_FILE_CREATED_SUCCESFFUL_MESSAGE" xml:space="preserve">
+    <value>The Excel file was generated succesfully.</value>
+  </data>
   <data name="EXPENSE_DETAILS_SUCCESSFULLY_SAVED" xml:space="preserve">
     <value>Expense details were successfully added to the transactions table!</value>
   </data>

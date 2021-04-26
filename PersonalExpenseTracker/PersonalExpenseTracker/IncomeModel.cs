@@ -147,5 +147,10 @@ namespace PersonalExpenseTracker
 
 
         }
+
+        public Task SaveIncomeInfoAsync(int contactID, UserTransactionsData info)
+        {
+            return Task.Run(() => SaveIncomeInfo(contactID, info));
+        }
     }
 }

@@ -216,6 +216,7 @@
       <DependentUpon>FormWeeklyView.cs</DependentUpon>
     </Compile>
     <Compile Include="IncomeModel.cs" />
+    <Compile Include="PredictorModel.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RedirectToDashboard.cs" />

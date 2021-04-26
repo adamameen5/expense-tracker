@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -14,7 +15,7 @@ namespace PersonalExpenseTracker
     {
         
         private FormWeeklyView _weeklyViewController;
-
+        public int countOfControls = 0;
         public FormDashboard()
         {
             InitializeComponent();
@@ -22,7 +23,39 @@ namespace PersonalExpenseTracker
             lblUserName.Text = FormLogin.globalLoggedInUserName;
 
             _weeklyViewController = new FormWeeklyView();
+
+            //var c = GetAll(this, typeof(Button));
+            //MessageBox.Show("Total Controls: " + c.Count());
+
+            //countOfControls = c.Count();
         }
+
+
+        //private void DoWork()
+        //{
+        //    Thread[] threads = new Thread[countOfControls];
+        //    for (int i=0; i<threads.Length; i++)
+        //    {
+        //        threads[i] = new Thread(new ThreadStart(myThreadMethod));
+        //        threads[i].Start();
+        //    }
+        //}
+
+        //public void myThreadMethod()
+        //{
+        //    doDisplay()
+        //}
+
+
+        //public IEnumerable<Control> GetAll(Control control, Type type)
+        //{
+        //    var controls = control.Controls.Cast<Control>();
+
+        //    return controls.SelectMany(ctrl => GetAll(ctrl, type))
+        //                              .Concat(controls)
+        //                              .Where(c => c.GetType() == type);
+        //}
+
 
         private void toggleUserInfoView(object sender, EventArgs e)
         {

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -35,6 +36,11 @@ namespace PersonalExpenseTracker
             lblUserName.Text = FormLogin.globalLoggedInUserName;
             eventCode.Text = helper.GetEventCode();
             LoadComboBoxEventContactData(contactTypeToShow);
+
+            if (File.Exists("ExpenseGuide.xml") == true)
+            {
+                this.myDataSet.ReadXml("ExpenseGuide.xml");
+            }
         }
 
         private void validateEventInfo(object sender, EventArgs e)
@@ -115,7 +121,7 @@ namespace PersonalExpenseTracker
             this.myDataSet.AcceptChanges();
 
             //serialize it to disc
-            this.myDataSet.Contact.WriteXml("ExpenseGuide-Event-Details.xml");
+            this.myDataSet.WriteXml("ExpenseGuide.xml");
 
             //forwarding the data (interacting with the model class, saving the data permanently in the db)
             //here we save the contact details permanently in the db

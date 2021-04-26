@@ -63,7 +63,7 @@ namespace PersonalExpenseTracker
 
             //serialize it to disc
             this.myDataSet.WriteXml("ExpenseGuide.xml");
-            this.myDataSet.Credentials.WriteXml("ExpenseGuide-Credentials.xml");
+            //this.myDataSet.Credentials.WriteXml("ExpenseGuide-Credentials.xml");
 
             //forwarding - interacting with the model class, saving the data permanently in the db
             UserModel userModel = new UserModel();
